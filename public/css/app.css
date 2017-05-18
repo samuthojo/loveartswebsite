@@ -1,0 +1,114 @@
+html, body {
+    background-color: #fff;
+    color: #636b6f;
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+
+    --app-main-color: #e6544e;
+    --app-shade-color: #FF4242;
+    --app-accent1-color: #FF837E;
+    --app-accent2-color: #FFB4B4;
+    --app-light-color: #ffe1d0;
+    --app-contrast-color: #ffed75;
+    --app-cool-white: #f9f9f9;
+}
+
+@font-face{
+    font-family:Paint;
+    src:url(../fonts/Age.otf);
+    /*src:url(../fonts/Gipsiero_Kracxed.otf) format("embedded-opentype"),*/
+    /*url(../fonts/Gipsiero_Kracxed.otf) format("woff2"),*/
+    /*url(../fonts/Gipsiero_Kracxed.otf) format("woff"),*/
+    /*url(../fonts/Gipsiero_Kracxed.otf) format("truetype")*/
+}
+
+@font-face {
+    font-family: JohnHancockCP;
+    src:url(../fonts/CODEBold.otf);
+}
+
+
+.faded-bg{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    opacity: 0.1;
+    background-size: cover;
+    background-position: center;
+}
+
+.header-text{
+    font-family: Paint, serif;
+    font-size: 3em;
+    letter-spacing: 10px;
+}
+
+.hidden{
+    display: none;
+}
+
+.btn {
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border-radius: 0.6em;
+    /*color: #e74c3c;*/
+    color: #2e3436;
+    border-width: 2px;
+    border-style: solid;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-item-align: center;
+    align-self: center;
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 1;
+    margin: 0 8px;
+    padding: 0.5em 1.7em;
+    padding-top: 0.6em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: inherit;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+.btn:hover, .btn:focus {
+    color: #fff;
+    outline: 0;
+}
+
+.btn.line {
+    /*border-radius: 3em;*/
+    border-color: #111;
+    color: #111;
+    font-weight: bolder;
+    background-image: -webkit-linear-gradient(top, transparent 50%, #111 50%);
+    background-image: linear-gradient(to bottom, transparent 50%, #111 50%);
+    background-position: 0% 0%;
+    background-size: 210%;
+    -webkit-transition: background 150ms ease-in-out, color 150ms ease-in-out;
+    transition: background 150ms ease-in-out, color 150ms ease-in-out;
+}
+.btn.line:hover {
+    color: #fff;
+    background-position: 0 100%;
+}
+
+.typical-bg{
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
+}
+
+.fill-above{
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+}

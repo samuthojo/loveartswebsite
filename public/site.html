@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Tanzania music,drama ,poetry,Tanzania ndio mimi,Love Arts Tanzania | Passion - Impact - Change">
+    <meta name="description" content="A platform that unites individuals who share passion for arts to bring impact and positive changes.">
+    <meta name="author" content="iPF Softwares ">
+    <meta charset="UTF-8">
+    <link href="http://www.loveartstanzania.com/assets/images/fav.png" rel="shortcut icon" type="image">
+    <title>Love Arts Tanzania | Passion - Impact - Change</title>
+
+    <!-- Styles -->
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/flex.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
+</head>
+<body>
+        <!--1. LARGE IMAGE WITH SERIF TEXT, SANS SERIF TEXT-->
+<style>
+    #banner{
+        position: relative;
+        overflow: hidden;
+        height: calc(100vh + 10px);
+        /*height: calc(100vh + 200px);*/
+        background: var(--app-cool-white);
+        background-position: top right;
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        background-size: cover;
+        background-image: url(images/banner/im4.jpg);
+    }
+
+    #banner.reddis{
+        background-color: #ee4a4a;
+        background-image: -webkit-linear-gradient(#ee4a4a, #da4d4d);
+        background-image: -o-linear-gradient(#ee4a4a, #da4d4d);
+        background-image: linear-gradient(#ee4a4a, #da4d4d);
+    }
+
+    #banner h2{
+        font-family: "Ultra", serif;
+        font-size: 4em;
+        letter-spacing: 17px;
+        color: #303030;
+        color: #222;
+        padding-top: 70px;
+        margin-bottom: 9px;
+    }
+
+    #banner p{
+        font-size: 1.4em;
+
+        font-family: Verdana, sans-serif;
+        font-size: 1.3em;
+        font-weight: 100;
+        letter-spacing: 5px;
+    }
+
+    #banner #text{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    #banner .faded-bg{
+        opacity: 0.9;
+        background:rgba(238,74,74,1);
+        /*background:rgba(238,238,239,0.9);*/
+        
+    }
+
+    #celebrateTagline{
+        z-index: 99;
+        -webkit-perspective: 500px; /* Chrome, Safari, Opera */
+        -mox-perspective: 500px;
+        perspective: 500px;
+        color: #444;
+        margin-top: 18px;
+    }
+    #celebrateTagline span{
+        display: inline-block;
+        position: relative;
+        cursor: default;
+        border-style: solid;
+        border-width: 0;
+        border-bottom-width: 1px;
+
+        -webkit-transition: all 0.35s ease-out;
+        -moz-transition: all 0.35s ease-out;
+        -ms-transition: all 0.35s ease-out;
+        -o-transition: all 0.35s ease-out;
+        transition: all 0.35s ease-out;
+    }
+    #banner:not(.reddish) #celebrateTagline span{
+        color: #777;
+    }
+
+    #banner:not(.reddish) #celebrateTagline span:hover{
+        color: #000;
+    }
+
+    #celebrateTagline span:hover{
+        color: #f9f9f9;
+    }
+
+    #celebrateTagline span:not(:first-child){
+        /*margin-left: 40px;*/
+    }
+</style>
+
+<div id="banner" class="layout vertical reddish">
+    <style>
+    #bannerTopBar{
+        /*position: relative;*/
+        /*padding: 30px;*/
+        padding: 24px 42px;
+        z-index: 99;
+        /*background-color: #ff5555;*/
+        /*position: fixed;*/
+        width: 100%;
+    }
+
+    #bannerTopBar.light{
+        /*background: #fefefe;*/
+        background: #ff4d4d;
+    }
+
+    #bannerTopBar #title {
+        /*margin-left: 40px;*/
+        font-size: 32px;
+        /*font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;*/
+    }
+
+    #bannerTopBar #links, #bannerTopBar #authOptions{
+        /*background-color: greenyellow;*/
+        margin-top: 10px;
+    }
+
+    #bannerTopBar #links > a, #bannerTopBar #authOptions a{
+        padding: 12px 20px;
+        font-family: "Gotham medium";
+        font-size: 0.9em;
+        font-weight: 200;
+        letter-spacing: .1rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #000;
+    }
+
+    #bannerTopBar #authOptions a{
+        background-color: rgba(0,0,0,0.05);
+        /*color: #ffbcbc;*/
+        /*color: #333;*/
+    }
+
+    #bannerTopBar #authOptions a:hover{
+        background-color: rgba(0,0,0,0.1);
+        color: #000;
+    }
+
+    #bannerTopBar #links > a:hover{
+        background-color: rgba(0,0,0,0.05);
+    }
+
+    #bannerTopBar #topBar:not(.light) #links > a,
+    #bannerTopBar #topBar:not(.light) #authOptions > a,
+    #bannerTopBar #topBar:not(.light) #title{
+        color: #333;
+    }
+
+    #bannerTopBar #topBar:not(.light) #title{
+        color: #626262;
+        color: #000 !important;
+    }
+</style>
+
+<div id="bannerTopBar" class="layout center justified">
+    <div id="title" class="layout center" style="color: #555">
+        
+        
+
+        <img src="images/logoactive.png" alt="" style="height: 60px">
+    </div>
+
+    <div id="links" class="layout center">
+        <a href="#home">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#what">WHAT WE DO</a>
+        <a href="#me">MEDIA</a>
+        <a href="#artists">ARTISTS</a>
+        <a href="#artists">RELEASES</a>
+        <a href="#contact">CONTACTS</a>
+    </div>
+
+    <div id="authOptions" class="layout center">
+        <a href="#">LOGIN</a>
+    </div>
+</div>    <div class="faded-bg"></div>
+    <div class="layout vertical center flex" style="padding-top: 2em;">
+        <h2 style="margin-left: 133px;">
+            <span style="font-family: 'Gotham light', Serif; font-size: 0.5em;">
+                CELEBRATING
+            </span>
+
+            <span style="display: block; box-sizing: border-box; font-size: 1.3em; margin-left: -133px;"> ARTISTRY</span>
+        </h2>
+    </div>
+</div>    <style>
+    #pillars{
+        min-height: 100vh;
+        background-color: #fff;
+        /*padding:  14em;*/
+        padding-top: 6em;
+    }
+
+    #pillars #text{
+        padding: 0 14em;
+    }
+
+    #pillars h2{
+        font-family: "Gotham ultra", sans-serif;
+        font-size: 3.2em;
+        letter-spacing: 10px;
+        margin-bottom: 0.2em;
+    }
+
+    #pillars p{
+        font-family: "Gotham light", sans-serif;
+        font-size: 1.8em; line-height: 1.4em;
+    }
+
+    .inspire-shot{
+        background-color: #999;
+        /*background-color: var(--app-accent1-color);*/
+        background-image: url(images/p3s.png);
+        
+        width: calc(33.333% - 2px);
+        height: 300px;
+        margin: 1px;
+        background-size: 70px;
+        background-position: center;
+        position: relative;
+    }
+
+    .inspire-shot > div{
+        font-family: "Calson", serif;
+    }
+
+    .inspire-shot .pillar-image,
+    .inspire-shot .pillar-text{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-size: contain;
+        background-position: top;
+        background-repeat: no-repeat;
+    }
+
+    #pillars .inspire-shot:nth-of-type(1),
+    #pillars .inspire-shot:nth-of-type(2),
+    #pillars .inspire-shot:nth-of-type(4){
+        overflow: hidden;
+    }
+
+    #pillars .inspire-shot:nth-of-type(1) .pillar-image{
+        transform: translate3d(-25%, 20%, 0);
+    }
+
+    #pillars .inspire-shot:nth-of-type(2) .pillar-image{
+        transform: translate3d(30%, 20%, 0);
+    }
+
+    #pillars .inspire-shot:nth-of-type(3) .pillar-image{
+        transform: translate3d(30%, -20%, 0);
+    }
+
+    #pillars .inspire-shot:nth-of-type(4) .pillar-image{
+        transform: translate3d(0, 20%, 0);
+    }
+
+    .inspire-shot .pillar-text{
+        /*background-color: rgba(0,0,0,0.6);*/
+    }
+
+    .inspire-shot .pillar-name{
+        color: #fefefe;
+        /*color: #0d3625;*/
+        font-size: 2.5em;
+        font-family: "Calson", serif;
+    }
+
+    .inspire-shot .pillar-info{
+        display: none;
+        text-align: center;padding: 0.3em;font-size: 0.45em; font-family: 'Gotham light', serif; color: #ccc
+    }
+</style>
+
+<div id="pillars">
+    <div id="text">
+        <h2>OUR PILLARS</h2>
+        <p>We are passionate about all things Art, but currently we are most focused on....</p>
+    </div>
+
+    <div style="margin-top: 75px; position: relative;">
+        <div id="images" class="layout wrap" style="background:#fff;">
+                                                            <div class="inspire-shot">
+                        <div class="pillar-image" style="background-image: url(images/pillars/im1.png);"></div>
+                        <div class="pillar-text layout vertical center-center">
+                            <div class="pillar-name">
+                                MUSIC
+                            </div>
+                            <div class="pillar-info">
+                                Carefully arranged melodies paired with amazing voices that make you want to just let go an get lost into their
+                            </div>
+                        </div>
+                    </div>
+                                                                <div class="inspire-shot">
+                        <div class="pillar-image" style="background-image: url(images/pillars/im2.png);"></div>
+                        <div class="pillar-text layout vertical center-center">
+                            <div class="pillar-name">
+                                PHOTOGRAPHY
+                            </div>
+                            <div class="pillar-info">
+                                Priceless moments captured by keen eyes to keep them alive forever just for you.
+                            </div>
+                        </div>
+                    </div>
+                                                                <div class="inspire-shot">
+                        <div class="pillar-image" style="background-image: url(images/pillars/im3.png);"></div>
+                        <div class="pillar-text layout vertical center-center">
+                            <div class="pillar-name">
+                                DANCE
+                            </div>
+                            <div class="pillar-info">
+                                Pure emotion expressed in cleverly created movements that will leave you in absolute awe.
+                            </div>
+                        </div>
+                    </div>
+                                                                <div class="inspire-shot">
+                        <div class="pillar-image" style="background-image: url(images/pillars/im4.png);"></div>
+                        <div class="pillar-text layout vertical center-center">
+                            <div class="pillar-name">
+                                FASHION
+                            </div>
+                            <div class="pillar-info">
+                                Not just a cut here and a cut there but meaningful messages and personalities woven into being.
+                            </div>
+                        </div>
+                    </div>
+                                                                <div class="inspire-shot">
+                        <div class="pillar-image" style="background-image: url(images/pillars/im5.png);"></div>
+                        <div class="pillar-text layout vertical center-center">
+                            <div class="pillar-name">
+                                DRAMA
+                            </div>
+                            <div class="pillar-info">
+                                Staging out innermost feelings through very well written stories that will captivate you
+                            </div>
+                        </div>
+                    </div>
+                                                        
+            <div class="inspire-shot" style="background: #f5f5f5;">
+                <div id="" class="layout vertical center-center" style="height: calc(100% - 20px); font-size: 3em; backgroun: #f5f5f5; margin: 10px; font-famil: Verdana; font-weight: bold;">
+                    <span style="font-size: 0.65em; font-weight: 400; letter-spacing: 4px">LEARN</span>
+                    MORE
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    <style>
+    #featured{
+        padding-top: 4em;
+        background: var(--app-cool-white);
+        lg(top left, var(--app-accent1-color), var(--app-main-color), var(--app-accent1-color))
+    }
+
+    #featured #header h2{
+        text-align: center;
+        padding-top: 0;
+        margin-bottom: 0;
+        width: 100%;
+        /*font-family: "Lucida Grande", serif;*/
+        /*letter-spacing: 0.2em;*/
+        /*font-size: 3.5em;*/
+        /*font-weight: bolder;*/
+        font-family: "Gotham ultra", sans-serif;
+        font-size: 3em;
+        letter-spacing: 10px;
+        color: #555;
+    }
+
+    #featured #header p{
+        margin: 20px 0;
+        font-size: 1.8em;
+        letter-spacing: 2px;
+        font-family: "Lora Italic", sans-serif;
+    }
+
+    #featured #artistImage{
+        max-height: calc(100vh + 50px);
+        transform: translate3d(20px, 50px, 0) scale(1)
+    }
+</style>
+
+<div id="featured">
+    <div class="layout justified" style="overflow: hidden; padding-top: 8px;">
+        <img id="artistImage" src="images/baraka.png" alt="">
+        <div class="flex" style="padding-top: 80px;">
+            <div id="header" class="layout vertical center">
+                <h2>FEATURED ARTIST</h2>
+                <p style="">Baraka Kamuzoga</p>
+            </div>
+
+            <style>
+    #artistSubcontent{
+        max-width: 650px;
+        margin: auto;
+    }
+
+    #artistSubcontent #artistLinks{
+        /*background-color: bisque;*/
+        margin-bottom: 20px;
+        border: 1px solid #e2e2e2;
+        border-left: none;
+        border-right: none;
+        padding: 12px 8px;
+    }
+
+    #artistSubcontent #artistLinks a{
+        text-decoration: none;
+        color: #444;
+        border-bottom: 1px solid transparent;
+        padding: 3px 2px;
+        font-family: "Gotham medium", sans-serif;
+        font-size: 1.3em;
+    }
+
+    #artistSubcontent #artistLinks a:not(:hover):not(.active){
+        opacity: 0.6;
+    }
+
+    #artistSubcontent #artistLinks a:hover{
+        -webkit-transition: opacity 0.35s;
+        -moz-transition: opacity 0.35s;
+        -ms-transition: opacity 0.35s;
+        -o-transition: opacity 0.35s;
+        transition: opacity 0.35s;
+    }
+
+    #artistSubcontent #artistLinks a:not(:first-child){
+        margin-left: 30px;
+    }
+
+    #artistSubcontent.view-about #artistLinks a[target="#artistAbout"]{
+        color: var(--app-main-color);
+        border-bottom-color: var(--app-main-color);
+        opacity: 1;
+    }
+
+    #artistSubcontent.view-qsns #artistLinks a[target="#artistQsns"]{
+        color: var(--app-main-color);
+        border-bottom-color: var(--app-main-color);
+        opacity: 1;
+    }
+
+    #artistSubcontent.view-works #artistLinks a[target="#artistWorks"]{
+        color: var(--app-main-color);
+        border-bottom-color: var(--app-main-color);
+        opacity: 1;
+    }
+
+    #artistSections section{
+        padding: 0 20px;
+        font-family: "Times New Roman", serif;
+        -webkit-transition: opacity 0.35s 2.35s;
+        -moz-transition: opacity 0.35s 2.35s;
+        -ms-transition: opacity 0.35s 2.35s;
+        -o-transition: opacity 0.35s 2.35s;
+        transition: opacity 0.35s 2.35s;
+    }
+
+    #artistSections section .just-text{
+        font-size: 1.5em;
+        line-height: 1.7em;
+        font-family: "Lora Italic", serif;
+    }
+
+    #artistSubcontent:not(.view-about) #artistAbout{
+        display: none;
+        opacity: 0;
+    }
+
+    #artistSubcontent:not(.view-qsns) #artistQsns{
+        display: none;
+        opacity: 0;
+    }
+
+    #artistSubcontent:not(.view-works) #artistWorks{
+        display: none;
+        opacity: 0;
+    }
+
+    #artistSections section.visible{
+        display: block !important;
+        /*opacity: 1 !important;*/
+    }
+
+    #artistActions{
+        align-self: flex-end;
+        margin-top: 5px;
+        padding: 0 3px;
+        border-top: 1px solid #e0e0e0;
+        padding-top: 12px;
+    }
+
+    #artistActions a{
+        display: inline-block;
+        padding: 10px 12px;
+        border-radius: 2px;
+        background-color: transparent;
+        margin: 0;
+        font-family: "Gotham medium", sans-serif;
+        color: #777;
+        font-size: 1em;
+    }
+</style>
+
+<div id="artistSubcontent" class="view-about">
+    <div id="artistLinks" class="layout center-justified">
+        <a href="javascript:void(0);" target="#artistAbout" onclick="switchSection('about')">OVERVIEW</a>
+        <a href="javascript:void(0);" target="#artistQsns" onclick="switchSection('qsns')">20 QUESTIONS</a>
+        <a href="javascript:void(0);" target="#artistWorks" onclick="switchSection('works')">WORKS</a>
+    </div>
+    <div id="artistSections">
+        <section id="artistAbout" class="layout vertical">
+            <span class="just-text">
+                Baraka is a reknown guitarist, singer and songwiter based in Nyamagana Mwanza. He is best known for his shredding skills which are
+                most notable in his hit single Roho yangu released in May 2009(launch event hosted by lovearts yooohoo). Although no one in Baraka's family has ever chosen a career in the music industry....
+                <span class="hidden">
+                     he's been heard saying, <em><q>they(Everyone else in his family) are definitely better musicians than me, everything I know I learnt from them.</q></em>
+                </span>
+            </span>
+
+            <div id="artistActions" class="layout" style="margin-top: 20px;">
+                <a href="#" title="Facebook">
+                    <i class="fa fa-facebook-square" style="color: #3b5998;"></i>&nbsp;
+                    Kamu Music&nbsp;
+                </a>
+                <a href="#" title="Instagram">
+                    <i class="fa fa-instagram" style="color: #222;"></i>&nbsp;
+                    kamu_music&nbsp;
+                </a>
+                <a href="#" title="Twitter">
+                    <i class="fa fa-twitter-square" style="color: #55acee"></i>&nbsp;
+                    kamu_music&nbsp;
+                </a>
+            </div>
+        </section>
+        <section id="artistQsns">
+            <style>
+    #featuredArtistQuestions .question{
+        margin: 0.5em 0;
+        position: relative;
+    }
+
+    #featuredArtistQuestions .question .question-number{
+        margin-right: -2em;
+        /*position: absolute;*/
+        top: 0;
+        height:100%;
+        /*background-color: greenyellow;*/
+    }
+
+    #featuredArtistQuestions .question .question-number div{
+        font-family: "Ultra", sans-serif;
+        display: inline-block;
+        /*position: absolute;*/
+        font-size: 5.76em;
+        text-align: center;
+        padding: 0 0.05em;
+        background-color: #eee;
+        width: 90px;
+        letter-spacing: 2px;
+        opacity: 0.4;
+        color: #aaa;
+    }
+
+    #featuredArtistQuestions .question h3{
+        font-family: "Gotham bold", serif;
+        font-size: 1.4em;
+    }
+
+    #featuredArtistQuestions .question p{
+        margin-top: 7px;
+        font-size: 1em;
+        /*font-style: italic;*/
+        font-family: "Gotham light", sans-serif;
+        color: #555;
+        padding-top: 0.2em;
+        padding-bottom: 0.8em;
+    }
+</style>
+
+<div id="featuredArtistQuestions" class="layout vertical">
+    
+                    <div class="question layout">
+            <div class="question-number layout cente">
+                <div>
+                    01
+                </div>
+            </div>
+
+            <div class="question-content layout vertical">
+                <h3 class="question-title">
+                    How do you come up with your wonderful melodies?
+                </h3>
+                <p class="question-answer">
+                    <em>I'd say its inspiration, you'd be amazed with what the proper inspiration can do.</em>
+                </p>
+            </div>
+        </div>
+                    <div class="question layout">
+            <div class="question-number layout cente">
+                <div>
+                    02
+                </div>
+            </div>
+
+            <div class="question-content layout vertical">
+                <h3 class="question-title">
+                    Was your hit song <q>Saa nyingine</q> targeted at anyone in particular?
+                </h3>
+                <p class="question-answer">
+                    <em>[Laughs] This is one of those moments I wish I could plead the fifth. The answer is yes and no; it was definitely inspired by a real situation but it wasn't limited to it.</em>
+                </p>
+            </div>
+        </div>
+    
+    <div id="artistActions" class="layout">
+        <a href="#">
+            <i class="fa fa-link"></i>&nbsp;
+            ALL QUESTIONS&nbsp;
+        </a>
+        <a href="#" style="color: var(--app-main-color)">
+            <i class="fa fa-youtube-play"></i>&nbsp;
+            WATCH INTERVIEW&nbsp;
+        </a>
+    </div>
+</div>        </section>
+        <section id="artistWorks" class="layout vertical">
+            <span class="just-text">
+                We're still awaiting Baraka's permission to showcase his works live in here,
+                shouldn't take too long so please check back soon.
+                Formthe time being you can just check them out in his youtube and soundcloud channels listed below.
+            </span>
+
+
+            <div id="artistActions" class="layout" style="margin-top: 20px;">
+                <a href="#" title="Sound Cloud">
+                    <i class="fa fa-soundcloud" style="color: #000;"></i>&nbsp;
+                    Kamu Music&nbsp;
+                </a>
+                <a href="#" title="Youtube">
+                    <i class="fa fa-youtube-play" style="color: var(--app-main-color)"></i>&nbsp;
+                    Kamu Music&nbsp;
+                </a>
+            </div>
+        </section>
+    </div>
+</div>
+
+<script>
+    var subContent = document.getElementById("artistSubcontent");
+    function switchSection(section){
+        subContent.classList.remove('view-about', 'view-qsns', 'view-works');
+//        document.getElementById("artist"+section.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();})).classList.add('visible');
+        subContent.classList.add('view-'+section);
+    }
+</script>        </div>
+    </div>
+</div>    <style>
+    #instagram{
+        /*margin-top: 60px;*/
+        min-height: 300px;
+        overflow: hidden;
+        background-color: var(--app-cool-white);
+        /*background: #f2f2f2;*/
+        background: #fff;
+    }
+
+    #instagram #content{
+        position: relative;
+        min-height: calc(100vh + 10px);
+        background-color: var(--app-cool-white);
+    }
+
+    #instagram #text{
+        padding: 6em 14em;
+    }
+
+    #instagram #text h2{
+        font-size: 3em; font-family: 'Gotham ultra', sans-serif; margin-bottom: 0.4em;
+    }
+
+    #instagram #text p{
+        font-family:'Gotham light', sans-serif;font-size: 1.6em; line-height: 1.5em;
+    }
+
+    #instagram #instaWall{
+        -webkit-background-size: cover;
+        background-size: 100%;
+        background-position: center;
+        background-image: url(images/insta-wall-2.jpg);
+    }
+</style>
+
+<div id="instagram" class="layout center-center">
+    <div id="text" class="flex self-start">
+        
+            
+        
+        <h2>Showcase</h2>
+        <p>
+            Here is a little showcase of how we get it on taken from our instagram page. Click an image to view it on instagram.
+        </p>
+    </div>
+</div>    <div id="instagramElement">
+    <style>
+    #instagramElement{
+        perspective: 1000px;
+        position: relative;
+        height: 350px;
+        overflow: hidden;
+        background: #fff;
+
+        background: #eadeca;
+        background-image: -webkit-linear-gradient(left, #fff4e2, #ede0ca);
+        background-image: -o-linear-gradient(left, #fff4e2, #ede0ca);
+        background-image: linear-gradient(to right, #fff4e2, #ede0ca);
+    }
+    #instaOuter{
+        /*height: 350px;*/
+        overflow: hidden;
+        width: 130%;
+        position: absolute;
+        top: -24%;
+        left: 0;
+    }
+
+    #instaOuter #instaBg{
+        /*max-width: 980px;*/
+        -webkit-transform: translate3d(-18%, 0, -250px) rotateY(-12deg);
+        -moz-transform: translate3d(-18%, 0, -250px) rotateY(-12deg);
+        -ms-transform: translate3d(-18%, 0, -250px) rotateY(-12deg);
+        -o-transform: translate3d(-18%, 0, -250px) rotateY(-12deg);
+        transform: translate3d(-18%, 0, -250px) rotateY(-12deg);
+        padding: 50px;
+        padding-bottom: 0;
+    }
+
+    #instaOuter .insta-card{
+        background-color: #eee;
+        /*border: 26px solid #fff4e2;*/
+        border-color: #fff;
+        border-width: 26px;
+        border-style: solid;
+        border-style: groove;
+        border-style: double;
+        box-shadow: 12px 12px 23px rgba(0,0,0, 0.3);
+        margin: 20px;
+        width: 210px;
+        height: 210px;
+        background-position: center;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+
+    #instaOuter .insta-card:nth-child(9),
+    #instaOuter .insta-card:nth-child(15){
+        border-right:none;
+        margin-right: -9px;
+    }
+
+    #instaOuter .insta-card:nth-child(10),
+    #instaOuter .insta-card:nth-child(16){
+        border-left:none;
+        margin-left: -9px;
+    }
+
+
+    #instaOuter .insta-card:nth-child(9),
+    #instaOuter .insta-card:nth-child(10)
+    {
+        border-bottom:none;
+        /*margin-bottom: -9px;*/
+        margin-top: 29px;
+    }
+
+    #instaOuter .insta-card:nth-child(15),
+    #instaOuter .insta-card:nth-child(16){
+        border-top:none;
+        margin-top: 11px;
+    }
+
+    #instaOuter .insta-card img{
+        /*border: 3px groove #fff;*/
+        width: 100%;
+    }
+</style>
+
+<div id="instaOuter">
+    
+    <div id="instaBg" class="layout justified wrap">
+                    <a target="_blank" href="https://www.instagram.com/p/BBZjYWpBfvV/?taken-by=loveartstz" class="insta-card layout center-center" style="background-image: url(images/instagram/1.jpg)">
+                
+            </a>
+                    <a target="_blank" href="https://www.instagram.com/p/BEVwqwvhft_/?taken-by=loveartstz" class="insta-card layout center-center" style="background-image: url(images/instagram/2.jpg)">
+                
+            </a>
+                    <a target="_blank" href="https://www.instagram.com/p/BEK_2HEhfjI/?taken-by=loveartstz" class="insta-card layout center-center" style="background-image: url(images/instagram/3.jpg)">
+                
+            </a>
+                    <a target="_blank" href="https://www.instagram.com/p/BDC-l3rBfqp/?taken-by=loveartstz" class="insta-card layout center-center" style="background-image: url(images/instagram/4.jpg)">
+                
+            </a>
+                    <a target="_blank" href="https://www.instagram.com/p/BChkLOvBfsl/?taken-by=loveartstz" class="insta-card layout center-center" style="background-image: url(images/instagram/5.jpg)">
+                
+            </a>
+                    <a target="_blank" href="https://www.instagram.com/p/BB4T9aGhflv/?taken-by=loveartstz" class="insta-card layout center-center" style="background-image: url(images/instagram/6.jpg)">
+                
+            </a>
+                    <a target="_blank" href="https://www.instagram.com/p/BDcnZZKhfv-/?taken-by=loveartstz" class="insta-card layout center-center" style="background-image: url(images/instagram/7.jpg)">
+                
+            </a>
+                    <a target="_blank" href="https://www.instagram.com/p/BC0FyzAhfsB/?taken-by=loveartstz" class="insta-card layout center-center" style="background-image: url(images/instagram/8.jpg)">
+                
+            </a>
+                    <a target="_blank" href="https://www.instagram.com/p/BEG2RBjBfr8/?taken-by=loveartstz" class="insta-card layout center-center" style="background-image: url(images/instagram/9.jpg)">
+                
+            </a>
+                    <a target="_blank" href="https://www.instagram.com/p/BEG17IRhfrM/?taken-by=loveartstz" class="insta-card layout center-center" style="background-image: url(images/instagram/10.jpg)">
+                
+            </a>
+                    <a target="_blank" href="https://www.instagram.com/p/BC0Fuhghfr4/?taken-by=loveartstz" class="insta-card layout center-center" style="background-image: url(images/instagram/11.jpg)">
+                
+            </a>
+                    <a target="_blank" href="https://www.instagram.com/p/BB7OUqBhftE/?taken-by=loveartstz" class="insta-card layout center-center" style="background-image: url(images/instagram/12.jpg)">
+                
+            </a>
+                    <a target="_blank" href="https://www.instagram.com/p/BC72_zRBfv9/?taken-by=loveartstz" class="insta-card layout center-center" style="background-image: url(images/instagram/13.jpg)">
+                
+            </a>
+                    <a target="_blank" href="https://www.instagram.com/p/BDfJwoThfqQ/?taken-by=loveartstz" class="insta-card layout center-center" style="background-image: url(images/instagram/14.jpg)">
+                
+            </a>
+                    <a target="_blank" href="https://www.instagram.com/p/BEG1dXEhfqQ/?taken-by=loveartstz" class="insta-card layout center-center" style="background-image: url(images/instagram/15.jpg)">
+                
+            </a>
+                    <a target="_blank" href="https://www.instagram.com/p/BEG1dXEhfqQ/?taken-by=loveartstz" class="insta-card layout center-center" style="background-image: url(images/instagram/16.jpg)">
+                
+            </a>
+                    <a target="_blank" href="https://www.instagram.com/p/BEN3F6aBfld/?taken-by=loveartstz" class="insta-card layout center-center" style="background-image: url(images/instagram/17.jpg)">
+                
+            </a>
+                    <a target="_blank" href="https://www.instagram.com/p/BBhrs0Chfq_/?taken-by=loveartstz" class="insta-card layout center-center" style="background-image: url(images/instagram/18.jpg)">
+                
+            </a>
+                    <a target="_blank" href="https://www.instagram.com/p/BFBWGzThfkd/?taken-by=loveartstz" class="insta-card layout center-center" style="background-image: url(images/instagram/19.jpg)">
+                
+            </a>
+                    <a target="_blank" href="https://www.instagram.com/p/BCsVtPZBfgA/?taken-by=loveartstz" class="insta-card layout center-center" style="background-image: url(images/instagram/20.jpg)">
+                
+            </a>
+                    <a target="_blank" href="https://www.instagram.com/p/BCsWCNmhfg3/?taken-by=loveartstz" class="insta-card layout center-center" style="background-image: url(images/instagram/21.jpg)">
+                
+            </a>
+                    <a target="_blank" href="https://www.instagram.com/p/BFBR1wgBftJ/?taken-by=loveartstz" class="insta-card layout center-center" style="background-image: url(images/instagram/22.jpg)">
+                
+            </a>
+                    <a target="_blank" href="https://www.instagram.com/p/BCzYdFlBfvd/?taken-by=loveartstz" class="insta-card layout center-center" style="background-image: url(images/instagram/23.jpg)">
+                
+            </a>
+                    <a target="_blank" href="https://www.instagram.com/p/BCAjxQzBfoc/?taken-by=loveartstz" class="insta-card layout center-center" style="background-image: url(images/instagram/24.jpg)">
+                
+            </a>
+                    <a target="_blank" href="https://www.instagram.com/p/BE6Jupchfum/?taken-by=loveartstz" class="insta-card layout center-center" style="background-image: url(images/instagram/25.jpg)">
+                
+            </a>
+                    <a target="_blank" href="https://www.instagram.com/p/BDvzdathfpo/?taken-by=loveartstz" class="insta-card layout center-center" style="background-image: url(images/instagram/26.jpg)">
+                
+            </a>
+                    <a target="_blank" href="https://www.instagram.com/p/BCuWIYOBfsB/?taken-by=loveartstz" class="insta-card layout center-center" style="background-image: url(images/instagram/27.jpg)">
+                
+            </a>
+                    <a target="_blank" href="https://www.instagram.com/p/BCuWZ-VhfsM/?taken-by=loveartstz" class="insta-card layout center-center" style="background-image: url(images/instagram/28.jpg)">
+                
+            </a>
+                    <a target="_blank" href="https://www.instagram.com/p/BCH5S1OBftB/?taken-by=loveartstz" class="insta-card layout center-center" style="background-image: url(images/instagram/29.jpg)">
+                
+            </a>
+                    <a target="_blank" href="https://www.instagram.com/p/BB4UG2Rhfl_/?taken-by=loveartstz" class="insta-card layout center-center" style="background-image: url(images/instagram/30.jpg)">
+                
+            </a>
+            </div>
+</div></div>    <style>
+    #events{
+        min-height: 400px;
+        overflow: hidden;
+        background: #fff;
+    }
+
+    #events #content{
+        position: relative;
+        min-height: calc(100vh + 10px);
+        background-color: var(--app-cool-white);
+    }
+
+    #events #text{
+        padding: 8em 0; padding-left: 14em;
+        padding-top: 8em;
+    }
+
+    #events #text h2{
+        font-size: 3em; font-family: 'Gotham ultra', sans-serif; margin-bottom: 0.4em;
+    }
+
+    #events #text p{
+        font-family:'Gotham light', sans-serif;font-size: 1.6em; line-height: 1.5em;
+    }
+</style>
+
+<div id="events" class="layout center-center">
+    <div id="content" class="hidden">
+        <div class="faded-bg" style="opacity: 1;background-image:url(images/banner/im3.jpg);"></div>
+        <div class="faded-bg" style="opacity: 1; background-color: rgba(0,0,0,0.8);"></div>
+    </div>
+    <div id="text" class="flex self-start">
+        <h2>Events</h2>
+        <p>
+            Throughout the year we host a number events. These events are normally focused mainly on championing the
+            pairing the exuding of intrinsinc passion for art with attainment of better living standards.
+        </p>
+    </div>
+
+    <div style="margin: 0 3em; min-width: 120px">
+        <style>
+    #events #nextEvent{
+        position: relative;
+        display: inline-block;
+        /*box-shadow: 0 0 43px rgba(0,0,0,0.1);*/
+        border-radius: 2px;
+        padding: 32px 12px;
+        max-width: 320px;
+        margin: calc(4em - 82px) 50px;
+        padding-left: 20px;
+        border-left: 1px solid #e0e0e0;
+    }
+
+    #nextEvent #title{
+        position: relative;
+        padding-top: 13px;
+        padding-left: 12px;
+    }
+
+    #nextEvent #date{
+        display: none;
+        padding: 15px;
+        background-color: #fff;
+        background: #ff8c8c;
+        box-shadow: 0 0 13px rgba(0,0,0,0.1);
+        border-radius: 3px;
+    }
+
+    #nextEvent #date span{
+        display: block;
+    }
+
+    #nextEvent #title .sub-text{
+        font-size: 0.7em;
+        color: #555;
+    }
+
+    #nextEvent #title h3{
+        font-family: Calson, serif;
+        margin-top: 8px;
+        font-size: 1.2em;
+        color: #777;
+    }
+
+    #nextEvent #info{
+        margin-top: 10px;
+        font-family: "Lora Italic", sans-serif;
+        font-size: 1.1em;
+        line-height: 1.2em;
+        padding: 0 12px;
+        color: #555;
+        margin-bottom: 20px;
+    }
+</style>
+
+<div id="nextEvent" class="layout inline vertical">
+    <div id="title">
+        <div id="date" style="text-align: center;">
+            <span>25th</span>
+            <span style="font-family: 'Gotham bold'; letter-spacing: 2px;">JUN</span>
+        </div>
+        <span class="sub-text">NEXT EVENT</span>
+        <h3>
+            <b>Nina Ndoto Kubwa</b> Launching
+        </h3>
+
+        <p style="padding: 6px 0; font-size: 0.9em; padding-bottom: 2px;">
+            <sup class="fa fa-calendar" style="font-size: 0.7em; display: inline-block; margin-to: -43px;"></sup>
+            <sub style="display: inline-block">13th Nov</sub>&nbsp;
+
+            <sup class="fa fa-map-marker" style="font-size: 1em; display: inline-block; margin-to: -43px;"></sup>
+            <sub style="display: inline-block">Kawawa Hall</sub>
+        </p>
+    </div>
+    <div style="display:none; padding: 20px 12px; padding-to: 40px;">
+        <hr style="border: none; border-bottom: 1px solid #ffd6d6">
+    </div>
+    <div id="info">
+        Nina ndoto kubwa which translates to ‘I have a big dream’, is the ultima... <a href="#" style="color: red !important">Learn more</a>
+        
+    </div>
+</div>    </div>
+</div>    <style>
+    #manager{
+        position: relative;
+        /*padding: 2em 0;*/
+        /*min-height: calc(100vh + 10px);*/
+        background-color: #f6f6f6;
+        /*background-color: var(--app-cool-white);*/
+        padding-left: 8em;
+    }
+
+    #manager > #text{
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        min-width: 50%;
+        max-width: 50%;
+        padding: 2em;
+        padding-top: 6em;
+        padding-bottom: 4em;
+    }
+
+    #manager > #text h2{
+        font-family: 'Gotham ultra', sans-serif;
+        font-size: 2.8em;
+        margin-bottom: 0.7em;
+        /*color: #777;*/
+    }
+
+    #manager > #text p{
+        font-family: 'Lora Italic', sans-serif; font-size: 1.8em; line-height: 1.4em;
+    }
+
+    #manager > #image{
+        /*min-width: 30%;*/
+        /*max-width: 30%;*/
+        /*max-height: 400px;*/
+        /*margin-left: auto;*/
+    }
+</style>
+
+<div id="manager" class="layout center-justified">
+    <div id="text" style="color: #444" class="layout vertical center-justified flex">
+        <h2>A word from our Director</h2>
+        <p style="">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias cum debitis deleniti dicta dolores eveniet incidunt iste laboriosam minima nesciunt perspiciatis repellendus sequi, unde ut vel! Fugiat laboriosam.
+        </p>
+        <div style="margin-left: auto; padding: 1.4em;">
+            <em style="font-family: 'Lora Italic', cursive; font-style: italic; font-size: 1.5em;">
+                Love, Abella
+            </em>
+        </div>
+    </div>
+
+    <div id="image" class="layout inline center-center">
+        <img class="self-end" src="images/abellar.png" alt="Abella Bateyunga" height="500px">
+    </div>
+</div>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+<style>
+    #bottomContent{
+        position: relative;
+    }
+    #bottomContent .faded-bg{
+        background-position: top;
+        background-image: url(images/media/im7.jpg);
+        opacity: 0.05;
+    }
+    #connect{
+        padding: 90px 0;
+        /*background-color: #f9f9f9;*/
+    }
+
+    #connect h2{
+        color: #626262;
+        font-size: 2.5em;
+        letter-spacing: 10px;
+        font-family: 'Gotham ultra', sans-serif;
+        margin-bottom: 0.4em;
+    }
+
+    #connect p{
+        font-family:'Gotham light', sans-serif;
+        font-size: 1.4em;
+        margin-bottom: 0.3em;
+    }
+
+    #connect #socialIcons{
+        /*display: inline-block;*/
+        margin-top: 10px;
+    }
+
+    #connect #socialIcons .social-icon{
+        display: -ms-inline-flexbox;
+        display: -webkit-inline-flex;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        border-radius: 5px;
+        padding: 25px 16px;
+        box-sizing: content-box;
+
+        -webkit-transition: all 0.25s ease-out;
+        -moz-transition: all 0.25s ease-out;
+        -ms-transition: all 0.25s ease-out;
+        -o-transition: all 0.25s ease-out;
+        transition: all 0.25s ease-out;
+    }
+
+    #connect #socialIcons .social-icon:hover{
+        background-color: #fefefe;
+        box-shadow: 0 0 15px rgba(0,0,0,0.16);
+
+        -webkit-transform: scale(1.04);
+        -moz-transform: scale(1.04);
+        -ms-transform: scale(1.04);
+        -o-transform: scale(1.04);
+        transform: scale(1.04);
+    }
+
+    #connect #socialIcons .social-icon .icon{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+        font-size: 1.5em;
+        color: #fefefe;
+    }
+
+    #connect #socialIcons .social-icon:not(:hover) .icon{
+        /*background-color: #e4e4e4 !important;*/
+        /*color: #555 !important;*/
+        -webkit-filter: grayscale(0.6);
+        filter: grayscale(0.6);
+
+        -webkit-transition: all 0.25s ease-out;
+        -moz-transition: all 0.25s ease-out;
+        -ms-transition: all 0.25s ease-out;
+        -o-transition: all 0.25s ease-out;
+        transition: all 0.25s ease-out;
+    }
+
+    #connect #socialIcons .social-icon .icon.instagram{
+        background-color: #e4e4e4;
+        background: -webkit-radial-gradient(circle farthest-corner at 35% 90%, #fec564, rgba(0, 0, 0, 0) 50%), -webkit-radial-gradient(circle farthest-corner at 0 140%, #fec564, rgba(0, 0, 0, 0) 50%), -webkit-radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, rgba(0, 0, 0, 0) 50%), -webkit-radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, rgba(0, 0, 0, 0) 50%), -webkit-radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, rgba(0, 0, 0, 0) 50%), -webkit-radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, rgba(0, 0, 0, 0) 50%), -webkit-radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, rgba(0, 0, 0, 0)), -webkit-linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+        background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, rgba(0, 0, 0, 0) 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, rgba(0, 0, 0, 0) 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, rgba(0, 0, 0, 0) 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, rgba(0, 0, 0, 0) 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, rgba(0, 0, 0, 0) 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, rgba(0, 0, 0, 0) 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, rgba(0, 0, 0, 0)), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+    }
+
+    #connect #socialIcons .social-icon .text{
+        opacity: 0;
+    }
+
+    #connect #socialIcons .social-icon:hover .text{
+        opacity: 1;
+        -webkit-transition: opacity 0.35s;
+        -moz-transition: opacity 0.35s;
+        -ms-transition: opacity 0.35s;
+        -o-transition: opacity 0.35s;
+        transition: opacity 0.35s;
+    }
+
+    #footer{
+        height: 100px;
+        background-color: #000;
+        font-size: 1.3em;
+        color: #fefefe;
+        font-family: "Gotham ultra", sans-serif;
+    }
+</style>
+
+<div id="bottomContent">
+    <div class="faded-bg"></div>
+    <div id="connect" class="layout vertical center-center">
+        <h2>CONNECT WITH US</h2>
+        <p>Let us guide you through the beauty of art an those who create it.</p>
+
+        <div id="socialIcons">
+            <a target="_blank" href="https://www.facebook.com/Love-Arts-Tz-305790052859478/" class="social-icon">
+                <span class="icon layout center-center" style="background: #3b5998;">
+                    <span class="fa fa-facebook"></span>
+                </span>
+                <span class="text">FACEBOOK</span>
+            </a>
+
+            <a target="_blank" href="https://www.instagram.com/loveartstz/" class="social-icon">
+                <span class="icon instagram layout center-center">
+                    <span class="fa fa-instagram"></span>
+                </span>
+                <span class="text">INSTAGRAM</span>
+            </a>
+
+            <a href="https://twitter.com/loveartstz" class="social-icon">
+                <span class="icon layout center-center" style="background: #55acee;">
+                    <span class="fa fa-twitter"></span>
+                </span>
+                <span class="text">TWITTER</span>
+            </a>
+
+            <a target="_blank" href="https://www.youtube.com/channel/UCBMjLBtbis2kMWZjTKMiMPg" class="social-icon">
+                <span class="icon layout center-center" style="background: #e82117;">
+                    <span class="fa fa-youtube-play"></span>
+                </span>
+                <span class="text">YOUTUBE</span>
+            </a>
+        </div>
+    </div>
+    <div id="footer" class="layout center-center" style="">
+        LOVE ARTS
+    </div>
+</div>    <!-- Scripts -->
+
+    <script src="js/lib/TweenMax.min.js"></script>
+    <script src="js/lib/ScrollMagic.min.js"></script>
+    <script src="js/lib/sm-animation.gsap.min.js"></script>
+    <script src="js/lib/sm-debug.addIndicators.min.js"></script>
+    <script src="js/app.js"></script>
+
+        <script>
+        var controller = new ScrollMagic.Controller();
+        var instaParallaxScene = new ScrollMagic.Scene({
+            triggerElement: '#instagramElement',
+            triggerHook: 0.9,
+            duration: '890'
+        })
+        .setTween(TweenMax.to('#instaBg', 1, {y: '-60%', ease: Power0.easeNone}))
+//        .addIndicators()
+        .addTo(controller);
+    </script>
+</body>
+</html>
