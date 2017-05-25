@@ -105,11 +105,17 @@
     }
 
     #footer{
-        height: 100px;
+        padding: 0 2.5em;
+        height: 120px;
         background-color: #000;
-        font-size: 1.3em;
-        color: #fefefe;
-        font-family: "Gotham ultra", sans-serif;
+        font-size: 1.02em;
+        color: #888;
+        font-family: "Gotham thin", sans-serif;
+    }
+
+    #footer .highlight{
+        color: #eee;
+        /*font-family: "Gotham regular", sans-serif;*/
     }
 </style>
 
@@ -149,7 +155,15 @@
             </a>
         </div>
     </div>
-    <div id="footer" class="layout center-center" style="">
-        LOVE ARTS
+    <div id="footer" class="layout center justified">
+        <span><span class="highlight" style="font-weight: bold">EMAIL US: </span> info@loveartstanzania.com</span>
+        <span>
+            &copy; {{date("Y")}} <span class="highlight">Love Arts Tanzania</span>
+        </span>
+
+        <span>
+            Crafted by
+            <span class="highlight">iPF Softwares</span>
+        </span>
     </div>
 </div>

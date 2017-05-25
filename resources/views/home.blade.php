@@ -6,8 +6,8 @@
     @include('landing.featured.featured_artist')
     @include('landing.instagram.index')
     @include('instagram')
-    @include('landing.events.index')
-    @include('landing.manager')
+    {{--@include('landing.events.index')--}}
+{{--    @include('landing.manager')--}}
 @endsection
 
 @section('scripts')

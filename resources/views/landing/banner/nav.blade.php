@@ -34,21 +34,26 @@
         text-decoration: none;
         text-transform: uppercase;
         color: #000;
+        color: #f0f0f0;
     }
 
     #bannerTopBar #authOptions a{
-        background-color: rgba(0,0,0,0.05);
-        /*color: #ffbcbc;*/
-        /*color: #333;*/
+        background-color: rgba(255,255,255,0.1);
+        color: #ffbcbc;
+        color: #fff;
     }
 
     #bannerTopBar #authOptions a:hover{
         background-color: rgba(0,0,0,0.1);
         color: #000;
+
+        background-color: rgba(255,255,255,0.2);
+        color: #fff;
     }
 
     #bannerTopBar #links > a:hover{
-        background-color: rgba(0,0,0,0.05);
+        /*background-color: rgba(0,0,0,0.15);*/
+        background-color: rgba(255,255,255,0.2);
     }
 
     #bannerTopBar #topBar:not(.light) #links > a,
@@ -60,6 +65,7 @@
     #bannerTopBar #topBar:not(.light) #title{
         color: #626262;
         color: #000 !important;
+        /*color: #fff;*/
     }
 </style>
 
@@ -74,11 +80,12 @@
     <div id="links" class="layout center">
         <a href="#home">HOME</a>
         <a href="#about">ABOUT</a>
-        {{--<a href="#what">WHAT WE DO</a>--}}
         <a href="#artists">ARTISTS</a>
-        <a href="#me">MEDIA</a>
+        <a href="#media">MEDIA</a>
+        <a href="#ubunifu">UBUNIFU CHALLENGE</a>
+        <a href="#events">EVENTS</a>
         <a href="#artists">INFO KITAA</a>
-        <a href="#contact">CONTACTS</a>
+        {{--<a href="#contact">CONTACTS</a>--}}
     </div>
 
     <div id="authOptions" class="layout center">

@@ -65,7 +65,7 @@
     ];
     ?>
 
-    @for($i = 0; $i < count($questions) - 1; $i++)
+    @for($i = 0; $i < count($questions); $i++)
         <?php
             $qn = $questions[$i];
         ?>

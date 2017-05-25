@@ -10,7 +10,8 @@
         background-repeat: no-repeat;
         -webkit-background-size: cover;
         background-size: cover;
-        background-image: url({{asset('images/banner/im4.jpg')}});
+        {{--background-image: url({{asset('images/banner/im4.jpg')}});--}}
+         color: #fff;
     }
 
     #banner.reddis{
@@ -24,15 +25,14 @@
         font-family: "Ultra", serif;
         font-size: 4em;
         letter-spacing: 17px;
-        color: #303030;
-        color: #222;
+        /*color: #303030;*/
+        /*color: #222;*/
         padding-top: 70px;
         margin-bottom: 9px;
     }
 
     #banner p{
         font-size: 1.4em;
-
         font-family: Verdana, sans-serif;
         font-size: 1.3em;
         font-weight: 100;
@@ -48,7 +48,7 @@
     }
 
     #banner .faded-bg{
-        opacity: 0.9;
+        opacity: 0.8;
         background:rgba(238,74,74,1);
         /*background:rgba(238,238,239,0.9);*/
     {{--background-image: url({{asset('images/banner/im4.jpg')}});--}}
@@ -95,8 +95,9 @@
 
 <div id="banner" class="layout vertical reddish">
     @include('landing.banner.nav')
+    <video src="{{asset('images/banner/mig2.mp4')}}" poster="{{asset('images/banner/migcv.jpg')}}" autoplay muted loop style="position: absolute; top: 0; left: 0;heigh: 100%;width: 100%;"></video>
     <div class="faded-bg"></div>
-    <div class="layout vertical center flex" style="padding-top: 2em;">
+    <div class="layout vertical center-center flex" style="padding-bottom: 150px;padding-to: 2em;">
         <h2 style="margin-left: 133px;">
             <span style="font-family: 'Gotham light', Serif; font-size: 0.5em;">
                 CELEBRATING

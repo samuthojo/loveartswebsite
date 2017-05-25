@@ -1,20 +1,21 @@
 <style>
     #works{
-        display: inline-block;
-        margin: auto;
+        /*display: inline-block;*/
+        /*margin: auto;*/
+        padding: 10px 0;
+        margin-bottom: 10px;
     }
     .song{
-        padding: 8px 6px;
+        padding: 12px;
         margin-bottom: 4px;
         min-width: 430px;
-        background: #f2f2f2;
         cursor: pointer;
     }
 
     .song .song-image{
         width: 45px;
         height: 35px;
-        background-color: #ccc;
+        /*background-color: #ccc;*/
         -webkit-background-size:cover;
         background-size:cover;
         background-position: center;
@@ -25,12 +26,18 @@
     .song .song-image .song-bars,
     .song .song-loading,
     .song .song-image .song-visualizer{
+        /*background: #f2f2f2;*/
+        background: var(--app-cool-white);
+    }
+
+    .song .song-image .song-bars,
+    .song .song-loading,
+    .song .song-image .song-visualizer{
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: #f2f2f2;
         /*padding: 0 10px;*/
     }
 

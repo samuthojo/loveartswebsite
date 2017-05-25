@@ -56,13 +56,15 @@ Route::get('/insta', function () {
         $noApTitle = str_replace("'", "", $lowerCaseTitle);
         $noSpaceTitle = str_replace(" ", "-", $noApTitle);
         $src = $noSpaceTitle . ".mp3";
-        $songs[$i]['src'] = asset('/music/') . '/' . $src;
+//        $songs[$i]['src'] = asset('/music/') . '/' . $src;
+        $songs[$i]['src'] = $src;
 
         $lowerCaseAlbum = strtolower($song['album']);
         $noApAlbum = str_replace("'", "", $lowerCaseAlbum);
         $noSpaceAlbum = str_replace(" ", "-", $noApAlbum);
         $img = $noSpaceAlbum . ".jpg";
-        $songs[$i]['artwork'] = asset('/music/') . '/' . $img;
+//        $songs[$i]['artwork'] = asset('/music/') . '/' . $img;
+        $songs[$i]['artwork'] = $img;
     }
 
 

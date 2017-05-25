@@ -6,24 +6,43 @@
 
     #artistSubcontent #artistLinks{
         /*background-color: bisque;*/
-        margin-bottom: 20px;
-        border: 1px solid #e2e2e2;
+        margin-bottom: 10px;
+        /*margin: 15px 0;*/
+        border-bottom: 1px solid #e2e2e2;
+        /*margin-top: 10px;*/
         border-left: none;
         border-right: none;
-        padding: 12px 8px;
+        padding-bottom: 20px;
+        /*display: none;*/
     }
 
     #artistSubcontent #artistLinks a{
+        position: relative;
         text-decoration: none;
-        color: #444;
+        color: #999;
         border-bottom: 1px solid transparent;
-        padding: 3px 2px;
         font-family: "Gotham medium", sans-serif;
-        font-size: 1.3em;
+        font-size: 1.05em;
+        /*opacity: 0.6;*/
+    }
+
+    #artistSubcontent #artistLinks a:not(:first-child):after{
+        content: "";
+        background: #000;
+        position: absolute;
+        left: -17px;
+        top:calc(50% - 2px);
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
     }
 
     #artistSubcontent #artistLinks a:not(:hover):not(.active){
-        opacity: 0.6;
+
+    }
+
+    #artistSubcontent #artistLinks a:hover{
+        opacity: 0.9;
     }
 
     #artistSubcontent #artistLinks a:hover{
@@ -38,26 +57,17 @@
         margin-left: 30px;
     }
 
-    #artistSubcontent.view-about #artistLinks a[target="#artistAbout"]{
-        color: var(--app-main-color);
-        border-bottom-color: var(--app-main-color);
-        opacity: 1;
-    }
-
-    #artistSubcontent.view-qsns #artistLinks a[target="#artistQsns"]{
-        color: var(--app-main-color);
-        border-bottom-color: var(--app-main-color);
-        opacity: 1;
-    }
-
+    #artistSubcontent.view-about #artistLinks a[target="#artistAbout"],
+    #artistSubcontent.view-qsns #artistLinks a[target="#artistQsns"],
     #artistSubcontent.view-works #artistLinks a[target="#artistWorks"]{
-        color: var(--app-main-color);
-        border-bottom-color: var(--app-main-color);
-        opacity: 1;
+        color: #ed6666 !important;
+        /*border-bottom-color: #000 !important;*/
+        /*padding: 4px 12px;*/
+        /*padding-bottom: 7px;*/
     }
 
     #artistSections section{
-        padding: 0 20px;
+    /*  padding: 0 20p*/
         font-family: "Times New Roman", serif;
         -webkit-transition: opacity 0.35s 2.35s;
         -moz-transition: opacity 0.35s 2.35s;
@@ -67,9 +77,10 @@
     }
 
     #artistSections section .just-text{
-        font-size: 1.5em;
-        line-height: 1.7em;
-        font-family: "Lora Italic", serif;
+        font-size: 1.3em;
+        font-weight: 400;
+        line-height: 1.9em;
+        font-family: "Gotham light", serif;
     }
 
     #artistSubcontent:not(.view-about) #artistAbout{
@@ -113,8 +124,8 @@
 </style>
 
 <div id="artistSubcontent" class="view-about">
-    <div id="artistLinks" class="layout center-justified">
-        <a href="javascript:void(0);" target="#artistAbout" onclick="switchSection('about')">ARTIST BIO</a>
+    <div id="artistLinks" class="layout center-justifie">
+        <a href="javascript:void(0);" target="#artistAbout" onclick="switchSection('about')">BIOGRAPHY</a>
         <a href="javascript:void(0);" target="#artistQsns" onclick="switchSection('qsns')">20 QUESTIONS</a>
         <a href="javascript:void(0);" target="#artistWorks" onclick="switchSection('works')">WORKS</a>
     </div>
@@ -123,9 +134,9 @@
             <span class="just-text">
                 Baraka is a reknown guitarist, singer and songwiter based in Nyamagana Mwanza. He is best known for his shredding skills which are
                 most notable in his hit single Roho yangu released in May 2009(launch event hosted by lovearts yooohoo). Although no one in Baraka's family has ever chosen a career in the music industry....
-                <span class="hidden">
+                {{--<span class="hidden">--}}
                      he's been heard saying, <em><q>they(Everyone else in his family) are definitely better musicians than me, everything I know I learnt from them.</q></em>
-                </span>
+                {{--</span>--}}
             </span>
 
             <div id="artistActions" class="layout" style="margin-top: 20px;">
