@@ -162,6 +162,7 @@
         color: #fff;
         font-size: 1.8em;
         font-family: "Calson", serif;
+        text-align: center;
     }
 
     .inspire-shot .pillar-info{
@@ -236,14 +237,17 @@
 </style>
 
 <?php
-$pillars = ["MUSIC", "PHOTOGRAPHY", "DANCE", "FASHION", "DRAMA", "POETRY"];
+$pillars = ["MUSIC", "PHOTOGRAPHY", "MEDIA", "DRAMA", "DANCE", "FASHION", "POETRY", "BRANDING AND DESIGN", "PAINTING"];
 $taglines = [
-    "Carefully arranged melodies paired with amazing voices that make you want to just let go an get lost into their",
-    "Priceless moments captured by keen eyes to keep them alive forever just for you.",
-    "Pure emotion expressed in cleverly created movements that will leave you in absolute awe.",
-    "Not just a cut here and a cut there but meaningful messages and personalities woven into being.",
-    "Staging out innermost feelings through very well written stories that will captivate you",
-    "Telling untold stories and expressing deep passionate feelings through rhymic mastery."
+    "Music is a powerful tool that once we use it positively it can change lives. For us, music  is beyond entertainment, beyond the melody, kick and snare, it is without a doubt a language we speak, an overflow of lessons learnt, an outlet and channel to eloquently lay out what is in our hearts. This is not just saying anything but message beefed up with content is meant to benefit and influence this generation and generation to come.",
+    "There are moments in life worth remembering, memories are worth keeping, we are passionate in  capturing these moments, we shoot with heart and soul, visually telling stories that are timeless, We aim to preserve our identity by achieving our past, celebrating and correcting while defining where we ought to be through our images. We are going to use Photography Exhibition and Photo Journalism to create stories that educates, inspire, entertain and empower people in their lives.",
+    "Our media unveils possibilities and beauty surrounding community; we aim to create media with content that inspires individuals to change for the better, along with that document, our on-going educative, entertaining and energetic projects. Our media reaches our community’s diverse audience through our various media channels which are TV documentaries/programmes, TV drama, radio drama, radio talk show, educative comics, magazine and our interactive social media. Through our Media, we are going to create various platforms for youth to showcase their gifts and talents and also connecting Tanzanian Artists with Arts opportunities and the market place.",
+    "Our drama geared towards change, we look at the situation as it is and think what it ought to be and we bring it live on stage with combination of humour, tragedy and tension. Well tell stories that we relate to, not only for the sake of entertaining but stories that bring solutions. We have deliberately chosen drama that combines music, dance, and poetry- “Theatre musicals’’ to tell stories, It carries so much power and comes out stronger when character involvement is in place. ",
+    "Our movements tell stories; we speak our identity while celebrating our culture. We dance to entertain, and celebrate the glory of our creator. We dance to bring out an ideal vision of what our society ought to be, we dance to educate and liberate, and with every step we take we speak freedom, hope and unit. We dance to heal, reconcile and to bring joy. We dance of our love for others. With our Dance TV programs like Cheza, we envision to transform mind-sets and make dance a respectable career.",
+    "Our fashion house is our identity, our pride. A trendy, classy and authentic African collection, our clothesline and accessories are entrenched to our dear African stories, the colourful choices of our designs speaks of our people and through our design we speak of African beauty and create an impression on how African manpower can be horned effectively to marry the resources that our countries are blessed with for the prosperity of our nations. In fashion we are going to do Khanga Competition “Fashion for Cause Campaign” to bring about socio-economic and political development in Tanzania.",
+    "Words are powerful, words can destroy or can create we choose the latter. Using the power of words, we intensely express our feeling and ideas by use of distinctive style and rhythm. For us poetry is a means we use to bring out the quality of God's creativity, beauty and most definitely, his love.",
+    "Adding value to others by helping them to create a distinctive appealing image to build a strong corporate and events, brand is engraved in our DNA, Brands that help develop and maintain positive relationships with clients is what we are all about. As the market is very competitive, our “in-your face” concepts brings about the desires results that assists our clients to remain relevant, productive and effective in the market.",
+    "We use arts and creativity to draw bigger picture in people’s lives and paint colour of hope, unity, self-love and love for the country. To us it is not about the beauties of the artistic work but also how powerful and impactful the work is to the society, appealing to the eyes of our souls."
 ]
 ?>
 
@@ -268,7 +272,7 @@ $taglines = [
         <div id="fillAbove" class="fill-above"></div>
         <div id="pillarImages" class="layout wrap" style="background:#fff;">
             @for($i = 0; $i < count($pillars); $i++)
-                @if($i < 6)
+                @if($i < 9)
                     <a href="javascript:void(0);" class="inspire-shot view-pillar" data-for="{{$pillars[$i]}}">
                         <div class="pillar-image" style="background-image: url({{'images/pillars2/im'. (($i % 9) + 1) .'.jpg'}});"></div>
                         <div class="fill-above"></div>

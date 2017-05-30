@@ -1,3 +1,6 @@
+<?php
+    $long_footer = true;
+?>
 @extends('layouts.app')
 
 @section('content')

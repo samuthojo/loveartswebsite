@@ -74,3 +74,5 @@ Route::get('/insta', function () {
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+
+Route::get('/artists', 'ArtistsController@index')->name('artists');

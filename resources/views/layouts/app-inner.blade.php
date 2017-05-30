@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ config('app.locale') }}">
+<html lang="{{ config('app.locale') }}" ng-app="lovearts">
 <head>
     <!-- CSRF Token -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,36 +13,24 @@
     <title>Love Arts Tanzania | Passion - Impact - Change</title>
 
     <!-- Styles -->
+
     <link href="{{ asset('css/reset.css') }}" rel="stylesheet">
     <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/flex.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @yield('styles')
 
     <!-- Scripts -->
     <script src="{{asset('js/lib/jquery-3.1.0.min.js')}}"></script>
-    <script>
-        window.Laravel = {!! json_encode([
-            'csrfToken' => csrf_token(),
-        ]) !!};
-    </script>
 </head>
-<body>
+<body style="padding-top: 70px;">
+    @include('layouts.nav')
+
     @yield('content')
 
-    @if(isset($long_footer))
-        @include('layouts.long-footer')
-    @else
-        @include('layouts.footer')
-    @endif
+    @include('layouts.footer')
+
     <!-- Scripts -->
-
-    <script src="{{asset('js/lib/angular-1.6.4.min.js')}}"></script>
-    <script src="{{asset('js/lib/TweenMax.min.js')}}"></script>
-    <script src="{{asset('js/lib/ScrollMagic.min.js')}}"></script>
-    <script src="{{asset('js/lib/sm-animation.gsap.min.js')}}"></script>
-    <script src="{{asset('js/lib/sm-debug.addIndicators.min.js')}}"></script>
-    <script src="{{ asset('js/app.js') }}"></script>
-
     @yield('scripts')
 </body>
 </html>
