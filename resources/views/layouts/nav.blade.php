@@ -61,12 +61,12 @@
 
     <div id="links" class="layout center">
         <a href="{{url('/')}}">HOME</a>
-        <a href="#about">ABOUT</a>
+        <a href="{{url('/about')}}">ABOUT</a>
         <a href="{{url('/artists')}}">ARTISTS</a>
-        <a href="#media">MEDIA</a>
+        <a href="{{url('/media)}}">MEDIA</a>
         <a href="#ubunifu">UBUNIFU CHALLENGE</a>
-        <a href="#events">EVENTS</a>
-        <a href="#artists">INFO KITAA</a>
+        <a href="{{url('/events)}}">EVENTS</a>
+        <a href="#info">INFO KITAA</a>
         {{--<a href="#contact">CONTACTS</a>--}}
     </div>
 

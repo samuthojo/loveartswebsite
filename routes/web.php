@@ -74,5 +74,20 @@ Route::get('/insta', function () {
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
-
+Route::get('/about', 'HomeController@about')->name('about');
+Route::get('/contact', 'HomeController@contact')->name('contact');
+Route::get('/media', 'HomeController@media')->name('media');
 Route::get('/artists', 'ArtistsController@index')->name('artists');
+
+Route::get('/list', function(){
+    $faker = Faker\Factory::create();
+    $list = [];
+    for ($i = 0; $i< 50; $i++){
+        $item = [];
+        $item['title'] = $faker->sentence(3);
+        $item['subtitle'] = $faker->realText(140);
+        $list[] = $item;
+    }
+
+    return $list;
+});

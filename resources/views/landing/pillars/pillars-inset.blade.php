@@ -237,7 +237,7 @@
 </style>
 
 <?php
-$pillars = ["MUSIC", "PHOTOGRAPHY", "MEDIA", "DRAMA", "DANCE", "FASHION", "POETRY", "BRANDING AND DESIGN", "PAINTING"];
+$pillars = ["MUSIC", "PHOTOGRAPHY", "MEDIA", "DRAMA", "DANCE", "FASHION", "POETRY", "BRANDING & DESIGN", "PAINTING"];
 $taglines = [
     "Music is a powerful tool that once we use it positively it can change lives. For us, music  is beyond entertainment, beyond the melody, kick and snare, it is without a doubt a language we speak, an overflow of lessons learnt, an outlet and channel to eloquently lay out what is in our hearts. This is not just saying anything but message beefed up with content is meant to benefit and influence this generation and generation to come.",
     "There are moments in life worth remembering, memories are worth keeping, we are passionate in  capturing these moments, we shoot with heart and soul, visually telling stories that are timeless, We aim to preserve our identity by achieving our past, celebrating and correcting while defining where we ought to be through our images. We are going to use Photography Exhibition and Photo Journalism to create stories that educates, inspire, entertain and empower people in their lives.",

@@ -101,7 +101,7 @@
 
     <div id="links" class="layout center">
         <a href="{{url('/')}}">HOME</a>
-        <a href="#about">ABOUT</a>
+        <a href="/about">ABOUT</a>
         <a href="{{url('/artists')}}">ARTISTS</a>
         <a href="#media">MEDIA</a>
         <a href="#ubunifu">UBUNIFU CHALLENGE</a>
