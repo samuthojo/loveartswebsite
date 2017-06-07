@@ -121,3 +121,122 @@ html, body {
     max-width: 1200px;
     margin: auto;
 }
+
+.next-arrow{
+    padding: 10px 0;
+    position: relative;
+    /*color: #fff;*/
+    display: inline-block;
+}
+
+.next-arrow:before {
+    content: "";
+    height: 21px;
+    left: 110%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 31px;
+    transition: transform 0.4s;
+    background-image: url(../images/nextwhite.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.next-arrow:hover:before {
+    /*transform: translate(1rem, 0);*/
+}
+
+.lv-btn{
+    padding: 10px 16px;
+    font-size: 23px;
+    box-shadow: 0 0 4px rgba(0,0,0,0.3);
+    background: #fefefe;
+    border: none;
+}
+
+
+.event{
+    color: var(--app-accent1-color);/*#aadaf2;*/
+    font-weight: 900;
+    text-decoration: none;
+    cursor: pointer;
+
+    position: relative;
+    min-width: calc(100% - 50px);
+    max-width: calc(100% - 50px);
+    margin-right: 35px;
+    min-height: 160px;
+    margin-bottom: 30px;
+    padding: 35px;
+    border-radius: 4px;
+    /*background-color: #323743;*/
+    background-color: #914b4b;
+    box-shadow: 0 9px 18px 0 rgba(0, 0, 0, .25);
+    -webkit-transition: all 350ms cubic-bezier(.684, .217, .298, .937);
+    transition: all 350ms cubic-bezier(.684, .217, .298, .937);
+}
+
+.event:hover {
+    /*background-color: #2b303b;*/
+    background-color: #7c4040;
+    -webkit-transform: translate(0px, -5px) scale(1.015);
+    -ms-transform: translate(0px, -5px) scale(1.015);
+    transform: translate(0px, -5px) scale(1.015);
+}
+
+.event:hover .next-arrow:before{
+    transform: translate(10px, 0);
+}
+
+.event .image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: -35px;
+    border-radius: 4px;
+    box-shadow: 0 9px 18px 0 rgba(0, 0, 0, .25);
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.event .image img{
+    width: 100px;
+}
+
+.event .date {
+    margin-bottom: 10px;
+    /*color: #d2d2e5;*/
+    color: #dfbebe;
+    font-size: 13px;
+    line-height: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.event .name{
+    /*margin-bottom: 7px;*/
+    font-size: 1.5em;
+    line-height: 1.6em;
+}
+
+.event .excerpt {
+    display: block;
+    /*color: #6a7185;*/
+    color: #bc9a9a;
+    font-weight: 400;
+    margin-top: 0;
+    width: 70%;
+    margin-bottom: 0px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.event .next-arrow{
+    color: var(--app-light-color);
+}

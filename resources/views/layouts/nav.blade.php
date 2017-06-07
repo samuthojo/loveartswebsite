@@ -46,6 +46,10 @@
     #bannerTopBar #links > a:hover{
         background-color: rgba(255,255,255,0.2);
     }
+
+    #bannerTopBar #links > a.active{
+        background-color: rgb(232, 74, 74);
+    }
 </style>
 
 <?php
@@ -60,14 +64,7 @@
     </div>
 
     <div id="links" class="layout center">
-        <a href="{{url('/')}}">HOME</a>
-        <a href="{{url('/about')}}">ABOUT</a>
-        <a href="{{url('/artists')}}">ARTISTS</a>
-        <a href="{{url('/media)}}">MEDIA</a>
-        <a href="#ubunifu">UBUNIFU CHALLENGE</a>
-        <a href="{{url('/events)}}">EVENTS</a>
-        <a href="#info">INFO KITAA</a>
-        {{--<a href="#contact">CONTACTS</a>--}}
+        @include('layouts.nav_links')
     </div>
 
     <div id="authOptions" class="layout center">

@@ -75,6 +75,10 @@
         background-color: rgba(255,255,255,0.2);
     }
 
+    #bannerTopBar #links > a.active{
+        background-color: rgb(232, 74, 74);
+    }
+
     #bannerTopBar #topBar:not(.light) #links > a,
     #bannerTopBar #topBar:not(.light) #authOptions > a,
     #bannerTopBar #topBar:not(.light) #title{
@@ -100,14 +104,7 @@
     </div>
 
     <div id="links" class="layout center">
-        <a href="{{url('/')}}">HOME</a>
-        <a href="/about">ABOUT</a>
-        <a href="{{url('/artists')}}">ARTISTS</a>
-        <a href="#media">MEDIA</a>
-        <a href="#ubunifu">UBUNIFU CHALLENGE</a>
-        <a href="#events">EVENTS</a>
-        <a href="#artists">INFO KITAA</a>
-        {{--<a href="#contact">CONTACTS</a>--}}
+        @include('layouts.nav_links')
     </div>
 
     <div id="authOptions" class="layout center">

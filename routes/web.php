@@ -77,6 +77,13 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/about', 'HomeController@about')->name('about');
 Route::get('/contact', 'HomeController@contact')->name('contact');
 Route::get('/media', 'HomeController@media')->name('media');
+Route::get('/media/{show}', 'HomeController@show')->name('show');
+Route::get('/events', 'HomeController@events')->name('events');
+Route::get('/events/{i}', 'HomeController@event')->name('event');
+Route::get('/info', 'HomeController@infos')->name('infos');
+Route::get('/info/{i}', 'HomeController@info')->name('info');
+
+Route::get('/media/{show}/{item}', 'HomeController@show_item')->name('show_item');
 Route::get('/artists', 'ArtistsController@index')->name('artists');
 
 Route::get('/list', function(){

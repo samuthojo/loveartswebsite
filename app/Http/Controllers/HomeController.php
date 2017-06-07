@@ -35,4 +35,39 @@ class HomeController extends Controller
     {
 //        return view('home');
     }
+
+    public function media()
+    {
+        return view('media');
+    }
+
+    public function show($show)
+    {
+        return view('media.show', compact('show'));
+    }
+
+    public function show_item($show, $item)
+    {
+        return view('media.show_item', compact('show', 'item'));
+    }
+
+    public function events()
+    {
+        return view('events.index');
+    }
+
+    public function event($i)
+    {
+        return view('events.single', compact('i'));
+    }
+
+    public function infos()
+    {
+        return view('info.index');
+    }
+
+    public function info($i)
+    {
+        return view('info.single', compact('i'));
+    }
 }

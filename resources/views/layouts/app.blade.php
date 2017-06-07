@@ -42,6 +42,7 @@
     <script src="{{asset('js/lib/sm-animation.gsap.min.js')}}"></script>
     <script src="{{asset('js/lib/sm-debug.addIndicators.min.js')}}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{asset('js/scripts.js')}}"></script>
 
     @yield('scripts')
 </body>
