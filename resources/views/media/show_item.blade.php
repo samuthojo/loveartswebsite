@@ -29,7 +29,7 @@
 
     #video{
         overflow: hidden;
-        border-radius: 8px;
+        border-radius: 3px;
         position: relative;
         width: 100%;
         height: 450px;
@@ -64,7 +64,8 @@
                 <div id="video" style="position: relative;">
                     <div class="fill-above layout center-center" style="background: rgba(0,0,0,0.5);">
                         <button style="background: transparent; border: none">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="124" height="124" viewBox="0 0 24 24"><path d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+                            <i class="fa fa-youtube-play" style="font-size: 104px; color: red"></i>
+                            {{--<svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="124" height="124" viewBox="0 0 24 24"><path d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>--}}
                         </button>
                     </div>
                 </div>
@@ -84,7 +85,7 @@
                     </div>
                 </div>
             </div>
-            <div class="layout vertical flex" style="padding: 20px; padding-top: 0;">
+            <div class="layout vertical flex" style="padding: 20px; padding-top: 0; display: none">
                 <div style="padding: 15px 0; padding-top: 0;">
                     <h5 style="font-size: 1.2em; margin: 0; padding: 0;">Other Sessions</h5>
                 </div>

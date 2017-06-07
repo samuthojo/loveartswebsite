@@ -139,7 +139,7 @@
                             <h2 style="display: inline-block">Show Name</h2>
                             <p>This is an awesome channel, there is no other channel like this, you shall. subscribe to this channel.</p>
                         </div>
-                        <button style="margin-left: auto; font-size: 1em;">SUBSCRIBE</button>
+                        <button class="lv-btn" style="margin-left: auto; font-size: 1em;">SUBSCRIBE</button>
                     </div>
                 </a>
 
