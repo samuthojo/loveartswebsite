@@ -14,7 +14,7 @@
 
     #media #title{
         /*background: #fff0f0;*/
-        background: #362626;
+        /*background: #362626;*/
         /*background: #000;*/
         padding-top: 7.5em;
         padding-bottom: 3.5em;
@@ -45,7 +45,9 @@
     }
 
     .channel .title{
-        background: #000;
+        background-color: #000;
+        -webkit-background-size:20%;
+        {{--background-image: url({{asset('images/pt.png')}});--}}
         margin-right: 10px;
         width: calc(50% - 20px);
         max-width: calc(50% - 20px);
@@ -116,10 +118,21 @@
         font-family: "Gotham light", sans-serif;
         font-size: 12px;
     }
+
+    #polyCover{
+        background: #362626; opacity: 0.95;
+    }
+
+    #polyBg{
+        background-image: url({{asset('images/pt.png')}}); background-size: 50%;
+    }
 </style>
 
 <div id="media">
-    <section id="title">
+    <section id="title" style="position: relative;">
+        <div id="polyBg" class="fill-above">
+        </div>
+        <div id="polyCover" class="fill-above"></div>
         <div class="container">
             <h1>MEDIA</h1>
             <p>

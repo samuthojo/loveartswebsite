@@ -12,7 +12,6 @@
     }
 
     #bg{
-        height: 200px;
         overflow: hidden;
     }
 
@@ -27,6 +26,7 @@
     }
 
     #show #title{
+        padding-top: 8.5em;
         padding-bottom: 1.5em;
     }
 

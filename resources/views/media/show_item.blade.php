@@ -22,7 +22,9 @@
     }
 
     #videoContent{
-        width: 850px;
+        width: 100%;
+        max-width: 1000px;
+        margin: auto;
         position: relative;
         color: #000000;
     }
@@ -32,12 +34,11 @@
         border-radius: 3px;
         position: relative;
         width: 100%;
-        height: 450px;
+        height: 550px;
         background-color: #000;
         box-shadow: 0 0 32px rgba(120,0,0,0.1);
         -webkit-background-size: cover;
         background-size: cover;
-        background-image: url({{asset('images/shows/'.((($show - 1)*5) + $item).'.jpg')}})
     }
 
     #videoTitle h1{
@@ -62,27 +63,18 @@
         <div class="container layout start">
             <div id="videoContent">
                 <div id="video" style="position: relative;">
-                    <div class="fill-above layout center-center" style="background: rgba(0,0,0,0.5);">
-                        <button style="background: transparent; border: none">
-                            <i class="fa fa-youtube-play" style="font-size: 104px; color: red"></i>
-                            {{--<svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="124" height="124" viewBox="0 0 24 24"><path d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>--}}
-                        </button>
-                    </div>
+                    <iframe id="ytIframe" src="http://www.youtube.com/embed/W7qWa52k-nE" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+                    {{--<div class="fill-above layout center-center" style="background: rgba(0,0,0,0.5);">--}}
+                        {{--<button style="background: transparent; border: none">--}}
+                            {{--<i class="fa fa-youtube-play" style="font-size: 104px; color: red"></i>--}}
+                        {{--</button>--}}
+                    {{--</div>--}}
                 </div>
                 <div id="videoTitle">
                     <h1>Kusadikika Seaseon 1 episode 12</h1>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium assumenda atque aut dolorum ea eligendi est in itaque laudantium, maiores perspiciatis, quidem recusandae sunt ut veniam veritatis vero voluptas voluptatibus.
                     </p>
-
-                    <hr style="margin-top: 25px; margin-bottom: 20px;border: none; border-bottom: 1px solid #dfdfdf;">
-
-                    <div class="layout end-justified" style="color: #777">
-                        <span>12 LIKES</span>&emsp;
-                        <span>34 COMMENTS</span>&emsp;
-                        <span>123 VIEWS</span>
-                        {{--<span></span>--}}
-                    </div>
                 </div>
             </div>
             <div class="layout vertical flex" style="padding: 20px; padding-top: 0; display: none">

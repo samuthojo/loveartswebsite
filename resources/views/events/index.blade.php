@@ -9,7 +9,7 @@
         #bg{
             height: 300px;
             /*background: #2a2c33;*/
-            background: #623333;
+            /*background: #623333;*/
         }
 
         .container{
@@ -19,7 +19,8 @@
 
         #events{
             position: relative;
-            padding: 4em 0;
+            padding-bottom: 6em;
+            padding-top: 2em;
             min-height: 100vh;
         }
 
@@ -31,7 +32,8 @@
             font-size: 3em;
             font-family: "Gotham ultra", sans-serif;
             letter-spacing: 3px;
-            color: #ecd3d3;
+            /*color: #ecd3d3;*/
+            color: #914b4b;
         }
 
         .event{
@@ -49,7 +51,7 @@
                 </h1>
             </div>
             <div class="layout justified wrap">
-                @for($i = 0; $i < 10; $i++)
+                @for($i = 0; $i < 6; $i++)
                     @include('events.event')
                 @endfor
             </div>
