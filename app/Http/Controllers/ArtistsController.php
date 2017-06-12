@@ -22,6 +22,6 @@ class ArtistsController extends Controller
         $artists = json_decode($artists_str);
         $artist = $artists[$i];
 
-        return view('artists.single', compact('artist'));
+        return view('artists.single.index', compact('artist'));
     }
 }

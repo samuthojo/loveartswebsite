@@ -201,13 +201,13 @@
             <div id="worksWrapper" style="overflow: hidden;">
                 <div class="layout">
                     <section>
-                        @include('artists.section-about')
+                        @include('artists.single.section-about')
                     </section>
                     <section>
-                        @include('artists.section-works')
+                        @include('artists.single.section-works')
                     </section>
                     <section>
-                        @include('artists.section-pictures')
+                        @include('artists.single.section-pictures')
                     </section>
                 </div>
             </div>
