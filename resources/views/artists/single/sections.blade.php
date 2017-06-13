@@ -50,7 +50,8 @@
     <section id="artistWorks">
         @include('artists.single.section-works')
     </section>
-    <section id="artistPics">
-        @include('artists.single.section-pictures')
-    </section>
 </div>
+
+<section id="artistPics" style="background: #f9f9f9; margin-top: 5em; overflow: hidden;">
+    @include('artists.single.section-pictures')
+</section>

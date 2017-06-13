@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\Client;
 
 class ArtistsController extends Controller
 {
@@ -23,5 +25,19 @@ class ArtistsController extends Controller
         $artist = $artists[$i];
 
         return view('artists.single.index', compact('artist'));
+    }
+
+    public function insta($username)
+    {
+//        $client = new GuzzleHttp\Client();
+//        $request = new \GuzzleHttp\Psr7\Request('GET', "https://www.instagram.com/$username/media/");
+//        $promise = $client->sendAsync($request)->then(function ($response) {
+//            echo 'I completed!</br>';
+//            dd($response->getBody());
+//        });
+//        $promise->wait();
+        $client = new Client(); //GuzzleHttp\Client
+        $result = $client->get("https://www.instagram.com/$username/media/");
+        return $result;
     }
 }

@@ -4,7 +4,7 @@
     <style>
         #artist{
             min-height: 100vh;
-            padding-bottom: 3em;
+            padding-bottom: 3em !important;
         }
 
         .container{

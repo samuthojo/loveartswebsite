@@ -86,6 +86,7 @@ Route::get('/info/{i}', 'HomeController@info')->name('info');
 Route::get('/media/{show}/{item}', 'HomeController@show_item')->name('show_item');
 Route::get('/artists', 'ArtistsController@index')->name('artists');
 Route::get('/artists/{i}', 'ArtistsController@single')->name('artist');
+Route::get('/instaPics/{username}', 'ArtistsController@insta')->name('home');
 
 Route::get('/list', function(){
     $faker = Faker\Factory::create();
