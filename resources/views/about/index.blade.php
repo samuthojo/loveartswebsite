@@ -118,6 +118,10 @@
             padding: 0 1em;
         }
 
+        #ourGenesis{
+            display: none;
+        }
+
         #valuesObjectives{
             /*padding: 5em;*/
         }
@@ -222,7 +226,7 @@
         </section>
 
         <section id="ourGenesis" class="layout">
-            <div id="youtueWord"></div>
+            <div id="youtubeWord"></div>
             <div id="textualWord">
                 Arts is the expression of human creativity and imagination, the very signature of the master artist- the creator of the
                 universe. Arts is life and can define human interaction, as it has become a powerful tool in expressing thought and emotions.

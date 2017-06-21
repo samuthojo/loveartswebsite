@@ -23,7 +23,7 @@
 
     #videoContent{
         width: 100%;
-        max-width: 1000px;
+        max-width: 800px;
         margin: auto;
         position: relative;
         color: #000000;
@@ -34,7 +34,7 @@
         border-radius: 3px;
         position: relative;
         width: 100%;
-        height: 550px;
+        height: 450px;
         background-color: #000;
         box-shadow: 0 0 32px rgba(120,0,0,0.1);
         -webkit-background-size: cover;
@@ -45,7 +45,7 @@
         /*font-family: "Gotham medium", sans-serif !important;*/
         font-family: Avenir, sans-serif;
         font-weight: 600;
-        font-size: 1.8em;
+        font-size: 1.4em;
         letter-spacing: 1px;
         margin-top: 35px;
         margin-bottom: 8px;
@@ -53,7 +53,7 @@
 
     #videoTitle p{
         font-family: "Verdana", sans-serif;
-        font-size: 1.2em;
+        font-size: 1em;
         line-height: 1.3em;
     }
 </style>
@@ -77,9 +77,9 @@
                     </p>
                 </div>
             </div>
-            <div class="layout vertical flex" style="padding: 20px; padding-top: 0; display: none">
+            <div class="layout vertical flex" style="padding: 20px; padding-top: 0; display: non">
                 <div style="padding: 15px 0; padding-top: 0;">
-                    <h5 style="font-size: 1.2em; margin: 0; padding: 0;">Other Sessions</h5>
+                    <h5 style="font-size: 1.2em; margin: 0; padding: 0;">Other episodes for kusadikika</h5>
                 </div>
 
                 @for($i = 1; $i < 3; $i++)
