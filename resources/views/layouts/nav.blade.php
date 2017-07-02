@@ -50,6 +50,15 @@
     #bannerTopBar #links > a.active{
         background-color: rgb(232, 74, 74);
     }
+
+    #authOptions img{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #ddd;
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        border: 2px solid #fff;
+    }
 </style>
 
 <?php
@@ -68,6 +77,10 @@
     </div>
 
     <div id="authOptions" class="layout center">
-        <a href="#">LOGIN</a>
+        @if(Auth::guest())
+            <a href="{{url('/login')}}">LOGIN</a>
+        @else
+            <img src="{{Auth::user()->avatar}}" alt="">
+        @endif
     </div>
 </div>

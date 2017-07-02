@@ -90,6 +90,45 @@
         color: #000 !important;
         /*color: #fff;*/
     }
+
+    #authOptions #miniProfile{
+        padding: 20px;
+        padding-right: 70px;
+        padding-top: 25px;
+        padding-bottom: 30px;
+        background-color: #fff;
+        box-shadow: 0 0 50px rgba(0,0,0,0.2);
+        position: absolute;
+        right: -16px;
+        top: -16px;
+        color: #000000;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.25s ease-out;
+    }
+
+    #authOptions:hover #miniProfile{
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    #loggedUserName{
+        font-family: "Gotham medium", sans-serif;
+        font-size: 1.3em;
+        margin-bottom: 25px;
+        white-space: nowrap;
+    }
+
+    #authOptions img{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #ddd;
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        border: 2px solid #fff;
+        position: relative;
+        z-index: 1
+    }
 </style>
 
 <?php
@@ -108,6 +147,26 @@
     </div>
 
     <div id="authOptions" class="layout center">
-        <a href="#">LOGIN</a>
+        @if(Auth::guest())
+            <a href="{{url('/login')}}">LOGIN</a>
+        @else
+            <img src="{{Auth::user()->avatar}}" alt="{{Auth::user()->first_name()}}'s profile pictur4">
+
+            <div id="miniProfile" class="layou vertical start">
+                <div id="loggedUserName">
+                    {{Auth::user()->name}}
+                </div>
+
+                <a style="background: #000; align-self:" href="{{ url('/logout') }}"
+                   onclick="event.preventDefault();
+                                 document.getElementById('logout-form').submit();">
+                    LOGOUT
+                </a>
+
+                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+            </div>
+        @endif
     </div>
 </div>
