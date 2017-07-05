@@ -5,7 +5,7 @@
 
 @section('content')
     @include('landing.banner.indexol')
-    @include('landing.pillars.pillars-inset')
+    @include('landing.pillars.pillars-inset-ol')
     @include('landing.featured.featured_artist')
     @include('landing.instagram.index')
     @include('instagram')

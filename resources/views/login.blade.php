@@ -20,7 +20,7 @@
         #loginForm{
             width:700px;
             margin: auto;
-            min-height: 400px;
+            /*min-height: 400px;*/
             box-shadow: 0 0 22px rgba(0,0,0,0.1);
             position: relative;
             top: 90px;
@@ -47,7 +47,7 @@
         }
 
         #quote{
-            font-size: 1.6em;
+            font-size: 28px;
             text-align: center;
             width: 320px;
             padding: 20px 0;
@@ -64,15 +64,16 @@
         }
 
         #theForm{
-            position: absolute;
+            position: relative;
             width: 70%;
             height: 100%;
             left: 30%;
             top: 0;
+            padding-bottom: 50px;
         }
 
         #theForm h3{
-            font-size: 2.7em;
+            font-size: 42px;
             padding-left: 1.8em;
             padding-right: 1em;
             padding-top: 2em;
@@ -83,19 +84,19 @@
         #theForm #buttons{
             /*background: #000;*/
             padding: 20px;
-            padding-top: 30px;
+            padding-top: 35px;
             padding-right: 40px;
         }
 
         #theForm #buttons a{
             border-radius: 4px;
-            padding: 20px;
+            padding: 16px 20px;
             color: #f5f5f5;
             background: #000;
             font-size: 1em;
             box-shadow: 0 0 8px rgba(0,0,0,0.3);
             border: none;
-            min-width: 230px;
+            min-width: 200px;
             text-align: center;
             margin-bottom: 8px;
         }
@@ -107,8 +108,8 @@
             <div id="theForm">
                 <h3>Choose a login option below</h3>
                 <div id="buttons" class="layout vertical end">
-                    <a href="{{url('login/facebook/')}}" style="background: #3b5998;;">LOGIN WITH FACEBOOK</a>
-                    <a href="{{url('login/google/')}}">LOGIN WITH GOOGLE</a>
+                    <a href="{{url('login/facebook/')}}" style="background: #3b5998;;"><i class="fa fa-facebook"></i> &emsp; FACEBOOK</a>
+                    <a href="{{url('login/google/')}}" style="background: #d62d20;"><i class="fa fa-google"></i> &emsp;GOOGLE</a>
                 </div>
             </div>
 
