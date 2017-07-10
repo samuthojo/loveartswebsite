@@ -85,9 +85,10 @@
 
                 @verbatim
                 <a href="{{vm.show_url + '/' + episode.id}}"
-                   style="height: 200px; background: #eee; -webkit-background-size: cover;background-size: cover;background-image: url({{episode.cover}}); margin-bottom: 8px;"
                    ng-repeat="episode in vm.other_episodes"
                    ng-if="$index < 2 && $index != vm.item_id">
+                    <div style="height: 200px; background: #eee; -webkit-background-size: cover;background-size: cover;background-image: url({{episode.cover}}); margin-bottom: 8px;"></div>
+                    <h3>{{episode.name}}</h3><br>
                 </a>
                 @endverbatim
             </div>
