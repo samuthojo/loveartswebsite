@@ -51,16 +51,6 @@ class HomeController extends Controller
         return view('media.show_item', compact('show', 'item'));
     }
 
-    public function events()
-    {
-        return view('events.index');
-    }
-
-    public function event($i)
-    {
-        return view('events.single', compact('i'));
-    }
-
     public function infos()
     {
         return view('info.index');

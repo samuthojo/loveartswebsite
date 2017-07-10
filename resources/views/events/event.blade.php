@@ -1,20 +1,33 @@
-<a href="{{url('/events/'.($i+1))}}" class="event layou vertical">
-    <div class="date">JULY 4, 2017</div>
-    <h2 class="name">
-        It's Name
-    </h2>
-    <div class="excerpt">
-        <?php
-            $str = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda aut debitis deserunt eligendi exercitationem harum inventore itaque iusto laborum magnam, nam nemo numquam quibusdam repellendus similique sit ullam unde!";
-            $len = 40;
-        ?>
-        {{str_limit($str, $len)}}
-    </div>
+<a href="{{$event->url}}" class="an-event layou vertical">
     <div class="image layout center-center">
-        <img src="{{asset('images/events/'.($i + 1).'.jpg')}}" alt="">
+        <img src="{{asset('images/events/'.$event->poster)}}" alt="">
     </div>
 
-    <div class="next-arrow">
-        View Event
+    <div class="text">
+        @if(!isset($other_events))
+            <?php
+                $date = $event->date->year;
+                $date_str = substr($date, strlen($date) - 2);
+            ?>
+            <div class="date">{{$event->date->format("j M \\'y")}}</div>
+{{--            <div class="date">{{$event->date->toFormattedDateString()}}</div>--}}
+        @endif
+
+        <h2 class="name">
+            {{$event->title}}
+        </h2>
+
+        @if(!isset($other_events))
+            <div class="excerpt">
+                <?php
+                $len = 40;
+                ?>
+                {{str_limit($event->description, $len)}}
+            </div>
+        @endif
+
+        <div class="next-arrow">
+            More Details
+        </div>
     </div>
 </a>

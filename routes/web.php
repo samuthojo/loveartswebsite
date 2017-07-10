@@ -40,8 +40,8 @@ Route::get('/media', 'HomeController@media')->name('media');
 Route::get('/media/{show}', 'HomeController@show')->name('show');
 Route::get('/view_episode/{show}/{item}', 'HomeController@show_item')->name('show_item');
 
-Route::get('/events', 'HomeController@events')->name('events');
-Route::get('/events/{i}', 'HomeController@event')->name('event');
+Route::get('/events', 'EventsController@index')->name('events');
+Route::get('/events/{event}', 'EventsController@detail')->name('event-detail');
 Route::get('/info', 'HomeController@infos')->name('infos');
 Route::get('/info/{i}', 'HomeController@info')->name('info');
 

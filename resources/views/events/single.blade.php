@@ -9,6 +9,8 @@
         #event{
             padding-top: 5em;
             padding-bottom: 3em;
+            min-height: 100vh;
+            min-height: calc(100vh - 60px);
         }
 
         .container{
@@ -57,26 +59,27 @@
         <div class="container layout justified">
             <div id="title">
                 <h1>
-                    Event's Name
+                    {{$event->title}}
                 </h1>
                 <div class="sub-info">
                     <span>
                         <sup class="fa fa-calendar" style="font-size: 0.7em; margin-to: -143px;"></sup>
-                        <span>13th Nov, 2017</span>&nbsp;
+                        <span>{{$event->date->diffForHumans()}}</span>&nbsp;
                     </span>
 
                     <span>
                         <span class="fa fa-map-marker" style="font-size: 1em;"></span>
-                        <span>Mikocheni Lovearts HQ</span>
+                        <span>{{$event->location}}</span>
                     </span>
                 </div>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque cupiditate, delectus eveniet illo nemo pariatur reiciendis repellat sapiente ut voluptatem. Ducimus eaque illo iure magnam magni nobis rem tempora voluptatem.
+                    {{$event->description}}
                 </p>
             </div>
 
             <div id="otherEvents" class="flex layout vertical">
                 <h3>OTHER EVENTS</h3>
+                <?php $other_events = true?>
                 @for($i = 0; $i < 2; $i++)
                     @include('events.event')
                 @endfor
