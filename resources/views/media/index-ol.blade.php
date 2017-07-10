@@ -47,6 +47,7 @@
     .channel .title{
         background-color: #000;
         -webkit-background-size:20%;
+        {{--background-image: url({{asset('images/pt.png')}});--}}
         margin-right: 10px;
         width: calc(50% - 20px);
         max-width: calc(50% - 20px);
@@ -127,8 +128,7 @@
     }
 </style>
 
-@verbatim
-<div id="media" ng-controller="listCtrl as vm">
+<div id="media">
     <section id="title" style="position: relative;">
         <div id="polyBg" class="fill-above">
         </div>
@@ -137,37 +137,48 @@
             <h1>MEDIA</h1>
             <p>
                 Stay in touch with all you favorite tv shows, series and online platforms from your favorite loveartists right here, don't forget to subscribe.
+                {{--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam cupiditate debitis deleniti dolorem eius enim eum excepturi fugit incidunt ipsa!--}}
             </p>
         </div>
     </section>
 
-    <div class="channel" ng-repeat="channel in vm.movie_items">
-        <div class="container layout">
-            <a href="{{vm.media_url + channel.id}}" class="title layout vertical">
-                <div class="channel-image flex" style="-webkit-background-size: cover;background-size: cover; background-position: 0 0;background-image: url({{channel.cover}})"></div>
-                <div class="layout start" style="background: #f5f5f5; padding: 25px 30px; padding-bottom: 30px; padding-right: 25px;">
-                    <div class="flex layou center">
-                        <h2 style="display: inline-block">{{channel.name}}</h2>
-                        <p>{{channel.description}}</p>
-                    </div>
-                    <button class="lv-btn" style="margin-left: auto; font-size: 1em;">SUBSCRIBE</button>
-                </div>
-            </a>
-
-            <div class="channel-items flex layout start wrap">
-                <a href="{{ vm.media_url + channel.id + '/' + episode.id }}" class="channel-item" style="-webkit-background-size: cover;background-size: cover;background-image: url({{episode.cover}})" ng-repeat="episode in channel.videos">
-                    <div class="caption layout vertical">
-                        <div class="bg flex"></div>
-                        <div class="text layout vertical">
-                            <h3>{{episode.name}}</h3>
-                            <span>Posted on: {{episode.date}}</span>
+    @for($i = 1; $i < 5; $i++)
+        <div class="channel">
+            <div class="container layout">
+                <a href="{{url('/media/'.$i)}}" class="title layout vertical">
+                    <div class="channel-image flex" style="-webkit-background-size: cover;background-size: cover;background-image: url({{asset('images/shows/'.((($i - 1)*5) +1).'.jpg')}})"></div>
+                    <div class="layout start" style="background: #f5f5f5; padding: 25px 30px; padding-bottom: 30px; padding-right: 25px;">
+                        <div class="flex layou center">
+                            <h2 style="display: inline-block">Show Name</h2>
+                            <p>This is an awesome channel, there is no other channel like this, you shall. subscribe to this channel.</p>
                         </div>
+                        <button class="lv-btn" style="margin-left: auto; font-size: 1em;">SUBSCRIBE</button>
                     </div>
                 </a>
+
+                <div class="channel-items flex layout start wrap">
+                    <?php
+                        $count = 5;
+                        if($i == 2)
+                            $count = 2;
+                        else if($i == 4)
+                            $count = 3;
+                    ?>
+                    @for($j = 1; $j < $count; $j++)
+                        <a href="{{url('/media/'.$i.'/'.$j)}}" class="channel-item" style="-webkit-background-size: cover;background-size: cover;background-image: url({{asset('images/shows/'.((($i - 1)*5) + $j).'.jpg')}})">
+                            <div class="caption layout vertical">
+                                <div class="bg flex"></div>
+                                <div class="text layout vertical">
+                                    <h3>Episode Name</h3>
+                                    <span>Posted on: 22nd July</span>
+                                </div>
+                            </div>
+                        </a>
+                    @endfor
+                </div>
             </div>
         </div>
-    </div>
+    @endfor
 
     <div style="height: 5em"></div>
 </div>
-@endverbatim

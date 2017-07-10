@@ -37,8 +37,8 @@
 
     #show #title h1{
         color: #f8f8f8;
-        font-size: 2.8em;
-        letter-spacing: 2px;
+        font-size: 2em;
+        /*letter-spacing: 2px;*/
         font-family: "Gotham bold", sans-serif;
         margin-bottom: 0.2em;
     }
@@ -100,20 +100,20 @@
     .channel-item .caption .text h3{
         color: #333;
         margin-bottom: 2px;
-        font-size: 1.3em;
+        font-size: 1em;
     }
 </style>
 
-<div id="show">
+<div id="show" ng-controller="listDetailCtrl as vm">
     <div id="bg" class="layout end">
         <img src="{{asset('images/banner/im4.jpg')}}" alt="" style="position: absolute; top: 0; left: 0; width: 100%; height: auto; min-height: 100%">
         <div class="fill-above layout vertical end"></div>
         <div id="title" class="container layout center">
             <div>
-                <h1>Kijana Wajibika</h1>
-                <span><span style="color:var(--app-main-color)">Host :</span> <strong style="font-weight: bold;">Abella Bateyunga</strong></span>
+                <h1>@{{ vm.show_name }}</h1>
+                {{--<span><span style="color:var(--app-main-color)">Host :</span> <strong style="font-weight: bold;">Abella Bateyunga</strong></span>--}}
             </div>
-            <span style="margin-top: 0.2em;margin-left: auto;">New episodes every Tuesday</span>
+            {{--<span style="margin-top: 0.2em;margin-left: auto;">New episodes every Tuesday</span>--}}
         </div>
     </div>
     <div id="nav">
@@ -126,21 +126,66 @@
 
     <div class="container">
         <section class="channel-items layout wrap">
-            @for($j = 1; $j < 5; $j++)
-                <a href="{{url('/media/'.$show.'/'.$j)}}" class="channel-item" style="position: relative;">
-                    <img src="{{asset('images/shows/'.((($show - 1)*5) + $j).'.jpg')}}" alt="">
+            @verbatim
+                <a href="{{vm.show_url + '/' + episode.id}}"
+                   class="channel-item" style="position: relative;"
+                    ng-repeat="episode in vm.episodes">
+                    <img ng-src="{{episode.cover}}" alt="{{episode.name}}">
                     <div class="fill-above caption layout vertical">
                         <div class="bg flex"></div>
                         <div class="text layout vertical">
-                            <h3>Episode Name</h3>
-                            <span>Posted on: 22nd July</span>
+                            <h3>{{episode.name}}</h3>
+                            <span>{{episode.date}}</span>
                         </div>
                     </div>
                 </a>
-            @endfor
+            @endverbatim
         </section>
     </div>
 
     <div style="height: 5em"></div>
 </div>
+@endsection
+
+
+@section('scripts')
+    <script src="{{asset('js/lib/angular-youtube-api-factory.js')}}"></script>
+    <script>
+        const API_KEY = "AIzaSyB4ts37fbq9XYLcOBySltoN3E5U5J-7mIQ";
+        //        angular.module("jtt_youtube",[]).
+
+        angular.module('lovearts', ['jtt_youtube'])
+
+            .controller('listDetailCtrl', function ($scope, youtubeFactory) {
+                var vm = this;
+                vm.loading = true;
+                vm.show_url = "{{url('/view_episode/' . $show . '/')}}";
+
+                youtubeFactory.getVideosFromPlaylistById({
+                    playlistId: "{{$show}}",
+                    key: API_KEY
+                }).then(function (_data) {
+                    console.log(_data);
+                    vm.episodes = _data.data.items.map(function(f){
+                        if(!vm.show_name)
+                            vm.show_name = f.snippet.channelTitle;
+
+                        var date = new Date(f.snippet.publishedAt);
+                        return {
+                            id: f.snippet.resourceId.videoId,
+                            name: f.snippet.title,
+                            date: date.getDay() + " - " + date.getMonth() + " - " + date.getFullYear(),
+                            cover: f.snippet.thumbnails.standard.url
+                        };
+                    });
+                    console.log("Episode results");
+//                    console.log(vm.episodes);
+                    vm.loading = false;
+                }).catch(function (err) {
+                    console.log("Error found!!");
+                    console.log(err);
+                    vm.loading = false;
+                });
+            });
+    </script>
 @endsection

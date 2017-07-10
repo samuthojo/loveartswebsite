@@ -24,7 +24,6 @@
     #videoContent{
         width: 100%;
         max-width: 800px;
-        margin: auto;
         position: relative;
         color: #000000;
     }
@@ -58,12 +57,12 @@
     }
 </style>
 
-<div id="showItem">
+<div id="showItem" ng-controller="episodeCtrl as vm">
     <section id="title">
         <div class="container layout start">
             <div id="videoContent">
                 <div id="video" style="position: relative;">
-                    <iframe id="ytIframe" src="http://www.youtube.com/embed/W7qWa52k-nE" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+                    <iframe id="ytIframe" src="http://www.youtube.com/embed/{{$item}}" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
                     {{--<div class="fill-above layout center-center" style="background: rgba(0,0,0,0.5);">--}}
                         {{--<button style="background: transparent; border: none">--}}
                             {{--<i class="fa fa-youtube-play" style="font-size: 104px; color: red"></i>--}}
@@ -71,26 +70,95 @@
                     {{--</div>--}}
                 </div>
                 <div id="videoTitle">
-                    <h1>Kusadikika Seaseon 1 episode 12</h1>
+                    @verbatim
+                    <h1>{{vm.episode.name}}</h1>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium assumenda atque aut dolorum ea eligendi est in itaque laudantium, maiores perspiciatis, quidem recusandae sunt ut veniam veritatis vero voluptas voluptatibus.
+                        {{vm.episode.description}}
                     </p>
+                    @endverbatim
                 </div>
             </div>
             <div class="layout vertical flex" style="padding: 20px; padding-top: 0; display: non">
                 <div style="padding: 15px 0; padding-top: 0;">
-                    <h5 style="font-size: 1.2em; margin: 0; padding: 0;">Other episodes for kusadikika</h5>
+                    <h5 style="font-size: 1.2em; margin: 0; padding: 0;">Other episodes</h5>
                 </div>
 
-                @for($i = 1; $i < 3; $i++)
-                    <div style="height: 200px; background: #eee; margin-bottom: 8px;">
-
-                    </div>
-                @endfor
+                @verbatim
+                <a href="{{vm.show_url + '/' + episode.id}}"
+                   style="height: 200px; background: #eee; -webkit-background-size: cover;background-size: cover;background-image: url({{episode.cover}}); margin-bottom: 8px;"
+                   ng-repeat="episode in vm.other_episodes"
+                   ng-if="$index < 2 && $index != vm.item_id">
+                </a>
+                @endverbatim
             </div>
         </div>
     </section>
 
     <div style="height: 5em"></div>
 </div>
+@endsection
+
+
+@section('scripts')
+    <script src="{{asset('js/lib/angular-youtube-api-factory.js')}}"></script>
+    <script>
+        const API_KEY = "AIzaSyB4ts37fbq9XYLcOBySltoN3E5U5J-7mIQ";
+        //        angular.module("jtt_youtube",[]).
+
+        angular.module('lovearts', ['jtt_youtube'])
+
+            .controller('episodeCtrl', function ($scope, youtubeFactory) {
+                var vm = this;
+                vm.loading = true;
+                vm.show_url = "{{url('/view_episode/' . $show . '/')}}";
+                vm.item_id = "{{$item}}";
+
+                youtubeFactory.getVideoById({
+                    id: "{{$item}}",
+                    key: API_KEY
+                }).then(function (_data) {
+                    console.log(_data);
+                    vm.episode = _data.data.items.map(function(f){
+                        var date = new Date(f.snippet.publishedAt);
+                        return {
+                            id: f.snippet.resourceId.videoId,
+                            name: f.snippet.title,
+                            date: date.getDay() + " - " + date.getMonth() + " - " + date.getFullYear(),
+                            cover: f.snippet.thumbnails.standard.url
+                        };
+                    });
+                    console.log("Episode results");
+//                    console.log(vm.episodes);
+                    vm.loading = false;
+                }).catch(function (err) {
+                    console.log("Error found!!");
+                    console.log(err);
+                    vm.loading = false;
+                });
+
+
+                youtubeFactory.getVideosFromPlaylistById({
+                    playlistId: "{{$show}}",
+                    key: API_KEY
+                }).then(function (_data) {
+                    console.log(_data);
+                    vm.other_episodes = _data.data.items.map(function(f){
+                        var date = new Date(f.snippet.publishedAt);
+                        return {
+                            id: f.snippet.resourceId.videoId,
+                            name: f.snippet.title,
+                            date: date.getDay() + " - " + date.getMonth() + " - " + date.getFullYear(),
+                            cover: f.snippet.thumbnails.standard.url
+                        };
+                    });
+                    console.log("Episode results");
+//                    console.log(vm.episodes);
+                    vm.loading = false;
+                }).catch(function (err) {
+                    console.log("Error found!!");
+                    console.log(err);
+                    vm.loading = false;
+                });
+            });
+    </script>
 @endsection
