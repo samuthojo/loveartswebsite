@@ -90,11 +90,17 @@
                     </h1>
                     <p style="margin-top: 10px; font-size: 1.7em; font-family: 'Gotham light', sans-serif; line-height: 1.5em">
                         (or <span style="color: var(--app-main-color)">Sanuka</span> as they say),
-                        there are beautiful art joints and experiences happening all around you,  below are some to get you hooked up.
+                        there are beautiful art joints and experiences happening all around you, keep an open eye and raised an eyebrow every now and then.
                     </p>
                 </div>
             </div>
 
+            <div style="text-align: right; display: inline-block; position: absolute; right: 120px;">
+                <hr style="height: 200px; width: 0; margin: auto; margin-bottom: 60px; margin-top: -30px;">
+                <span style="font-size: 1.3em; font-family: 'Gotham light', sans-serif; line-height: 1.5em; display: inline-block; max-width: 300px;">
+                    Here are some few that will get you properly hooked up
+                </span>
+            </div>
             <div id="theInfos" class="layout justified wrap">
                 @for($i = 0; $i <10; $i++)
                     <div class="info-image">
