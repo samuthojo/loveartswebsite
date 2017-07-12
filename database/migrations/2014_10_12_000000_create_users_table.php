@@ -21,13 +21,12 @@ class CreateUsersTable extends Migration
             $table->string('password')->nullable();
             $table->string('gender')->nullable();
             $table->date('dob')->nullable();
+            $table->string('type')->nullable();
+            $table->integer('role')->default(0);
             $table->string('provider')->nullable();
             $table->string('provider_id')->unique()->nullable();
             $table->boolean('verified')->default(false);
             $table->string('verification_token')->nullable();
-//            $table->index(['gender']);
-//            $table->index(['provider', 'provider_id']);
-//            $table->primary('id');
             $table->rememberToken();
             $table->timestamps();
         });

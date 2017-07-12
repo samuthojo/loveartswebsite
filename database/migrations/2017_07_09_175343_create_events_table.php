@@ -16,10 +16,10 @@ class CreateEventsTable extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->string('description')->unique();
-            $table->date('date')->nullable();
-            $table->string('location')->nullable();
-            $table->string('poster')->nullable();
+            $table->string('description');
+            $table->date('date');
+            $table->string('location');
+            $table->string('poster');
             $table->string('url')->nullable();
             $table->timestamps();
         });

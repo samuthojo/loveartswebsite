@@ -50,14 +50,4 @@ class HomeController extends Controller
     {
         return view('media.show_item', compact('show', 'item'));
     }
-
-    public function infos()
-    {
-        return view('info.index');
-    }
-
-    public function info($i)
-    {
-        return view('info.single', compact('i'));
-    }
 }

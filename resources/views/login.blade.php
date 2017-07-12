@@ -5,6 +5,10 @@
         body{
             background: #f0f0f0;
         }
+
+        #bannerTopBar{
+            position: absolute !important;
+        }
         #loginWrapper{
             min-height:calc(100vh - 190px);
             position: relative;

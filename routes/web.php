@@ -33,6 +33,16 @@ Route::group(['middleware' => ['web', 'guest']], function () {
     });
 });
 
+
+//Route::group(['middleware' => ['web', 'guest']], function () {
+//    Route::get('admin', 'AdminController@index');
+
+    Route::get('/admin', function () {
+        return view('admin.index');
+    });
+//});
+
+
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/about', 'HomeController@about')->name('about');
 Route::get('/contact', 'HomeController@contact')->name('contact');
@@ -41,9 +51,9 @@ Route::get('/media/{show}', 'HomeController@show')->name('show');
 Route::get('/view_episode/{show}/{item}', 'HomeController@show_item')->name('show_item');
 
 Route::get('/events', 'EventsController@index')->name('events');
-Route::get('/events/{event}', 'EventsController@detail')->name('event-detail');
-Route::get('/info', 'HomeController@infos')->name('infos');
-Route::get('/info/{i}', 'HomeController@info')->name('info');
+Route::post('/saveEvent', 'EventsController@store')->name('create-event');
+Route::get('/info', 'InfoController@index')->name('infos');
+Route::post('/saveInfo', 'InfoController@store')->name('create-info');
 
 Route::get('/artists', 'ArtistsController@index')->name('artists');
 Route::get('/artists/{i}', 'ArtistsController@single')->name('artist');
