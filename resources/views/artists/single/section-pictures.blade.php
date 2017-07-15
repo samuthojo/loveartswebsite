@@ -28,17 +28,30 @@
     #artistPics .shots-list .insta-pic:last-child{
         margin-right: 0;
     }
+
+    .insta-pic.empty{
+        background: transparent !important;
+        border: 1px solid #ddd;
+    }
 </style>
 
-<h3 style="padding-bottom: 0;">ON INSTAGRAM</h3>
+<h3 style="padding-bottom: 0;">PICTURES</h3>
 <div style="margin: auto; width: 180px; border-top: 1px solid #ccc; margin-top: 1.5em; margin-bottom: 3.2em"></div>
 
 <div class="shots-list">
     <div class="layout center-justified">
-        @for($i = 1; $i < 12; $i++)
+        @foreach($artist->images as $image)
             <a href="#" class="insta-pic layout center-center">
-                <img src="{{asset('images/instagram/'.$i.'.jpg')}}" alt="" style="height: 100%;">
+                <img src="{{asset('images/instagram/'.$image->url)}}" alt="" style="height: 100%;">
             </a>
-        @endfor
+        @endforeach
+
+        @if(count($artist->images) < 5)
+            @for($i = 0; $i < 5 - count($artist->images); $i++)
+                <div class="insta-pic empty layout center-center">
+
+                </div>
+            @endfor
+        @endif
     </div>
 </div>

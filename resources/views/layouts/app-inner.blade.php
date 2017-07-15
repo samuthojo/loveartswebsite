@@ -31,7 +31,6 @@
     @include('layouts.footer')
 
     <!-- Scripts -->
-    <script src="{{asset('js/lib/angular-1.6.4.min.js')}}"></script>
     <script src="{{asset('js/scripts.js')}}"></script>
     @yield('scripts')
 </body>

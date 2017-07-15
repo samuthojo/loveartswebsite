@@ -29,6 +29,7 @@
             min-width: calc(33.33% - 4px);
             max-width: calc(33.33% - 4px);
             margin-bottom: 6px;
+            margin-right: 4px;
             height: 300px;
             overflow: hidden;
             text-decoration: none;
@@ -94,20 +95,23 @@
         .artist:hover .artist-quote{
             font-size: 1.5em;
             position: absolute;
+            padding: 0 20px;
         }
 
         #artistFilters{
-
+            padding: 20px;
         }
 
         #artistFilters .artist-filter{
             position: relative;
             color: #888;
-            padding: 15px 20px;
+            padding: 15px 38px;
             min-width: 100px;
             text-align: center;
             margin: 0 8px;
             letter-spacing: 2px;
+            font-size: 16px;
+            white-space: normal;
         }
 
         #artistFilters .artist-filter:before{
@@ -118,7 +122,7 @@
             height: 100%;
             width: 100%;
             transform: rotateX(18deg);
-            background: #f7f7f7;
+            background: #f0f0f0;
             z-index: -1;
         }
 
@@ -135,117 +139,85 @@
         #artistFilters .artist-filter.active:before{
             background: var(--app-contrast-color);
         }
+
+        #artists #noResults{
+            font-size: 1.2em;
+            color: #555;
+            font-family: Verdana;
+        }
+
+        #artists:not(.no-artists) #noResults{
+            display: none;
+        }
     </style>
 
-    @verbatim
-        <div id="artists" ng-controller="ArtistsListCtrl as vm">
-            <div style="padding-top: 4em; margin-bottom: 4.6em; backgroun: #ff4d4d;">
-                <div class="container">
-                    <div class="layout center justified">
-                        <h1 class="page-title">ARTISTS</h1>
-                        <div id="artistFilters" class="layout center">
-                            <a href="javascript:void(0);" class="artist-filter"
-                               ng-repeat="filter in vm.filters"
-                               ng-class="{'active' : vm.isCur($index)}"
-                               ng-click="vm.setFilter($index)">{{filter}}</a>
-                        </div>
+    <div id="artists">
+        <div style="padding-top: 4em; margin-bottom: 4.6em; backgroun: #ff4d4d;">
+            <div class="container">
+                <div class="layout vertical center justified">
+                    <h1 class="page-title">ARTISTS</h1>
+                    <div id="artistFilters" class="layout center-center wrap">
+                        <a href="javascript:void(0);"
+                           class="artist-filter active filter-all"
+                           onclick="setFilter('all')">ALL</a>
+
+                        @foreach($filters as $filter)
+                            <a href="javascript:void(0);"
+                               class="artist-filter filter-{{$filter->id}}"
+                               onclick="setFilter('{{$filter->id}}')">{{$filter->name}}</a>
+                        @endforeach
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="container" style="margin-bottom: 8.6em;">
-                <div class="layout wrap justified">
-                    <a class="artist" href="{{vm.getPath($index)}}"
-                       ng-repeat="artist in artists"
-                       ng-show="$index % vm.cur_filter === 0">
-                        <div class="image" style="background-image: {{vm.artistImage($index)}}"></div>
+        <div class="container" style="margin-bottom: 8.6em;">
+            <div class="layout wrap">
+                @foreach($artists as $artist)
+                    <a class="artist type-{{explode(" ", $artist->pillar_id)[0]}}" href="{{url('artists/' . $loop->iteration)}}">
+                        <div class="image" style="background-image: url({{asset('images/artists/im' . (($loop->iteration % 11) + 1) . '.png')}})"></div>
                         <div class="artist-text layout vertical center-center text-center">
                             <div class="artist-name">
-                                {{artist.name}}
+                                {{$artist->name}}
                             </div>
+
                             <div class="artist-quote">
-                                <q>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, doloremque, velit. Alias facilis magni necessitatibus.</q>
+                                <q>
+                                    {{$artist->art_quote}}
+                                    @if(!$artist->art_quote)
+                                        I really, really, really love art, I mean I know its kind of a cliche at this point to say but art literally saved me.
+                                    @endif
+                                </q>
                             </div>
                         </div>
                     </a>
-                </div>
+                @endforeach
             </div>
+
+            <h3 id="noResults" style="text-align: center;">No artists found for that filter, plese try out other filters.</h3>
         </div>
-    @endverbatim
+    </div>
 @endsection
 
 @section('scripts')
-    {{--<script src="{{asset('js/lib/angular-ui-router.min.js')}}"></script>--}}
     <script>
-        var artists = angular.module('lovearts', ['lovearts.controllers']);
-        var asset_path = "{{asset('images/artists/')}}";
-        var url_path = "{{url('artists/')}}";
+        function setFilter(filter){
+            $('.artist-filter').removeClass('active');
+            $('.artist-filter.filter-'+filter).addClass('active');
 
-        var cModule = angular.module("lovearts.controllers", []);
-
-        cModule.controller('ArtistsListCtrl', function ($scope, $timeout) {
-            var vm = this;
-            vm.cur_filter = 1;
-            vm.filters = ["ALL", "MUSICIANS", "DANCERS", "PAINTERS"];
-            vm.path = url_path;
-
-            $scope.artists = [
-                {name: "James Nyole"},{name: "Kimberly James"}, {name: "Emmanuel Nyagawa"},
-                {name: "Ashumta Kingi"}, {name: "Mgosi Amile"}, {name: "Catheryn Thomas Massamu"},
-                {name: "Edgar Bwigane"}, {name: "Balinze Mokti"}, {name: "Sharukh Kacha"},
-                {name: "Michael Lukemi"}, {name: "Millian Kilawe"}, {name: "Gasper Kiluvyo"}
-            ];
-
-            vm.setFilter = function(filter){
-                vm.cur_filter = filter + 1;
-            };
-
-            vm.isCur = function(filter){
-                return filter + 1 === vm.cur_filter;
-            };
-
-            vm.artistImage = function(i){
-                return "url("+asset_path + "/im" + (i + 1) + ".png);";
-            };
-
-            vm.getPath = function($index){
-                return vm.path + "/" + ($index + 1);
+            if(filter === "all"){
+                $(".artist").fadeIn();
+                return;
             }
-        });
+            $(".artist").fadeOut();
 
-        cModule.controller('ArtistInfoCtrl', function ($scope, $state, $stateParams) {
-            var vm = this;
-            var id = $stateParams.id;
-            var lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab blanditiis dolorum fuga harum necessitatibus reiciendis vitae. Consequatur, ducimus, voluptatem. Alias consequatur corporis debitis exercitationem facilis incidunt necessitatibus possimus, sequi temporibus! Deleniti, doloremque, velit. Alias facilis necessitatibus.";
-            var artists = [
-                "James Nyole", "Kimberly James", "Emmanuel Nyagawa",
-                "Ashumta Kingi", "Mgosi Amile", "Catheryn Thomas Massamu",
-                "Edgar Bwigane", "Balinze Mokti", "Sharukh Kacha",
-                "Michael Lukemi", "Millian Kilawe", "Gasper Kiluvyo"
-            ];
+            var matched_artists = $(".artist.type-"+filter);
+            matched_artists.fadeIn();
 
-            $scope.artist = {
-                name: artists[id - 1],
-                shortname: shortenName(artists[id - 1]),
-                bio: lorem,
-                age: 29,
-                skills: "Singer, Musician, Composer",
-                since: 2009
-            };
-
-            vm.goBack = function () {
-                $state.go('artistList');
-            };
-
-            $scope.artistImage = function(){
-                return "url("+asset_path + "/im" + id + ".png);";
-            };
-
-            function shortenName(name){
-                var lower = name.toLowerCase();
-                var split = lower.split(" ");
-                return split[0] + "_" + split[1];
-            }
-        });
+            if(matched_artists.length < 1)
+                $("#artists").addClass('no-artists');
+            else
+                $("#artists").removeClass('no-artists');
+        }
     </script>
 @endsection

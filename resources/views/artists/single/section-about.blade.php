@@ -44,15 +44,13 @@
         background-color: #000;
         -webkit-background-size: cover;
         background-size: cover;
-        background-image: url({{asset('images/asa.jpg')}});
         filter: grayscale(90%);
         box-shadow: 0 0 20px 4px rgba(0,0,0,0.18);
 
-        /*-webkit-transform: rotate(40deg);*/
-        /*-moz-transform: rotate(40deg);*/
-        /*-ms-transform: rotate(40deg);*/
-        /*-o-transform: rotate(40deg);*/
-        transform: rotate(-40deg);
+        -webkit-transform: rotate(-40deg);
+        -moz-transform: rotate(-40deg);
+        -ms-transform: rotate(-40deg);
+        -o-transform: rotate(-40deg);
     }
 
     .cd:hover{
@@ -89,19 +87,22 @@
 </style>
 <div class="layout" style="max-width: 1100px; margin: auto;">
     <div class="about-me flex">
-        <h3>I'm a <span class="hot-word">Music Junkie</span></h3>
+        <h3>I'm a <span class="hot-word">{{$artist->simple_description}}</span></h3>
         <p>
-            I am one of those boundary pushers, who walks the line in life and in poetry, asks poignant questions and challenges the rituals of our time.
-            I can write for days, with a wit as quick as my pen, I am always coming up with new songs, new ideas and mantras.
-            My heart is for salt water, for others, for my family & for revival.
+            {{$artist->description}}
         </p>
     </div>
 
     <div style="height: 180px; margin-left: 1.5em; border-right: 1px solid #ccc; align-self: center"></div>
 
     <div class="about-me-deco layout center-center" style="padding: 2.6em 0;">
-        <div class="cd layout center-center">
-          <div class="hole"></div>
-        </div>
+        <?php
+            $viewMap = [
+                1 => '<div class="cd layout center-center"><div class="hole" style="background-image: ;"></div></div>',
+                2 => '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M9.4 10.5l4.77-8.26C13.47 2.09 12.75 2 12 2c-2.4 0-4.6.85-6.32 2.25l3.66 6.35.06-.1zM21.54 9c-.92-2.92-3.15-5.26-6-6.34L11.88 9h9.66zm.26 1h-7.49l.29.5 4.76 8.25C21 16.97 22 14.61 22 12c0-.69-.07-1.35-.2-2zM8.54 12l-3.9-6.75C3.01 7.03 2 9.39 2 12c0 .69.07 1.35.2 2h7.49l-1.15-2zm-6.08 3c.92 2.92 3.15 5.26 6 6.34L12.12 15H2.46zm11.27 0l-3.9 6.76c.7.15 1.42.24 2.17.24 2.4 0 4.6-.85 6.32-2.25l-3.66-6.35-.93 1.6z"/></svg>',
+            ];
+        ?>
+
+        {!! isset($viewMap[$artist->pillar_id]) ? $viewMap[$artist->pillar_id] : '' !!}
     </div>
 </div>

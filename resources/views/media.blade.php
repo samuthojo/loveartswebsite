@@ -5,62 +5,49 @@
 @endsection
 
 @section('scripts')
+    <script src="{{asset('js/lib/angular-1.6.4.min.js')}}"></script>
     <script src="{{asset('js/lib/angular-ui-router.min.js')}}"></script>
     <script src="{{asset('js/lib/localforage.js')}}"></script>
     <script src="{{asset('js/lib/angular-localForage.js')}}"></script>
     <script src="{{asset('js/lib/angular-youtube-api-factory.js')}}"></script>
 
-    @verbatim
     <script>
+{{--        var shows = "{{implode(',', $shows->pluck('youtube_id')->toArray())}}";--}}
+        var shows = {!! $shows->toJson() !!};
         const API_KEY = "AIzaSyB4ts37fbq9XYLcOBySltoN3E5U5J-7mIQ";
 
+        @verbatim
         var app = angular.module('lovearts', ['ui.router', 'jtt_youtube', 'LocalForageModule']);
-
         app.controller('showsCtrl', function ($scope, youtubeFactory, $localForage) {
             var vm = this;
             vm.loading = true;
             vm.media_url = "{{url('/media/')}}/";
-            vm.episode = {
-                name: "Some episode name"
-            };
 
-            youtubeFactory.getPlaylistById({
-                id: "PL70298B8E028D372C, PL5uUen04IQNlXgsP0RTwak6fxHbVL8ovW, PLhuEyf1go4nUmbJO-ZF8b3877WxcGF53E, PL5uUen04IQNktzf6JMMzE1XMnqAK81xrY, PL5uUen04IQNkhWApvhXaoYfad3j9Gvmx0'",
-                key: API_KEY
-            }).then(function (_data) {
-                vm.movie_items = _data.data.items.map(function(f){
-                    var date = new Date(f.snippet.publishedAt);
+            vm.movie_items = shows.map(function(f){
+                var date = new Date(f.created_at);
 
-                    return {
-                        id: f.id,
-                        name: f.snippet.title,
-                        date: date.getDay() + " - " + date.getMonth() + " - " + date.getFullYear(),
-                        cover: f.snippet.thumbnails.standard.url,
-                        description:f.snippet.description
-                    };
-                });
-
-                var showsMap = {};
-                vm.movie_items.map(function(c){
-                    showsMap[c.id] = {
-                        name: c.name,
-                        description: c.description
-                    };
-
-                });
-
-                var date = new Date();
-                showsMap['last-sync'] = date.getTime();
-
-                $localForage.setItem('showsList', showsMap);
-                vm.loading = false;
-            }).catch(function (err) {
-                console.log("Error found!!");
-                console.log(err);
-                vm.loading = false;
+                return {
+                    id: f.youtube_id,
+                    name: f.name,
+                    date: date.getDay() + " - " + date.getMonth() + " - " + date.getFullYear(),
+                    cover: f.poster_url,
+                    description:f.description
+                };
             });
-        })
 
+            var showsMap = {};
+            vm.movie_items.map(function(c){
+                showsMap[c.id] = {
+                    name: c.name,
+                    description: c.description
+                };
+            });
+
+            var date = new Date();
+            showsMap['last-sync'] = date.getTime();
+
+            $localForage.setItem('showsList', showsMap);
+        })
 
         .controller('showCtrl', function ($scope, youtubeFactory, $stateParams, $localForage) {
             var vm = this;
@@ -215,10 +202,11 @@
                     if (unfiltered ||  (!unfiltered && keys[key])) {
                         result[key] = obj[key];
                     }
-                };
+                }
             }
             return result;
-        };
+        }
+
+        @endverbatim
     </script>
-    @endverbatim
 @endsection

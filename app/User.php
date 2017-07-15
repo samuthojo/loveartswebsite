@@ -11,10 +11,13 @@ class User extends Authenticatable
     use Notifiable;
 
     protected $fillable = [
-        'name', 'email', 'phone', 'avatar',
+        'name', 'email', 'phone',
         'password', 'gender', 'dob', 'type', 'role',
+        'avatar', 'art_quote', 'simple_description', 'description',
+        'video_url', 'portrait_url',
+        'facebook_link', 'instagram_link', 'youtube_link', 'twitter_link',
         'provider', 'provider_id',
-        'verified', 'verification_token',
+        'verified', 'verification_token'
     ];
 
     /**
@@ -272,5 +275,17 @@ class User extends Authenticatable
 
         return $date;
 
+    }
+
+    public function images(){
+        return $this->HasMany('App\ArtistImage');
+    }
+
+    public function pillar(){
+        return $this->belongsTo('App\Pillar');
+    }
+
+    public function type(){
+        return $this->pillar()->first();
     }
 }

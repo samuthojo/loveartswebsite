@@ -175,8 +175,8 @@
                 
                 <div id="artistName">
                     {{--<h1>Anelinikisra Masingelirwe</h1>--}}
-                    <h1>Anne Masige</h1>
-                    <p>MUSICIAN</p>
+                    <h1>{{$artist->name}}</h1>
+                    <p>{{strtoupper($artist->type()->name)}}</p>
                     <div id="artistSocials" class="layout">
                         <a href="#"><i class="fa fa-facebook"></i></a>
                         <a href="#"><i class="fa fa-instagram"></i></a>

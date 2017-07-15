@@ -36,11 +36,6 @@ class HomeController extends Controller
 //        return view('home');
     }
 
-    public function media()
-    {
-        return view('media');
-    }
-
     public function show($show)
     {
         return view('media.show', compact('show'));

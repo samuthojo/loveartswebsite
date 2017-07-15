@@ -46,7 +46,7 @@ Route::group(['middleware' => ['web', 'guest']], function () {
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/about', 'HomeController@about')->name('about');
 Route::get('/contact', 'HomeController@contact')->name('contact');
-Route::get('/media', 'HomeController@media')->name('media');
+Route::get('/media', 'MediaController@index')->name('media');
 Route::get('/media/{show}', 'HomeController@show')->name('show');
 Route::get('/view_episode/{show}/{item}', 'HomeController@show_item')->name('show_item');
 
@@ -56,5 +56,5 @@ Route::get('/info', 'InfoController@index')->name('infos');
 Route::post('/saveInfo', 'InfoController@store')->name('create-info');
 
 Route::get('/artists', 'ArtistsController@index')->name('artists');
-Route::get('/artists/{i}', 'ArtistsController@single')->name('artist');
+Route::get('/artists/{artist}', 'ArtistsController@single')->name('artist');
 Route::get('/instaPics/{username}', 'ArtistsController@insta')->name('home');
