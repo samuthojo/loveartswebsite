@@ -1,4 +1,4 @@
-<form action="{{url('/saveEvent')}}" enctype="multipart/form-data" method="POST" style="margin-right: 40px;">
+<form class="lv-form" action="{{url('/saveEvent')}}" enctype="multipart/form-data" method="POST" style="margin-right: 40px;">
     {{csrf_field()}}
     <h3 class="form-title">New Event</h3>
 

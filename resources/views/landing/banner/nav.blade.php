@@ -113,10 +113,16 @@
     }
 
     #loggedUserName{
-        font-family: "Gotham medium", sans-serif;
-        font-size: 1.3em;
-        margin-bottom: 25px;
+        display: block;
+        letter-spacing: 0 !important;
+        color: #000 !important;
+        text-transform: none !important;
+        font-family: "Gotham medium", sans-serif !important;
+        font-size: 1em !important;
+        margin-bottom: 15px !important;
         white-space: nowrap;
+        padding-left: 0 !important;
+        padding-top: 0 !important;
     }
 
     #authOptions img{
@@ -127,7 +133,8 @@
         box-shadow: 0 0 20px rgba(0,0,0,0.1);
         border: 2px solid #fff;
         position: relative;
-        z-index: 1
+        z-index: 1;
+        margin-top: -10px;
     }
 </style>
 
@@ -150,12 +157,12 @@
         @if(Auth::guest())
             <a href="{{url('/login')}}">LOGIN</a>
         @else
-            <img src="{{Auth::user()->avatar}}" alt="{{Auth::user()->first_name()}}'s profile pictur4">
+            <img src="{{Auth::user()->avatar_url()}}" alt="{{Auth::user()->first_name()}}'s profile pictur4">
 
             <div id="miniProfile" class="layou vertical start">
-                <div id="loggedUserName">
+                <a href="{{url('artists/'.Auth::user()->id)}}" id="loggedUserName">
                     {{Auth::user()->name}}
-                </div>
+                </a>
 
                 <a style="background: #000; align-self:" href="{{ url('/logout') }}"
                    onclick="event.preventDefault();

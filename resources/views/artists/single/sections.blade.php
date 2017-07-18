@@ -8,6 +8,7 @@
         padding-bottom: 1.8em;
         border-bottom: 1px solid #dfdfdf;
         margin-bottom: 2em;
+        display: none;
     }
 
     #artist #artistSectionLinks a{

@@ -41,9 +41,11 @@
 <div class="shots-list">
     <div class="layout center-justified">
         @foreach($artist->images as $image)
-            <a href="#" class="insta-pic layout center-center">
-                <img src="{{asset('images/instagram/'.$image->url)}}" alt="" style="height: 100%;">
-            </a>
+            @if($loop->iteration <= 5)
+                <a href="#" class="insta-pic layout center-center">
+                    <img src="{{asset('images/artists/profile'. '/' . $image->url)}}" alt="" style="height: 100%;">
+                </a>
+            @endif
         @endforeach
 
         @if(count($artist->images) < 5)

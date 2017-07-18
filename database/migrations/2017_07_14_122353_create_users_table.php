@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('password')->nullable();
             $table->string('gender')->nullable();
             $table->date('dob')->nullable();
-            $table->integer('pillar_id')->unsigned();
+            $table->integer('pillar_id')->unsigned()->default(1);
             $table->integer('role')->default(0);
 
             //PROFILE INFO

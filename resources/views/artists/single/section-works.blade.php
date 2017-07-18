@@ -67,7 +67,7 @@
 <div class="layout" style="max-width: 1050px; margin: auto;">
     <?php
         $yupo = ($artist->portrait_url && strlen($artist->portrait_url) > 0);
-        $portrait = $yupo ? 'images/artists/' . $artist->portrait_url : asset('images/defpotrait.jpg');
+        $portrait = $yupo ? asset('images/artists/works') . '/' . $artist->portrait_url : asset('images/defpotrait.jpg');
 
         if($yupo){
             $sound_cloud_url = '<iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=';

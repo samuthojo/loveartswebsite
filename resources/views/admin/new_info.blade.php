@@ -1,4 +1,4 @@
-<form action="{{url('/saveInfo')}}" enctype="multipart/form-data" method="POST">
+<form class="lv-form" action="{{url('/saveInfo')}}" enctype="multipart/form-data" method="POST">
     {{csrf_field()}}
     <h3 class="form-title">New Info</h3>
 

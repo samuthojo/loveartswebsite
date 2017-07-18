@@ -30,7 +30,7 @@ Route::group(['middleware' => ['web', 'guest']], function () {
 
     Route::get('/login', function () {
         return view('login');
-    });
+    })->name('login');
 });
 
 
@@ -58,3 +58,15 @@ Route::post('/saveInfo', 'InfoController@store')->name('create-info');
 Route::get('/artists', 'ArtistsController@index')->name('artists');
 Route::get('/artists/{artist}', 'ArtistsController@single')->name('artist');
 Route::get('/instaPics/{username}', 'ArtistsController@insta')->name('home');
+
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/editProfile', 'ArtistsController@edit_profile')->name('editProfile');
+    Route::post('/saveBasic', 'ArtistsController@save_basic')->name('saveBasic');
+    Route::post('/saveArtistic', 'ArtistsController@save_artistic')->name('saveArtistic');
+    Route::post('/saveArtistWorks', 'ArtistsController@save_works')->name('saveArtistWorks');
+
+    Route::post('/saveSocialMedia', 'ArtistsController@save_social_media')->name('saveSocialMedia');
+    Route::post('/saveArtistPictures', 'ArtistsController@save_pictures')->name('saveArtistPictures');
+    Route::get('/setupAccount', 'ArtistsController@setup_account')->name('setupAccount');
+});

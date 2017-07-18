@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Pillar extends Model
 {
     protected $fillable = [
-        'name', 'description'
+        'name', 'description', 'image_url'
     ];
 
     public function artists(){

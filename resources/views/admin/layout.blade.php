@@ -14,6 +14,7 @@
     <link href="{{ asset('css/reset.css') }}" rel="stylesheet">
     <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/flex.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     @yield('styles')
 
@@ -58,69 +59,6 @@
             background: #fff !important;
             height: 60px !important;
             border-top: 1px solid #ccc;
-        }
-
-
-        form{
-            display: inline-block;
-            background: #fff;
-            padding: 24px;
-            box-shadow: 0 0 20px rgba(0,0,0, 0.1);
-            position: relative;
-            border-radius: 4px;
-            width: 450px;
-        }
-
-        .form-title{
-            padding: 20px 0;
-            font-size: 30px;
-        }
-
-        input:not([type="submit"]):not([type="file"]),
-        select, textarea{
-            width: 100%;
-            border-radius: 3px;
-            background-color: transparent;
-            border: 1px solid #ccc;
-            font-size: 20px;
-            padding: 8px;
-        }
-
-        input, select, textarea{
-            display: block;
-            margin-top: 8px;
-            max-width: 100%;
-        }
-
-        form .layout{
-            position: relative;
-        }
-
-        form label{
-            display: block;
-            margin: 20px 0;
-            width: 100%;
-            position: relative;
-        }
-
-        .layout > label{
-            width: 50%;
-        }
-
-        .layout > label:first-child{
-            margin-right: 20px;
-            width: calc(50% - 20px);
-        }
-
-        button{
-            border-radius: 3px;
-            padding: 13px 24px;
-            background: #c61916;
-            color: #fff;
-            border: 1px solid #9c1a17;
-            display: block;
-            margin-left: auto;
-            margin-bottom: 10px;
         }
     </style>
     <script src="{{asset('js/lib/jquery-3.1.0.min.js')}}"></script>

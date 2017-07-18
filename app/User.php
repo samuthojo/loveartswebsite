@@ -20,6 +20,8 @@ class User extends Authenticatable
         'verified', 'verification_token'
     ];
 
+//    protected $dateFormat = 'Y-m-d H:i:sO';
+
     /**
      * The attributes that should be casted to native types.
      *
@@ -104,12 +106,14 @@ class User extends Authenticatable
         //default user avatar
         $avatar_url = url('/images/avatar.jpg');
 
-        //try obtain custom uploaded avatar
-        $media = $this->getMedia('images')->first();
-        if ($media) {
-            $avatar_url = asset('storage/' . $media->id . '/' . $media->file_name);
-        }
-        return $avatar_url;
+        //check if is online link
+        if(!is_null($this->avatar) && strlen($this->avatar) > 0)
+            $avatar_url = (
+                    strpos($this->avatar, 'www') !== false ||
+                    strpos($this->avatar, 'http') !== false ||
+                    strpos($this->avatar, 'https') !== false) ? $this->avatar : asset('/images/artists/dps') . '/' . $this->avatar;
+
+         return $avatar_url;
     }
 
     /**

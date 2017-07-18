@@ -33,12 +33,12 @@
         color: #fff;
     }
 
-    #bannerTopBar #authOptions a{
+    #bannerTopBar #authOptions > a{
         background-color: rgba(255,255,255,0.1);
         color: #fff;
     }
 
-    #bannerTopBar #authOptions a:hover{
+    #bannerTopBar #authOptions > a:hover{
         background-color: rgba(255,255,255,0.2);
         color: #fff;
     }
@@ -58,6 +58,52 @@
         background-color: #ddd;
         box-shadow: 0 0 20px rgba(0,0,0,0.1);
         border: 2px solid #fff;
+        margin-top: -10px;
+    }
+
+    #authOptions #miniProfile{
+        padding: 20px;
+        padding-right: 70px;
+        padding-top: 25px;
+        padding-bottom: 30px;
+        background-color: #fff;
+        box-shadow: 0 0 50px rgba(0,0,0,0.2);
+        position: absolute;
+        right: -16px;
+        top: -26px;
+        color: #000000;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.25s ease-out;
+    }
+
+    #authOptions:hover #miniProfile{
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    #loggedUserName{
+        display: block;
+        letter-spacing: 0 !important;
+        color: #000 !important;
+        text-transform: none !important;
+        font-family: "Gotham medium", sans-serif !important;
+        font-size: 1em !important;
+        margin-bottom: 15px !important;
+        white-space: nowrap;
+        padding-left: 0 !important;
+        padding-top: 0 !important;
+    }
+
+    #authOptions img{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #ddd;
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        border: 2px solid #fff;
+        position: relative;
+        z-index: 1
     }
 </style>
 
@@ -80,7 +126,23 @@
         @if(Auth::guest())
             <a href="{{url('/login')}}">LOGIN</a>
         @else
-            <img src="{{Auth::user()->avatar}}" alt="">
+            <img src="{{Auth::user()->avatar_url()}}" alt="{{Auth::user()->first_name()}}'s profile pictur4">
+
+            <div id="miniProfile" class="layou vertical start">
+                <a href="{{url('artists/'.Auth::user()->id)}}" id="loggedUserName">
+                    {{Auth::user()->name}}
+                </a>
+
+                <a style="background: #000; align-self:" href="{{ url('/logout') }}"
+                   onclick="event.preventDefault();
+                                 document.getElementById('logout-form').submit();">
+                    LOGOUT
+                </a>
+
+                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+            </div>
         @endif
     </div>
 </div>

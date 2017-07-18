@@ -174,8 +174,8 @@
         <div class="container" style="margin-bottom: 8.6em;">
             <div class="layout wrap">
                 @foreach($artists as $artist)
-                    <a class="artist type-{{explode(" ", $artist->pillar_id)[0]}}" href="{{url('artists/' . $loop->iteration)}}">
-                        <div class="image" style="background-image: url({{asset('images/artists/im' . (($loop->iteration % 11) + 1) . '.png')}})"></div>
+                    <a class="artist type-{{explode(" ", $artist->pillar_id)[0]}}" href="{{url('artists/' . $artist->id)}}">
+                        <div class="image" style="background-image: url({{$artist->avatar_url()}})"></div>
                         <div class="artist-text layout vertical center-center text-center">
                             <div class="artist-name">
                                 {{$artist->name}}
