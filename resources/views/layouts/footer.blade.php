@@ -16,12 +16,12 @@
 </style>
 
 <div id="footer" class="layout center justified">
-    <span><span class="highlight" style="font-weight: bold">EMAIL US: </span> info@loveartstanzania.com</span>
+    <span><span class="highlight" style="font-weight: bold">EMAIL US: </span> hello@loveartstanzania.com</span>
     <span>
         &copy; {{date("Y")}} <span class="highlight">Love Arts Tanzania</span>
     </span>
     <span>
-        Crafted by
+        Web Strategies by
         <a href="http://ipfsoftwares.com" target="_blank" class="highlight">iPF Softwares</a>
     </span>
 </div>

@@ -1,0 +1,854 @@
+/*HOMEPAGE NAVBAR*/
+#homePage #bannerTopBar{
+    padding: 24px 42px;
+    z-index: 99;
+    width: 100%;
+}
+
+#homePage #bannerTopBar.light{
+    background: #ff4d4d;
+    padding: 10px 42px;
+    position: fixed;
+}
+
+#homePage #bannerTopBar #title {
+    font-size: 32px;
+}
+
+#homePage #bannerTopBar.light #title{
+    display: inline-block;
+}
+
+#homePage #bannerTopBar.light #title img{
+    height: 45px !important;
+}
+
+#homePage #bannerTopBar #links, #homePage #bannerTopBar #authOptions{
+    margin-top: 10px;
+}
+
+#homePage #bannerTopBar #links > a, #homePage #bannerTopBar #authOptions a{
+    padding: 12px 20px;
+    font-family: "Gotham medium", sans-serif;
+    font-size: 0.9em;
+    font-weight: 200;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #f0f0f0;
+}
+
+#homePage #bannerTopBar.light #links > a, #homePage #bannerTopBar.light #authOptions > a{
+    font-size: 0.75em;
+    margin-bottom: 11px;
+    color: #fff;
+}
+
+#homePage #bannerTopBar #authOptions a{
+    background-color: rgba(255,255,255,0.1);
+    color: #fff;
+}
+
+#homePage #bannerTopBar #authOptions a:hover{
+    background-color: rgba(255,255,255,0.2);
+    color: #fff;
+}
+
+#homePage #bannerTopBar #links > a:hover{
+    background-color: rgba(255,255,255,0.2);
+}
+
+#homePage #bannerTopBar #links > a.active{
+    background-color: rgb(232, 74, 74);
+}
+
+#homePage #bannerTopBar #topBar:not(.light) #links > a,
+#homePage #bannerTopBar #topBar:not(.light) #authOptions > a,
+#homePage #bannerTopBar #topBar:not(.light) #title{
+    color: #333;
+}
+
+#homePage #bannerTopBar #topBar:not(.light) #title{
+    color: #000 !important;
+}
+
+#homePage #authOptions #miniProfile{
+    padding: 20px;
+    padding-right: 70px;
+    padding-top: 25px;
+    padding-bottom: 30px;
+    background-color: #fff;
+    box-shadow: 0 0 50px rgba(0,0,0,0.2);
+    position: absolute;
+    right: -16px;
+    top: -16px;
+    color: #000000;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s ease-out;
+}
+
+#homePage #authOptions:hover #miniProfile{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#homePage #loggedUserName{
+    display: block;
+    letter-spacing: 0 !important;
+    color: #000 !important;
+    text-transform: none !important;
+    font-family: "Gotham medium", sans-serif !important;
+    font-size: 1em !important;
+    margin-bottom: 15px !important;
+    white-space: nowrap;
+    padding-left: 0 !important;
+    padding-top: 0 !important;
+}
+
+#homePage #authOptions img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ddd;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    border: 2px solid #fff;
+    position: relative;
+    z-index: 1;
+    margin-top: -10px;
+}
+
+
+/*HOMEPAGE BANNER*/
+#homePage #banner{
+    position: relative;
+    overflow: hidden;
+    height: calc(100vh + 10px);
+    background: var(--app-cool-white);
+    background-position: top right;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    color: #fff;
+}
+
+#homePage #banner.reddis{
+    background-color: #ee4a4a;
+    background-image: -webkit-linear-gradient(#ee4a4a, #da4d4d);
+    background-image: -o-linear-gradient(#ee4a4a, #da4d4d);
+    background-image: linear-gradient(#ee4a4a, #da4d4d);
+}
+
+#homePage #banner h2{
+    font-family: "Ultra", serif;
+    font-size: 4em;
+    letter-spacing: 17px;
+    padding-top: 70px;
+    margin-bottom: 9px;
+}
+
+#homePage #banner p{
+    font-family: Verdana, sans-serif;
+    font-size: 1.3em;
+    font-weight: 100;
+    letter-spacing: 5px;
+}
+
+#homePage #banner #text{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#homePage #banner .faded-bg{
+    opacity: 0.8;
+    background:rgba(238,74,74,1);
+}
+
+#homePage #celebrateTagline{
+    z-index: 99;
+    -webkit-perspective: 500px;
+    -mox-perspective: 500px;
+    perspective: 500px;
+    color: #444;
+    margin-top: 18px;
+}
+
+#homePage #celebrateTagline span{
+    display: inline-block;
+    position: relative;
+    cursor: default;
+    border-style: solid;
+    border-width: 0;
+    border-bottom-width: 1px;
+
+    -webkit-transition: all 0.35s ease-out;
+    -moz-transition: all 0.35s ease-out;
+    -ms-transition: all 0.35s ease-out;
+    -o-transition: all 0.35s ease-out;
+    transition: all 0.35s ease-out;
+}
+
+#homePage #banner:not(.reddish) #celebrateTagline span{
+    color: #777;
+}
+
+#homePage #banner:not(.reddish) #celebrateTagline span:hover{
+    color: #000;
+}
+
+#homePage #celebrateTagline span:hover{
+    color: #f9f9f9;
+}
+
+
+/*HOMEPAGE PILLARS*/
+#pillars{
+    min-height: 100vh;
+    background-color: #fff;
+    padding: 6em 14em;
+    padding: 8em 6em;
+    padding-left: 3em;
+    /*padding-bottom: 0;*/
+}
+
+#pillarLinks{
+    display: none;
+    margin-top: 16px; margin-bottom: 12px
+}
+
+#pillarLinks a{
+    margin-bottom: 8px;
+    opacity: 0.8;
+}
+
+#pillarLinks a.active{
+    color: var(--app-main-color)
+}
+
+#pillarLinks + a{
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 1em;
+    font-family: 'Calson', serif;
+    color: var(--app-main-color);
+    letter-spacing: 2px;
+}
+
+#pillars #text{
+    padding: 1.2em;
+    margin-right: 3em;
+}
+
+#pillars h2{
+    font-family: "Gotham ultra", sans-serif;
+    font-size: 3.2em;
+    /*font-size: 1.2em;*/
+    letter-spacing: 10px;
+    margin-bottom: 0.2em;
+}
+
+#pillars p{
+    font-family: "Gotham light", sans-serif;
+    font-size: 1.8em; line-height: 1.4em;
+    font-size: 1.1em; line-height: 1.2em;
+}
+
+.inspire-shot{
+    background: #fefefe;
+    background-size: 70px;
+    background-position: center;
+    width: calc(33.333% - 2px);
+    height: 300px;
+    margin: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.inspire-shot > div{
+    font-family: "Calson", serif;
+}
+
+.inspire-shot .pillar-image,
+.inspire-shot .pillar-text{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #000;
+
+    -webkit-transition: transform 0.25s ease-out;
+    -moz-transition: transform 0.25s ease-out;
+    -ms-transition: transform 0.25s ease-out;
+    -o-transition: transform 0.25s ease-out;
+    transition: transform 0.25s ease-out;
+}
+
+#pillars .inspire-shot:nth-of-type(1) .fill-above{
+    background: rgba(73, 45, 52, 1);
+    background: #96ADC8;
+    opacity: 0.3;
+}
+
+#pillars .inspire-shot:nth-of-type(2) .fill-above{
+    background: rgba(59, 68, 92, 1);
+    background: #FFC857;
+    opacity: 0.2;
+}
+
+#pillars .inspire-shot:nth-of-type(3) .fill-above{
+    background: rgb(243, 152, 95);
+    opacity: 0.2;
+}
+
+#pillars .inspire-shot:nth-of-type(4) .fill-above{
+    background: rgb(229, 175, 141);
+    opacity: 0.3;
+}
+
+#pillars .inspire-shot:nth-of-type(5) .fill-above{
+    background: rgba(204, 147, 26, 1);
+    background: rgb(209, 78, 78);
+    opacity: 0.3;
+}
+
+#pillars .inspire-shot:nth-of-type(6) .fill-above{
+    background: rgb(70, 128, 195);
+    opacity: 0.2;
+}
+
+#pillars .inspire-shot .fill-above{
+    opacity: 1 !important;
+    background: rgba(9, 5, 1, 0.5) !important;
+    -webkit-transition: transform 0.25s ease-out, opacity 0.25s ease-out;
+    -moz-transition: transform 0.25s ease-out, opacity 0.25s ease-out;
+    -ms-transition: transform 0.25s ease-out, opacity 0.25s ease-out;
+    -o-transition: transform 0.25s ease-out, opacity 0.25s ease-out;
+    transition: transform 0.25s ease-out, opacity 0.25s ease-out;
+}
+
+.inspire-shot .pillar-text{
+    background-position: center;
+}
+
+.inspire-shot .pillar-name{
+    color: #fff;
+    font-size: 1.8em;
+    font-family: "Calson", serif;
+    text-align: center;
+}
+
+.inspire-shot .pillar-info{
+    display: none;
+    text-align: center;padding: 0.3em;font-size: 0.45em; font-family: 'Gotham light', serif; color: #ccc
+}
+
+.inspire-shot:hover .pillar-image{
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+#pillars .inspire-shot:hover .pillar-name,
+#pillars .inspire-shot.active .pillar-name{
+    color: #fff;
+}
+
+#pillars.view-single #fillAbove, #pillars.view-single #pillarImages,
+#pillars:not(.view-single) #pillarInfo{
+    display: none;
+}
+
+#holler #fillAbove{
+    background: #fff;
+    pointer-events: none; z-index: 1;
+    opacity: 0;
+}
+
+#holler #fillAbove.partial-visible{
+    opacity: 0.6;
+}
+
+#holler #fillAbove.visible{
+    opacity: 1;
+}
+
+#pillarInfo .outer{
+    position: relative;
+    z-index: 1;
+    height: 200px;
+    float: left;
+    margin-right: 16px;
+    shape-outside: inset(0 120px 100px 0 0);
+}
+
+#pillarInfo .outer + div{
+    padding: 6px 20px;
+    padding-left: 0;
+}
+
+#holler{
+    position: relative; min-width: 70%;
+}
+
+#holler.no-ov{
+    overflow: hidden;
+}
+
+
+/*HOMEPAGE FEATURED ARTIST*/
+#featured{
+    padding-top: 6.5em;
+    padding-bottom: 3.5em;
+    background: var(--app-cool-white);
+lg(top left, var(--app-accent1-color), var(--app-main-color), var(--app-accent1-color))
+}
+
+#featured #header{
+    /*text-align: center;*/
+    max-width: 650px;
+    margin: auto;
+}
+
+#featured #header h2{
+    display: inline-block;
+    padding-top: 0;
+    margin-bottom: 0;
+    width: 100%;
+    font-family: "Gotham light", sans-serif;
+    font-size: 1em;
+    letter-spacing: 3px;
+    color: #555;
+}
+
+#featured #header p{
+    margin: 10px 0;
+    margin-top: 15px;
+    font-size: 1.8em;
+    /*letter-spacing: 4px;*/
+    font-family: "Gotham bold", sans-serif;
+    text-transform: uppercase;
+    color: #444;
+    margin-bottom: 25px;
+}
+
+#featured #artistImage{
+    position: relative;
+    max-width: calc(50% - 30px);
+    padding: 30px 60px;
+    margin-bottom: 40px;
+}
+
+#featured #artistImage #image{
+    width: 100%;
+    height: auto;
+    height: 470px;
+    box-shadow: 0 0 55px rgba(0,0,0,0.12);
+    background-size: cover;
+    margin-bottom: 20px;
+}
+
+/*FEATURED ARTIST SEXTIONS*/
+#artistSubcontent{
+    max-width: 650px;
+    margin: auto;
+}
+
+#artistSubcontent #artistLinks{
+    /*background-color: bisque;*/
+    margin-bottom: 10px;
+    /*margin: 15px 0;*/
+    border-bottom: 1px solid #e2e2e2;
+    /*margin-top: 10px;*/
+    border-left: none;
+    border-right: none;
+    padding-bottom: 20px;
+    /*display: none;*/
+}
+
+#artistSubcontent #artistLinks span{
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    color: #999;
+    border-bottom: 1px solid transparent;
+    font-family: "Gotham medium", sans-serif;
+    font-size: 1.05em;
+    /*opacity: 0.6;*/
+}
+
+#artistSubcontent #artistLinks span:not(:first-child):after{
+    content: "";
+    background: #000;
+    position: absolute;
+    left: -17px;
+    top:calc(50% - 2px);
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+}
+
+#artistSubcontent #artistLinks span:not(:hover):not(.active){
+
+}
+
+#artistSubcontent #artistLinks span:hover{
+    opacity: 0.9;
+}
+
+#artistSubcontent #artistLinks span:hover{
+    -webkit-transition: opacity 0.35s;
+    -moz-transition: opacity 0.35s;
+    -ms-transition: opacity 0.35s;
+    -o-transition: opacity 0.35s;
+    transition: opacity 0.35s;
+}
+
+#artistSubcontent #artistLinks span:not(:first-child){
+    margin-left: 30px;
+}
+
+#artistSubcontent.view-about #artistLinks span[targ="#artistAbout"],
+#artistSubcontent.view-qsns #artistLinks span[targ="#artistQsns"],
+#artistSubcontent.view-works #artistLinks span[targ="#artistWorks"]{
+    color: #ed6666 !important;
+}
+
+#artistSections section{
+    font-family: "Times New Roman", serif;
+    -webkit-transition: opacity 0.35s 2.35s;
+    -moz-transition: opacity 0.35s 2.35s;
+    -ms-transition: opacity 0.35s 2.35s;
+    -o-transition: opacity 0.35s 2.35s;
+    transition: opacity 0.35s 2.35s;
+}
+
+#artistSections section .just-text{
+    font-size: 1.3em;
+    font-weight: 400;
+    line-height: 1.9em;
+    font-family: "Gotham light", serif;
+}
+
+#artistSubcontent:not(.view-about) #artistAbout{
+    display: none;
+    opacity: 0;
+}
+
+#artistSubcontent:not(.view-qsns) #artistQsns{
+    display: none;
+    opacity: 0;
+}
+
+#artistSubcontent:not(.view-works) #artistWorks{
+    display: none;
+    opacity: 0;
+}
+
+#artistSections section.visible{
+    display: block !important;
+}
+
+#artistActions{
+    align-self: flex-end;
+    margin-top: 5px;
+    padding: 0 3px;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 12px;
+}
+
+#artistActions a{
+    display: inline-block;
+    padding: 10px 12px;
+    border-radius: 2px;
+    background-color: transparent;
+    margin: 0;
+    font-family: "Gotham medium", sans-serif;
+    color: #777;
+    font-size: 1em;
+}
+
+
+/*FEATURED ARTIST QUESTIONS*/
+#featuredArtistQuestions .question{
+    margin: 0.5em 0;
+    position: relative;
+}
+
+#featuredArtistQuestions .question .question-number{
+    margin-right: -2em;
+    top: 0;
+    height:100%;
+}
+
+#featuredArtistQuestions .question .question-number div{
+    font-family: "Ultra", sans-serif;
+    display: inline-block;
+    font-size: 5.76em;
+    text-align: center;
+    padding: 0 0.05em;
+    background-color: #eee;
+    width: 90px;
+    letter-spacing: 2px;
+    opacity: 0.4;
+    color: #aaa;
+}
+
+#featuredArtistQuestions .question h3{
+    font-family: "Gotham bold", serif;
+    font-size: 1.4em;
+}
+
+#featuredArtistQuestions .question p{
+    margin-top: 7px;
+    font-size: 1em;
+    font-family: "Gotham light", sans-serif;
+    color: #555;
+    padding-top: 0.2em;
+    padding-bottom: 0.8em;
+}
+
+
+/*ARTIST WORKS*/
+#works{
+    padding: 10px 0;
+    margin-bottom: 10px;
+}
+.song{
+    padding: 12px;
+    margin-bottom: 4px;
+    min-width: 430px;
+    cursor: pointer;
+}
+
+.song .song-image{
+    width: 45px;
+    height: 35px;
+    -webkit-background-size:cover;
+    background-size:cover;
+    background-position: center;
+    margin-right: 12px;
+    margin-left: 3px;
+}
+
+.song .song-image .song-bars,
+.song .song-loading,
+.song .song-image .song-visualizer{
+    background: var(--app-cool-white);
+}
+
+.song .song-image .song-bars,
+.song .song-loading,
+.song .song-image .song-visualizer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.song .song-image .song-bars span{
+    margin-right: 0.9px;
+    width: 0.5px;
+    height: 2px;
+    background: #777;
+    align-self: flex-end;
+}
+
+.song:not(.current) .song-bars,
+.song:not(.current) .song-visualizer{
+    display: none;
+}
+
+.song:not(.playing) .song-visualizer, .song:not(.playing) .song-time-in{
+    display: none;
+}
+
+.song.playing .song-length{
+    display: none;
+}
+
+.song:not(.loading) .song-loading{
+    display: none;
+}
+
+.song:hover, .song:hover .song-bars, .song:hover .song-visualizer, .song:hover .song-loading{
+    background: #e5e5e5;
+}
+
+.song-info{
+    padding-right: 4px;
+}
+
+.song .song-title{
+    color: #000;
+    font-size: 1.1em;
+    font-family: "Gotham light", sans-serif;
+    margin-bottom: 6px;
+}
+
+.song .song-album{
+    color: #555;
+    font-size: 0.8em;
+    font-family: "Gotham light", sans-serif;
+    margin-bottom: 6px;
+}
+
+.song-length, .song-time-in{
+    color: #555;
+    font-size: 0.7em;
+    font-family: "Gotham light", sans-serif;
+}
+
+
+/*LANDING PAGE DOWNVIDEO*/
+#downVideo{
+    height: 400px;
+    overflow: hidden;
+}
+
+#downVideo video{
+    position: absolute;
+    width: 100%;
+}
+
+#downVideo #text{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+}
+
+#downVideo #text a{
+    text-transform: uppercase;
+    font-family:"Gotham medium", sans-serif;
+    font-size: 18px;
+    margin-top: 30px;
+    padding: 16px 20px;
+    border-radius: 26px;
+    background: #ff4d4d;
+    color: #fff;
+    min-width: 200px;
+    text-align: center;
+    padding-right: 24px;
+}
+
+#downVideo #text p{
+    text-align: center;
+    max-width: 600px;
+    margin-top: 15px;
+    font-size: 1.5em;
+    line-height:1.5em;
+}
+
+
+/*LANDING PAGE SOCIAL ICONS*/
+#bottomContent{
+    position: relative;
+}
+#bottomContent .faded-bg{
+    background-position: top;
+    opacity: 0.05;
+}
+#connect{
+    padding: 90px 0;
+}
+
+#connect h2{
+    color: #626262;
+    font-size: 2.5em;
+    letter-spacing: 10px;
+    font-family: 'Gotham ultra', sans-serif;
+    margin-bottom: 0.4em;
+}
+
+#connect p{
+    font-family:'Gotham light', sans-serif;
+    font-size: 1.4em;
+    margin-bottom: 0.3em;
+}
+
+#connect #socialIcons{
+    margin-top: 10px;
+}
+
+#connect #socialIcons .social-icon{
+    display: -ms-inline-flexbox;
+    display: -webkit-inline-flex;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    border-radius: 5px;
+    padding: 25px 0;
+    box-sizing: content-box;
+
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    -ms-transition: all 0.25s ease-out;
+    -o-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+}
+
+#connect #socialIcons .social-icon .icon{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    color: #fefefe;
+}
+
+#connect #socialIcons .social-icon:not(:hover) .icon{
+    -webkit-filter: grayscale(0.6);
+    filter: grayscale(0.6);
+
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    -ms-transition: all 0.25s ease-out;
+    -o-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+}
+
+#connect #socialIcons .social-icon .icon.instagram{
+    background-color: #e4e4e4;
+    background: -webkit-radial-gradient(circle farthest-corner at 35% 90%, #fec564, rgba(0, 0, 0, 0) 50%), -webkit-radial-gradient(circle farthest-corner at 0 140%, #fec564, rgba(0, 0, 0, 0) 50%), -webkit-radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, rgba(0, 0, 0, 0) 50%), -webkit-radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, rgba(0, 0, 0, 0) 50%), -webkit-radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, rgba(0, 0, 0, 0) 50%), -webkit-radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, rgba(0, 0, 0, 0) 50%), -webkit-radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, rgba(0, 0, 0, 0)), -webkit-linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+    background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, rgba(0, 0, 0, 0) 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, rgba(0, 0, 0, 0) 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, rgba(0, 0, 0, 0) 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, rgba(0, 0, 0, 0) 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, rgba(0, 0, 0, 0) 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, rgba(0, 0, 0, 0) 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, rgba(0, 0, 0, 0)), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+}
+
+#connect #socialIcons .social-icon .text{
+    opacity: 0;
+    display: none;
+}
+
+#connect #socialIcons .social-icon:hover .text{
+    opacity: 1;
+    -webkit-transition: opacity 0.35s;
+    -moz-transition: opacity 0.35s;
+    -ms-transition: opacity 0.35s;
+    -o-transition: opacity 0.35s;
+    transition: opacity 0.35s;
+}
+
+#footer{
+    padding: 0 2.5em;
+    height: 120px;
+    background-color: #000;
+    font-size: 1.02em;
+    color: #888;
+    font-family: "Gotham thin", sans-serif;
+}
+
+#footer .highlight{
+    color: #eee;
+}

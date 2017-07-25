@@ -3,12 +3,17 @@
 ?>
 @extends('layouts.app')
 
+@section('styles')
+    <link rel="stylesheet" href="{{asset('css/landing.css')}}">
+@endsection
+
 @section('content')
-    @include('landing.banner.indexol')
-    @include('landing.pillars.pillars-inset-ol')
-    @include('landing.featured.featured_artist')
-    @include('landing.downvideo')
-    {{--@include('instagram')--}}
+    <div id="homePage">
+        @include('landing.banner.indexol')
+        @include('landing.pillars.pillars-inset-ol')
+        @include('landing.featured.featured_artist')
+        @include('landing.downvideo')
+    </div>
 @endsection
 
 @section('scripts')
