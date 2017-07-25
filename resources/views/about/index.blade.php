@@ -238,9 +238,9 @@
                 <h2>core values</h2>
                 <ul>
                     <li>Nurture creativity and Innovation</li>
-                    <li>Adopt a problem solving approach</li>
-                    <li>Focus on value addition in Arts</li>
-                    <li>Respect for diversity in Artists creativity and opinion.</li>
+                    <li>Champion transformational Arts</li>
+                    <li>Remain releveant</li>
+                    <li>Respect for diversity</li>
                     <li>Radical transparency.</li>
                 </ul>
             </div>

@@ -22,6 +22,6 @@
     </span>
     <span>
         Crafted by
-        <span class="highlight">iPF Softwares</span>
+        <a href="http://ipfsoftwares.com" target="_blank" class="highlight">iPF Softwares</a>
     </span>
 </div>

@@ -16,7 +16,8 @@
         /*display: none;*/
     }
 
-    #artistSubcontent #artistLinks a{
+    #artistSubcontent #artistLinks span{
+        cursor: pointer;
         position: relative;
         text-decoration: none;
         color: #999;
@@ -26,7 +27,7 @@
         /*opacity: 0.6;*/
     }
 
-    #artistSubcontent #artistLinks a:not(:first-child):after{
+    #artistSubcontent #artistLinks span:not(:first-child):after{
         content: "";
         background: #000;
         position: absolute;
@@ -37,15 +38,15 @@
         border-radius: 50%;
     }
 
-    #artistSubcontent #artistLinks a:not(:hover):not(.active){
+    #artistSubcontent #artistLinks span:not(:hover):not(.active){
 
     }
 
-    #artistSubcontent #artistLinks a:hover{
+    #artistSubcontent #artistLinks span:hover{
         opacity: 0.9;
     }
 
-    #artistSubcontent #artistLinks a:hover{
+    #artistSubcontent #artistLinks span:hover{
         -webkit-transition: opacity 0.35s;
         -moz-transition: opacity 0.35s;
         -ms-transition: opacity 0.35s;
@@ -53,13 +54,13 @@
         transition: opacity 0.35s;
     }
 
-    #artistSubcontent #artistLinks a:not(:first-child){
+    #artistSubcontent #artistLinks span:not(:first-child){
         margin-left: 30px;
     }
 
-    #artistSubcontent.view-about #artistLinks a[target="#artistAbout"],
-    #artistSubcontent.view-qsns #artistLinks a[target="#artistQsns"],
-    #artistSubcontent.view-works #artistLinks a[target="#artistWorks"]{
+    #artistSubcontent.view-about #artistLinks span[targ="#artistAbout"],
+    #artistSubcontent.view-qsns #artistLinks span[targ="#artistQsns"],
+    #artistSubcontent.view-works #artistLinks span[targ="#artistWorks"]{
         color: #ed6666 !important;
         /*border-bottom-color: #000 !important;*/
         /*padding: 4px 12px;*/
@@ -125,10 +126,11 @@
 
 <div id="artistSubcontent" class="view-about">
     <div id="artistLinks" class="layout center-justifie">
-        <a href="javascript:void(0);" target="#artistAbout" onclick="switchSection('about')">BIOGRAPHY</a>
-        <a href="javascript:void(0);" target="#artistQsns" onclick="switchSection('qsns')">20 QUESTIONS</a>
-        <a href="javascript:void(0);" target="#artistWorks" onclick="switchSection('works')">WORKS</a>
+        <span href="#" targ="#artistAbout" onclick="switchSection('about')">BIOGRAPHY</span>
+        <span href="#" targ="#artistQsns" onclick="switchSection('qsns')">20 QUESTIONS</span>
+        <span href="#" targ="#artistWorks" onclick="switchSection('works')">WORKS</span>
     </div>
+
     <div id="artistSections">
         <section id="artistAbout" class="layout vertical">
             <span class="just-text">

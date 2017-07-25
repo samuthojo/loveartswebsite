@@ -142,12 +142,12 @@
         $nav_class = isset($for_inner) ? "light" : "";
 ?>
 <div id="bannerTopBar" class="layout center justified {{$nav_class}}">
-    <div id="title" class="layout center" style="color: #555">
+    <a href="{{url('/')}}" id="title" class="layout center" style="color: #555">
         {{--<div id="logo"></div>--}}
         {{--Love Arts--}}
 
         <img src="{{asset('images/logoactive.png')}}" alt="" style="height: 60px">
-    </div>
+    </a>
 
     <div id="links" class="layout center">
         @include('layouts.nav_links')

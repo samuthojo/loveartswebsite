@@ -94,7 +94,7 @@
         .info-image .image:hover img{
             transition: 0.25s transform ease-out;
         }
-        .info-image .image:hover img{
+        .info-image .image:hover img:not(.gify){
             transform: scale(0.5);
         }
 
