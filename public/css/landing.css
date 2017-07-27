@@ -1,4 +1,67 @@
 /*HOMEPAGE NAVBAR*/
+#menuToggler{
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    z-index: 9999;
+    width: 40px;
+    height: 40px;
+    max-width: 45px;
+    border-radius: 50%;
+    position: fixed;
+    right: 20px !important;
+    top: 20px !important;
+    align-self: flex-start;
+    border: none;
+    background: rgba(255, 255, 255, 0.6);
+    display: none;
+    pointer-events: auto;
+    outline: none;
+}
+
+#mobNav{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    overflow-y: auto;
+    left: 0;
+    top: 0;
+    background: transparent;
+    pointer-events: none;
+}
+
+body.show-nav{
+    overflow: hidden;
+}
+
+body.show-nav #mobNav{
+    pointer-events: auto;
+    background-color: #ee4a4a;
+}
+
+body:not(.show-nav) #mobNav #theLinks{
+    transform: translateX(100%);
+}
+
+#mobNav #theLinks{
+    padding-top: 50px;
+    position: relative;
+    min-height: 100%;
+    background:rgba(238,74,74,0.9);
+
+    transition: all 0.15s ease-out;
+}
+
+#mobNav #theLinks a{
+    color: #fbbeb9;
+    padding: 24px 50px;
+    font-family: "Cambria Math", sans-serif;
+    font-size: 1.5em;
+}
+
+#mobNav #theLinks a.active{
+    padding: 24px;
+}
+
 #homePage #bannerTopBar{
     padding: 24px 42px;
     z-index: 99;
@@ -124,7 +187,7 @@
     position: relative;
     overflow: hidden;
     height: calc(100vh + 10px);
-    background: var(--app-cool-white);
+    background-color: #f9f9f9;
     background-position: top right;
     background-repeat: no-repeat;
     -webkit-background-size: cover;
@@ -160,6 +223,14 @@
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+#homePage #banner video,
+#homePage #banner #bannerImage{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
 #homePage #banner .faded-bg{
@@ -203,15 +274,44 @@
     color: #f9f9f9;
 }
 
+#navMotto{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background:rgba(238,74,74,0.8);
+    padding-bottom: 80px;
+}
+
+#navMotto h2{
+    font-size: 2em !important;
+    line-height: 1;
+    text-align: center;
+}
+
+#navMotto span{
+    letter-spacing: 2px;
+}
+
+#navMotto span:first-child{
+    font-family: 'Gotham light', serif;
+    font-size: 0.5em;
+}
+
+#navMotto span:last-child{
+    display: block;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
 
 /*HOMEPAGE PILLARS*/
 #pillars{
     min-height: 100vh;
     background-color: #fff;
-    padding: 6em 14em;
     padding: 8em 6em;
     padding-left: 3em;
-    /*padding-bottom: 0;*/
 }
 
 #pillarLinks{
@@ -245,14 +345,12 @@
 #pillars h2{
     font-family: "Gotham ultra", sans-serif;
     font-size: 3.2em;
-    /*font-size: 1.2em;*/
     letter-spacing: 10px;
     margin-bottom: 0.2em;
 }
 
 #pillars p{
     font-family: "Gotham light", sans-serif;
-    font-size: 1.8em; line-height: 1.4em;
     font-size: 1.1em; line-height: 1.2em;
 }
 
@@ -403,13 +501,18 @@
     overflow: hidden;
 }
 
+@media all and (min-width: 769px){
+    #navMotto{
+        display: none !important;
+    }
+}
+
 
 /*HOMEPAGE FEATURED ARTIST*/
 #featured{
     padding-top: 6.5em;
     padding-bottom: 3.5em;
-    background: var(--app-cool-white);
-lg(top left, var(--app-accent1-color), var(--app-main-color), var(--app-accent1-color))
+    background: #f9f9f9;
 }
 
 #featured #header{
@@ -433,7 +536,6 @@ lg(top left, var(--app-accent1-color), var(--app-main-color), var(--app-accent1-
     margin: 10px 0;
     margin-top: 15px;
     font-size: 1.8em;
-    /*letter-spacing: 4px;*/
     font-family: "Gotham bold", sans-serif;
     text-transform: uppercase;
     color: #444;
@@ -449,7 +551,6 @@ lg(top left, var(--app-accent1-color), var(--app-main-color), var(--app-accent1-
 
 #featured #artistImage #image{
     width: 100%;
-    height: auto;
     height: 470px;
     box-shadow: 0 0 55px rgba(0,0,0,0.12);
     background-size: cover;
@@ -463,15 +564,11 @@ lg(top left, var(--app-accent1-color), var(--app-main-color), var(--app-accent1-
 }
 
 #artistSubcontent #artistLinks{
-    /*background-color: bisque;*/
     margin-bottom: 10px;
-    /*margin: 15px 0;*/
     border-bottom: 1px solid #e2e2e2;
-    /*margin-top: 10px;*/
     border-left: none;
     border-right: none;
     padding-bottom: 20px;
-    /*display: none;*/
 }
 
 #artistSubcontent #artistLinks span{
@@ -482,7 +579,6 @@ lg(top left, var(--app-accent1-color), var(--app-main-color), var(--app-accent1-
     border-bottom: 1px solid transparent;
     font-family: "Gotham medium", sans-serif;
     font-size: 1.05em;
-    /*opacity: 0.6;*/
 }
 
 #artistSubcontent #artistLinks span:not(:first-child):after{
@@ -494,10 +590,6 @@ lg(top left, var(--app-accent1-color), var(--app-main-color), var(--app-accent1-
     width: 3px;
     height: 3px;
     border-radius: 50%;
-}
-
-#artistSubcontent #artistLinks span:not(:hover):not(.active){
-
 }
 
 #artistSubcontent #artistLinks span:hover{
@@ -715,13 +807,22 @@ lg(top left, var(--app-accent1-color), var(--app-main-color), var(--app-accent1-
     overflow: hidden;
 }
 
-#downVideo video{
+#downVideo video,
+#downVideo img{
     position: absolute;
+    left: 0;
+    top: 0;
     width: 100%;
+}
+
+#downVideo img{
+    display: none;
 }
 
 #downVideo #text{
     position: absolute;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
     background: rgba(0,0,0,0.5);

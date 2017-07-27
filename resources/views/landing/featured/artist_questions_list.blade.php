@@ -3,7 +3,7 @@
     $questions = [
         [
             "question" => "How do you come up with your wonderful melodies?",
-            "answer" => "I'd say its inspiration, you'd be amazed with what the proper inspiration can do."
+            "answer" => "I'd say its inspiration, you'd be amazed with what proper inspiration can do."
         ],
         [
             "question" => "Was your hit song <q>Saa nyingine</q> targeted at anyone in particular?",
@@ -11,7 +11,7 @@
         ],
         [
             "question" => "How has marriage life changed your lifestyle?",
-            "answer" => "So I wouldn't say it has really, at least not that much; obviously I can't do things like go off clubbing on a 'hey-ho' at one in the night anymore, but other than that it the same maybe even more fun."
+            "answer" => "So I wouldn't say it has really, at least not that much; obviously I can't do things like go off clubbing on a 'hey-ho' at one in the night anymore, but other than that it really is the same maybe even more fun."
         ]
     ];
     ?>

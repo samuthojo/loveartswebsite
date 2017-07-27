@@ -27,7 +27,6 @@ $taglines = [
                 <a href="javascript:void(0);" class="view-pillar" data-for="{{$pillars[$i]}}">{{$pillars[$i]}}</a>
             @endfor
         </div>
-        {{--<a href="javascript:void(0);">LEARN MORE</a>--}}
     </div>
 
     <div id="holler">
@@ -49,14 +48,6 @@ $taglines = [
                     </a>
                 @endif
             @endfor
-
-            {{--<div class="inspire-shot" style="background: #f5f5f5;">--}}
-            {{--<div id="" class="layout vertical center-center" style="height: calc(100% - 20px); font-size: 3em; backgroun: #f5f5f5; margin: 10px; font-famil: Verdana; font-weight: bold;">--}}
-            {{--<span style="font-size: 0.65em; font-weight: 400; letter-spacing: 4px">LEARN</span>--}}
-            {{--MORE--}}
-            {{--</div>--}}
-            {{--</div>--}}
         </div>
     </div>
-    {{--<hr style="border-width: 0; border-bottom-width: 1px; border-color: #ccc; width: 15em; margin: auto; margin-top: 6em;">--}}
 </div>

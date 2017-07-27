@@ -1,8 +1,8 @@
 <div id="artistSubcontent" class="view-about">
-    <div id="artistLinks" class="layout center-justifie">
-        <span href="#" targ="#artistAbout" onclick="switchSection('about')">BIOGRAPHY</span>
-        <span href="#" targ="#artistQsns" onclick="switchSection('qsns')">20 QUESTIONS</span>
-        <span href="#" targ="#artistWorks" onclick="switchSection('works')">WORKS</span>
+    <div id="artistLinks" class="layout">
+        <span targ="#artistAbout" onclick="switchSection('about')">BIOGRAPHY</span>
+        <span targ="#artistQsns" onclick="switchSection('qsns')">20 QUESTIONS</span>
+        <span targ="#artistWorks" onclick="switchSection('works')">WORKS</span>
     </div>
 
     <div id="artistSections">

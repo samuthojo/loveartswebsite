@@ -21,7 +21,7 @@
         &copy; {{date("Y")}} <span class="highlight">Love Arts Tanzania</span>
     </span>
     <span>
-        Web Strategies by
+        Design & Strategies by
         <a href="http://ipfsoftwares.com" target="_blank" class="highlight">iPF Softwares</a>
     </span>
 </div>

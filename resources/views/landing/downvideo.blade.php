@@ -1,7 +1,7 @@
 <div id="downVideo" class="layout center-center">
-    <video autoplay loop src="{{asset('images/1.mp4')}}"></video>
+    <video autoplay loop src="{{asset('images/1.mp4')}}" poster="{{asset('images/1.jpg')}}"></video>
+    <img src="{{asset('images/1.jpg')}}"/>
     <div id="text" class="layout vertical center-center">
-        {{--<h2>Showcase</h2>--}}
         <p>
             We've come across some wonderful works of art and compiled them for you to marvel at.
         </p>

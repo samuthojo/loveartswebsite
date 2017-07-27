@@ -105,6 +105,22 @@
         position: relative;
         z-index: 1
     }
+
+    #menuToggler{
+        z-index: 9999;
+        width: 35px;
+        height: 35px;
+        max-width: 35px;
+        border-radius: 50%;
+        position: fixed;
+        right: 20px !important;
+        top: 20px !important;
+        align-self: flex-start;
+    }
+
+    @media all and (max-width: 768px){
+
+    }
 </style>
 
 <?php
@@ -112,11 +128,12 @@
 ?>
 <div id="bannerTopBar" class="layout center justified {{$nav_class}}">
     <a href="{{url('/')}}" id="title" class="layout center" style="color: #555">
-        {{--<div id="logo"></div>--}}
-        {{--Love Arts--}}
-
         <img src="{{asset('images/logoactive.png')}}" alt="" style="height: 60px">
     </a>
+
+    <button href="#openMenu" id="menuToggler" class="layout center-center" style="background: #fff !important;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+    </button>
 
     <div id="links" class="layout center">
         @include('layouts.nav_links')

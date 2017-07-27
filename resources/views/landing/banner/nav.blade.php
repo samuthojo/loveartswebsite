@@ -6,6 +6,17 @@
         <img src="{{asset('images/logoactive.png')}}" alt="" style="height: 60px">
     </a>
 
+    <div id="mobNav" class="layout vertical">
+        <button href="#openMenu" id="menuToggler" class="layout center-center" onclick="toggleMobileMenu()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+        </button>
+
+        <div id="theLinks" class="layout vertical">
+            {{--<div style="width: 100%; height: 100%; position: absolute; left: 0; top: 0; background-size: cover; background-image: url({{asset('images/bgMobNav.png')}});"></div>--}}
+            @include('layouts.nav_links')
+        </div>
+    </div>
+
     <div id="links" class="layout center">
         @include('layouts.nav_links')
     </div>
