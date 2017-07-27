@@ -105,22 +105,6 @@
         position: relative;
         z-index: 1
     }
-
-    #menuToggler{
-        z-index: 9999;
-        width: 35px;
-        height: 35px;
-        max-width: 35px;
-        border-radius: 50%;
-        position: fixed;
-        right: 20px !important;
-        top: 20px !important;
-        align-self: flex-start;
-    }
-
-    @media all and (max-width: 768px){
-
-    }
 </style>
 
 <?php
@@ -131,9 +115,16 @@
         <img src="{{asset('images/logoactive.png')}}" alt="" style="height: 60px">
     </a>
 
-    <button href="#openMenu" id="menuToggler" class="layout center-center" style="background: #fff !important;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
-    </button>
+    <div id="mobNav" class="layout vertical">
+        <button href="#openMenu" id="menuToggler" class="layout center-center" onclick="toggleMobileMenu()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+        </button>
+
+        <div id="theLinks" class="layout vertical">
+            {{--<div style="width: 100%; height: 100%; position: absolute; left: 0; top: 0; background-size: cover; background-image: url({{asset('images/bgMobNav.png')}});"></div>--}}
+            @include('layouts.nav_links')
+        </div>
+    </div>
 
     <div id="links" class="layout center">
         @include('layouts.nav_links')

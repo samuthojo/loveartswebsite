@@ -33,5 +33,12 @@
     <!-- Scripts -->
     <script src="{{asset('js/scripts.js')}}"></script>
     @yield('scripts')
+
+
+    <script>
+        function toggleMobileMenu(){
+            $('body').toggleClass('show-nav');
+        }
+    </script>
 </body>
 </html>
