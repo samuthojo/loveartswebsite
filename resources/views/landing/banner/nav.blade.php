@@ -11,13 +11,42 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
         </button>
 
-        <div id="theLinks" class="layout vertical">
-            {{--<div style="width: 100%; height: 100%; position: absolute; left: 0; top: 0; background-size: cover; background-image: url({{asset('images/bgMobNav.png')}});"></div>--}}
+        <div id="theLinks" class="layout vertical main-nav" style="padding-bottom: {{Auth::guest() ? 80 : 60}}px;">
+            <div id="mobNavTitle" class="layout center-center">
+                MENU
+            </div>
+            <div style="width: 100%; height: 100%; position: fixed; right: 0; top: 0; background-size: cover; pointer-events: none; opacity: 0.1; background-image: url({{asset('images/banner/im4.jpg')}});"></div>
+
             @include('layouts.nav_links')
+
+            @if(!Auth::guest())
+                <a href="#"><hr style="width: 70%; border: none; border-bottom: 1px solid #fbbeb9;"></a>
+
+                <a href="{{url('artists/'.Auth::user()->id)}}">
+                    PROFILE
+                </a>
+
+                <a href="{{ url('/logout') }}"
+                   onclick="event.preventDefault();
+                                 document.getElementById('mobLogoutBtnForm').submit();">
+                    LOGOUT
+                </a>
+
+                <form id="mobLogoutBtnForm" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+            @endif
         </div>
+
+
+        @if(Auth::guest())
+            <a href="{{url('/login')}}" id="mobLoginBtn" class="layout center-center">
+                LOGIN / SIGNUP
+            </a>
+        @endif
     </div>
 
-    <div id="links" class="layout center">
+    <div id="links" class="layout center main-nav">
         @include('layouts.nav_links')
     </div>
 

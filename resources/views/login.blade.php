@@ -1,4 +1,4 @@
-@extends('layouts.app-inner')
+@extends('layouts.app')
 
 @section('content')
     <style>
@@ -8,10 +8,15 @@
 
         #bannerTopBar{
             position: absolute !important;
+            padding: 30px 60px !important;
+            margin-bottom: 30px !important;
+            background-color: transparent !important;
         }
+
         #loginWrapper{
             min-height:calc(100vh - 190px);
             position: relative;
+            top: 90px;
         }
 
         #bg{
@@ -43,7 +48,7 @@
             background: #000;
             overflow: hidden;
         }
-        
+
         #rotatedImage img{
             /*transform: rotate(-45deg);*/
             width: 100%;
@@ -104,7 +109,117 @@
             text-align: center;
             margin-bottom: 8px;
         }
+
+        #loginMob{
+            display: none;
+            min-height: 100vh;
+            min-height: calc(100vh - 100px);
+        }
+
+        #loginMob #mobBg{
+            height: 240px;
+            background: #000;
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-image: url({{asset('images/bulbs.jpeg')}});
+        }
+
+        #mobQuote{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            background: rgba(230, 84, 78, 0.7);
+            color: #ffc8c8;
+            padding: 0 35px;
+            padding-top: 20px;
+            font-size: 1.3em;
+            font-family: "Lora Italic", serif;
+        }
+
+        #mobQuote span{
+            font-size: 0.8em;
+            padding-top: 5px;
+            font-family: "Gotham light", sans-serif;
+        }
+
+        #mobButtons a{
+            display: inline-block;
+            border-radius: 4px;
+            padding: 22px 20px;
+            color: #f5f5f5;
+            background: #000;
+            letter-spacing: 2px;
+            font-family: "Gotham bold", sans-serif;
+            font-size: 1em;
+            box-shadow: 0 0 8px rgba(0,0,0,0.3);
+            border: none;
+            text-align: center;
+            margin-bottom: 8px;
+            max-width: 310px;
+            min-width: 310px;
+        }
+
+        #loginMob h3{
+            background: #fff;
+            color: #000;
+            padding: 20px 30px;
+            display: inline-block;
+            position: relative;
+            left: 0;
+            right: 0;
+            margin: 30px auto;
+            margin-top: -30px;
+            min-width: 200px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.1);
+            font-family: "Calson", sans-serif;
+            letter-spacing: 5px;
+            font-size: 1.5em;
+            text-align: center;
+        }
+
+        @media all and (max-width: 768px) {
+            #bannerTopBar #title{
+                padding: 12px !important;
+            }
+
+            body{
+                background: #fff0f0;
+            }
+            #loginWrapper{
+                display: none;
+            }
+
+            #loginMob{
+                display: block;
+            }
+        }
     </style>
+
+    @include('layouts.nav')
+
+    <div id="loginMob">
+        <div id="mobBg">
+            <p id="mobQuote" class="layout vertical center-center">
+                “Art enables us to find ourselves and lose ourselves at the same time.”<br>
+                <span>
+                    - Thomas Merton.
+                </span>
+            </p>
+        </div>
+
+        <div id="mobButtons" class="layout vertical center-center">
+            <h3>
+                LOGIN
+            </h3>
+
+            <a href="{{url('login/facebook/')}}" style="background: #3b5998;;">FACEBOOK LOGIN</a>
+            <a href="{{url('login/google/')}}" style="background: #d62d20;">GOOGLE LOGIN</a>
+        </div>
+    </div>
+
     <div id="loginWrapper">
         <div id="bg"></div>
 

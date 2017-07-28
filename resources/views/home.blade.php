@@ -196,50 +196,6 @@
             margin-top: 0 !important;
             min-width: 150px !important;
         }
-
-        #bottomContent{
-            overflow: hidden;
-            text-align: center !important;
-        }
-
-        #connect h2{
-            letter-spacing: 5px !important;
-            font-size: 2em !important;
-            padding: 0 4em;
-        }
-
-        #connect p{
-            font-size: 1.3em !important;
-            padding: 0 1em;
-        }
-
-        #connect #socialIcons{
-            display: inline-block !important;
-        }
-
-        #connect #socialIcons .social-icon{
-            padding: 0 !important;
-            width: auto !important;
-            margin: 10px;
-            margin-top: 20px;
-        }
-
-        #connect #socialIcons .social-icon:not(:hover) .icon{
-            -webkit-filter: none !important;
-            filter: none !important;
-        }
-
-        #footer{
-            height: auto !important;
-            padding: 30px 10px !important;
-            flex-direction: column;
-            justify-content: flex-start !important;
-            /*align-items: flex-start !important;*/
-        }
-
-        #footer > span{
-            padding: 20px 0;
-        }
     }
 </style>
 @section('content')
