@@ -1,222 +1,176 @@
 @extends('layouts.app-inner')
 
+@section('styles')
+    <link rel="stylesheet" href="{{asset('css/about-ol.css')}}">
+@endsection
+
 @section('content')
     <style>
-        body{
-            background: #fff;
-            padding-top: 0 !important;
-        }
+        @media all and (max-width: 768px){
+            #about section.fill{
+                height: 400px;
+            }
+            #about section h1{
+                font-size: 3em;
+                padding-left: 1.5em;
+                padding-top: 0;
+                margin-left: 0;
+                margin-bottom: 0;
+            }
+            #about section h1.spaced{
+                letter-spacing: 0.125em; line-height: 1;
+            }
 
-        #bannerTopBar{
-            position: absolute !important;
-            background-color: transparent;
-            /*background-color: rgba(0,0,0,1);*/
-            padding-top: 20px;
-            padding-bottom: 20px;
-        }
+            #about section .atop{
+                font-size: 0.25em;
+                font-family: "Gotham medium", sans-serif;
+                display: block;
+                letter-spacing: 0;
+                color: #ff4343;
+            }
 
-        #bannerTopBar.black{
-            background-color: #000;
-        }
+            #bannerTopBar{
+                background-color: transparent !important;
+            }
 
-        #bannerTopBar a.active{
-            background-color: rgba(255, 255, 255, 0.9) !important;
-            color: #000 !important;
-        }
+            #aboutUsText{
+                display: none;
+            }
 
-        #about{
-            position: relative;
-        }
+            #visionMission .layout{
+                /*display: none;*/
+                flex-direction: column;
+            }
 
-        #about section{
-            position: relative;
-            overflow: hidden;
-            color: #000;
-        }
+            #visionMission hr{
+                height: 0;
+                width: 60%;
+                margin: 30px 0;
+                align-self: center;
+                border-right: none;
+                border-bottom: 1px solid rgba(0,0,0,0.3);
+            }
 
-        #about section.fill{
-            height: 100vh;
-        }
+            #vision, #mission{
+                height: auto;
+                max-width: calc(100% - 30px);
+                text-align: center;
+            }
 
-        #about section img{
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            opacity: 0.1;
-            pointer-events: none;
-        }
+            #vision h2, #mission h2{
+                padding-top: 0.3em;
+                font-size: 1.5em;
+                font-family: "Gotham ultra", sans-serif;
+                margin-bottom: 20px;
+            }
 
-        #about section .text{
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 100%;
-            height: 100%;
-        }
+            #vision p, #mission p{
+                font-size: 1.3em;
+                font-family: "Gotham light", sans-serif;
+                line-height: 1.6em;
+                padding: 0 1em;
+            }
 
-        #about section h1{
-            font-size: 4.5em;
-            font-family: "Gotham ultra", sans-serif;
-            padding-top: 75px;
-            margin-left: 160px;
-            margin-bottom: 40px;
-            /*text-transform: uppercase;*/
-        }
-        #about section h1.spaced{
-            letter-spacing: 0.125em; line-height: 1;
-        }
 
-        #about section .atop{
-            font-size: 0.25em;
-            font-family: "Gotham medium", sans-serif;
-            display: block;
-            letter-spacing: 0;
-            color: #ff4343;
-        }
 
-        #about section.white{
-            color: #fff;
-        }
 
-        #about section.light h1{
-            font-family: "Gotham light", sans-serif;
-            font-weight: 100;
-        }
 
-        #visionMission{
-            /*padding: 8em 4em;*/
-        }
+            #values h2, #objectives h2{
+                font-size: 5.5em;
+                font-family: "Gotham ultra", sans-serif;
+                position: absolute;
+                top: 0.7em;
+                opacity: 0.1;
+            }
 
-        #vision, #mission{
-            height: 100%;
-            min-width: calc(50% - 30px);
-            max-width: calc(50% - 30px);
-            text-align: center;
-        }
+            #values ul, #objectives ul{
+                font-size: 1.5em;
+                font-family: "Gotham light", sans-serif;
+                padding: 1em 2em;
+            }
 
-        #vision h2, #mission h2{
-            padding-top: 0.3em;
-            font-size: 1.5em;
-            font-family: "Gotham ultra", sans-serif;
-            margin-bottom: 20px;
-        }
+            #values ul li, #objectives ul li{
+                list-style-type: circle;
+                padding: 8px 0;
+            }
 
-        #vision p, #mission p{
-            font-size: 2.3em;
-            font-family: "Gotham light", sans-serif;
-            line-height: 1.6em;
-            padding: 0 1em;
-        }
 
-        #ourFocus{
-            /*text-align: center;*/
-            padding: 6em 10em;
-        }
 
-        #ourFocus h3{
-            text-transform: lowercase;
-            font-family: Calson, serif;
-            font-size: 2em;
-            line-height: 1.5em;
-            text-align: center;
-            color: #777;
-        }
 
-        #valuesObjectives{
-            /*padding: 5em;*/
-        }
 
-        #values, #objectives{
-            padding: 2em 5em;
-            position: relative;
-        }
+            #ourFocus{
+                padding: 2em;
+            }
 
-        #values{
-            padding-bottom: 2em;
-        }
-
-        #objectives{
-            padding-top: 2em;
-        }
-
-        #values h2, #objectives h2{
-            padding: 0 2em;
-            font-size: 5.5em;
-            font-family: "Calson", sans-serif;
-            position: absolute;
-            /*color: #999;*/
-            opacity: 0.1;
-        }
-
-        #values ul, #objectives ul{
-            font-size: 1.5em;
-            font-family: "Gotham light", sans-serif;
-            padding: 1em 2em;
-            width: 50%;
-            /*background: rgba(255, 255, 255, 0.8);*/
-        }
-
-        #values ul{
-            margin-left: auto;
-            margin-right: 4em;
-        }
-
-        #objectives ul{
-            margin-right: auto;
-            margin-left: 4em;
-        }
-
-        #values ul li, #objectives ul li{
-            list-style-type: circle;
-            padding: 8px 0;
+            #ourFocus h3{
+                font-family: "Gotham light", sans-serif;
+                font-size: 2em;
+                line-height: 1.5em;
+                text-align: center;
+                color: #777;
+            }
         }
     </style>
 
     <div id="about">
-        <section id="why" class="fill white">
-            <div class="text layout center-center" style="background: rgb(0,0,0); padding-right: 10em;">
+        <section id="why" class="fill white layout">
+            <div class="text layout center-center" style="background: rgb(0,0,0); padding-right: 5em;">
                 <h1 class="spaced">
                     <span class="atop">We are excited by</span>
                     PASSION<br>
                     IMPACT<br>
                     CHANGE<br>
                 </h1>
+
+                <div id="aboutUsText">
+                    Art is a mighty force that if used effectively
+                    will not only entertain, but also liberate, prompt and educate. <br>
+                    We at Love Arts seek to motivate the creation of art that precedes positive change, art that like a wild
+                    fire is impossible to predict, but if harnessed properly can pave way to an inspiring movement.
+                </div>
             </div>
             <img src="{{asset('images/about/1.jpg')}}" alt="">
         </section>
 
-        <section id="visionMission" class="fill">
-            <div class="text layout center" style="background: #ff4343;">
+        <section id="visionMission" class="layout center" style="position: relative;">
+            <div style="position: absolute; top: 0; left: 0; height: 100%; width: 100%; -webkit-background-size: cover;background-size: cover; background-image: url({{asset('images/about/new/2.jpg')}});"></div>
+
+            <div class="layout" style="background: rgba(255, 67, 67, 0.9); padding: 6em 0;">
                 <div id="mission" class="layout vertical center-center">
                     <h2>OUR MISSION</h2>
                     <p>
                         Nurture gifts and talents and raising standard of Art, in all of its forms to positively influence mind set.
                     </p>
                 </div>
-                <hr style="height: 150px; margin: 0 30px; align-self: center; margin-bottom: 40px; border: none; border-right: 1px solid #333">
+                <hr>
                 <div id="vision" class="layout vertical center-center">
                     <h2>OUR VISION</h2>
                     <p>Impact culture and positively influence the nation through Arts.</p>
                 </div>
             </div>
-
-            <img src="{{asset('images/about/new/2.jpg')}}" alt="">
         </section>
 
-        <section id="valuesObjectives">
-            <div id="values" class="layout center" style="background: #f2f2f2">
+        <section id="ourGenesis" class="layout">
+            <div id="youtubeWord"></div>
+            <div id="textualWord">
+                Arts is the expression of human creativity and imagination, the very signature of the master artist- the creator of the
+                universe. Arts is life and can define human interaction, as it has become a powerful tool in expressing thought and emotions.
+            </div>
+        </section>
+
+        <section id="valuesObjectives" class="layou">
+            <div id="values" style="background: #f2f2f2">
                 <h2>core values</h2>
                 <ul>
                     <li>Nurture creativity and Innovation</li>
-                    <li>Adopt a problem solving approach</li>
-                    <li>Focus on value addition in Arts</li>
-                    <li>Respect for diversity in Artists creativity and opinion.</li>
+                    <li>Champion transformational Arts</li>
+                    <li>Remain releveant</li>
+                    <li>Respect for diversity</li>
                     <li>Radical transparency.</li>
                 </ul>
             </div>
-            {{--<hr style="width: 120px; margin: auto">--}}
-            <div id="objectives" class="layout horizontal-reverse center">
+            {{--<hr style="height: 120px; margin: 0 30px; margin-top: 20px; align-self: center; margin-bottom: 40px; border: none; border-right: 1px solid #aaa">--}}
+            <div id="objectives">
                 <h2>objectives</h2>
                 <ul>
                     <li>Champion the recognition of Arts as a sustainable career</li>
@@ -229,8 +183,7 @@
 
         <section id="ourFocus" class="white layout center-center" style="background: #000;">
             <h3>
-                CHAMPIONING THE RECOGNITION OF THE ARTS INDUSTRY IN TANZANIA AS AN INDUSTRY THAT CREATES
-                SUSTAINABLE LIVELIHOODS AND IMPACTS LIVES POSITIVELY
+                Championing the recognition of the arts industry in Tanzania as an industry that creates sustainable livelihoods and impacts lives positively.
             </h3>
             <img src="{{asset('images/about/new/3.jpg')}}" alt="">
         </section>
