@@ -1,18 +1,9 @@
 @extends('layouts.app-inner')
+@section('styles')
+    <link rel="stylesheet" href="{{asset('css/artist.css')}}">
+@endsection
 
 @section('content')
-    <style>
-        #artist{
-            min-height: 100vh;
-            /*padding-bottom: 3em;*/
-        }
-
-        .container{
-            max-width: 1100px;
-            margin: auto;
-        }
-    </style>
-
     <div id="artist">
         @include('artists.single.top-part')
         @include('artists.single.sections')

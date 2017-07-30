@@ -1,0 +1,315 @@
+#artist{
+    min-height: 100vh;
+    /*padding-bottom: 3em;*/
+}
+
+.container{
+    max-width: 1100px;
+    margin: auto;
+}
+
+#artist #backBg{
+    position: absolute;
+    background: #f8f8f8 !important;
+    height: 20em;
+    width: 100%;
+}
+
+#artist #artistBasics{
+    padding: 10em 2em;
+    padding-bottom: 4em;
+}
+
+#profilePic{
+    width: 120px;
+    min-width: 120px;
+    height: 120px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    margin-right: 20px;
+}
+
+#profilePic img{
+    width: 100%;
+    min-height: 100%;
+}
+
+#artistName{
+    color: #000000;
+}
+
+#artistName h1{
+    font-size: 2em;
+}
+
+#artistName p{
+    font-family: "Gotham light", sans-serif;
+    margin-top: 4px;
+    font-size: 1.4em;
+    color: #555;
+}
+
+#editLink{
+    display: block;
+    margin-top: 16px;
+    text-transform: uppercase;
+}
+
+#artistSocials{
+    padding-bottom: 0.2em;
+}
+
+#artistSocials a{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    line-height: 1;
+    background: rgba(0,0,0,0.05);
+    padding: 0 15px;
+    border-radius: 2px;
+    font-size: 16px;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+#artistSocials a i{
+    /*margin-right: 16px;*/
+}
+
+#artistSocials a + a{
+    margin-left: 20px;
+}
+
+#artist #backBg{
+    background: #f0f0f0;
+}
+
+#artist #artistSectionLinks{
+    padding: 4.5em 3.5em;
+    padding-bottom: 1.8em;
+    border-bottom: 1px solid #dfdfdf;
+    margin-bottom: 2em;
+    display: none;
+}
+
+#artist #artistSectionLinks a{
+    font-size: 1em;
+    color: #aaa;
+    cursor: pointer;
+}
+
+#artist #artistSectionLinks a:nth-child(2){
+    margin: 0 35px;
+}
+
+#artist #artistSectionLinks a.active{
+    color: #000;
+}
+
+#artist > section{
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+}
+
+.about-me{
+    padding: 2em;
+}
+
+.about-me > h3{
+    /*font-size: 1.5em;*/
+    color: #000;
+    font-family: "Gotham light", sans-serif;
+    font-size: 1.8em;
+    padding-top: 1em;
+    padding-bottom: 0.6em;
+}
+
+.about-me > h3 .hot-word{
+    color: #000;
+    font-family: "Gotham bold", sans-serif;
+}
+
+.about-me > p{
+    color: #333;
+    font-family: "Gotham light", sans-serif;
+    font-size: 1.2em;
+    line-height: 1.5em;
+}
+
+.about-me-deco{
+    width: 50%;
+    min-width: 50%;
+    max-width: 50%;
+}
+
+.about-me-deco img{
+    width: 260px;
+}
+
+#artist #worksWrapper section > h3{
+    font-family: "Gotham bold", sans-serif;
+    font-size: 1.2em;
+    padding: 2em 0;
+}
+
+.work-preview{
+    background: #000;
+    width: 600px;
+    min-width: 600px;
+    height: 340px;
+    margin-right: 1.3em;
+}
+
+.work-list.au{
+    box-shadow: 0 0 13px rgba(0,0,0,0.1);
+    max-width: 400px;
+    margin-left: auto;
+}
+
+.work-list.au .title{
+    position: relative;
+    height: 220px;
+    background: #f0f0f0;
+}
+
+.work-list.au .work-item{
+    min-height: 60px;
+}
+
+#artistWorks > h3{
+    text-align: center;
+    color: #000;
+    font-family: "Gotham light", sans-serif;
+    font-size: 1.8em;
+    padding-top: 1.3em;
+    padding-bottom: 2em;
+}
+
+.au-image{
+    height: 40px;
+    width: 40px;
+    min-width: 40px;
+    max-width: 40px;
+    background: #777;
+    margin: 0 8px;
+    margin-right: 12px;
+    overflow: hidden;
+}
+
+.au-image img{
+    width: 100%;
+    min-height:100%;
+}
+
+.au-text{
+    font-size: 0.8em;
+    font-family: "Gotham light", sans-serif;
+}
+
+.au-text .au-title{
+    display: block;
+    font-size: 1em;
+    font-family: "Gotham medium", sans-serif;
+    margin-bottom: 8px;
+}
+
+#artistPics > h3{
+    text-align: center;
+    color: #000;
+    font-family: "Gotham light", sans-serif;
+    font-size: 1.8em;
+    padding-top: 2.8em;
+    /*padding-bottom: 1em;*/
+}
+
+#artistPics .shots-list{
+    /*overflow-x: auto;*/
+    padding: 10px;
+    padding-bottom: 20px;
+    margin-right: 10px;
+}
+
+#artistPics .shots-list .insta-pic{
+    height: 220px;
+    width: 220px;
+    min-width: 220px;
+    /*max-width: 200px;*/
+    background: #ececec;
+    margin-right: 10px;
+    overflow: hidden;
+}
+
+#artistPics .shots-list .insta-pic:last-child{
+    margin-right: 0;
+}
+
+.insta-pic.empty{
+    background: transparent !important;
+    border: 1px solid #ddd;
+}
+
+@media all and (max-width: 768px) {
+    body {
+        padding-top: 0 !important;
+    }
+
+    #bannerTopBar {
+        background-color: transparent !important;
+    }
+
+    #artist #artistBasics{
+        background: #f8f8f8 !important;
+        padding: 2em;
+        padding-top: 8em;
+        flex-direction: column;
+    }
+
+    #artist #backBg{
+        display: none;
+    }
+
+    #profilePic{
+        width: 77px;
+        min-width: 77px;
+        height: 77px;
+        margin-right: 20px;
+    }
+
+    #artistSocials{
+        align-self: flex-start !important;
+        padding-left: 97px;
+        margin-top: 10px;
+    }
+
+    .about-me + div{
+        display: none;
+    }
+
+    .about-me-deco{
+        display: none;
+    }
+
+    #theWorks{
+        flex-direction: column;
+    }
+
+    .work-preview{
+        min-width: 0;
+        width: 100vw !important;
+    }
+
+    .work-list{
+        margin: 30px !important;
+        align-self: center;
+    }
+
+    #artistPics .shots-list {
+        overflow-x: auto;
+    }
+
+    #artistPics .shots-list .layout{
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+}
