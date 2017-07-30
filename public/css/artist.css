@@ -276,6 +276,10 @@
         margin-right: 20px;
     }
 
+    #artistName p{
+        margin-top: 8px;
+    }
+
     #artistSocials{
         align-self: flex-start !important;
         padding-left: 97px;
@@ -306,6 +310,8 @@
 
     #artistPics .shots-list {
         overflow-x: auto;
+        margin-right: 0;
+        padding-right: 10px;
     }
 
     #artistPics .shots-list .layout{
