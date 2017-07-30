@@ -1,0 +1,365 @@
+body{
+    background: #fff;
+}
+
+#media{
+    position: relative;
+    min-height: 100vh;
+}
+
+.container{
+    max-width: 1200px;
+    margin: auto;
+}
+
+#media #title{
+    /*background: #fff0f0;*/
+    /*background: #362626;*/
+    /*background: #000;*/
+    padding-top: 7.5em;
+    padding-bottom: 3.5em;
+}
+
+#media #title h1{
+    color: #f8f8f8;
+    font-size: 4em;
+    letter-spacing: 4px;
+    font-family: "Gotham ultra", sans-serif;
+    margin-bottom: 0.3em;
+}
+
+#media #title p{
+    margin-top: 10px;
+    line-height: 1.5em;
+    font-size: 1.3em;
+    max-width: 800px;
+    color: #eee;
+}
+
+.channel{
+    width: 33.333%;
+    max-width: 33.333%;
+    padding: 3em 0;
+}
+
+.channel .container{
+    padding-top: 3em;
+}
+
+.channel .title{
+    background-color: #000;
+    -webkit-background-size:20%;
+    margin-right: 10px;
+}
+
+.channel .channel-image{
+    background: #f0ad4e;
+    height: 295px;
+}
+
+.channel .title h2{
+    color: #000;
+    font-size: 1.4em;
+    /*letter-spacing: 2px;*/
+    font-family: "Gotham bold", sans-serif;
+    padding: 0.1em 0;
+}
+
+.channel .title p{
+    margin-top: 2px;
+    line-height: 1.2em;
+    font-size: 1em;
+    color: #555;
+}
+
+#polyCover{
+    background: #362626; opacity: 0.95;
+}
+
+#show{
+    position: relative;
+    min-height: 100vh;
+}
+
+#bg{
+    overflow: hidden;
+}
+
+#bg .fill-above{
+    background: rgba(52, 25, 25, 0.9);
+}
+
+.container{
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+#show #title{
+    padding-top: 8.5em;
+    padding-bottom: 1.5em;
+}
+
+#show #title span{
+    color: #e0e0e0;
+    font-size: 1.1em;
+}
+
+#show #title h1{
+    color: #f8f8f8;
+    font-size: 2em;
+    font-family: "Gotham bold", sans-serif;
+    margin-bottom: 0.2em;
+}
+
+#show #nav{
+    background: #f3f3f3;
+    padding: 24px 0;
+}
+
+#show #nav a{
+    position: relative;
+    color: #333;
+    font-size: 1em;
+    margin-right: 28px;
+    letter-spacing: 2px;
+}
+
+#show #nav a.active{
+    color: var(--app-main-color);
+}
+
+#show #nav a:not(:last-child):after{
+    content: "";
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: #000;
+    right: -14px;
+}
+
+#show .channel-items{
+    margin-top: 2em;
+    margin-left: -10px;
+    width:calc(100% + 20px);
+}
+
+#show .channel-items .channel-item{
+    width: calc(33.333% - 20px);
+    max-width: calc(33.333% - 20px);
+    height: 280px;
+    overflow: hidden;
+    margin: 10px;
+}
+
+.channel-item .channel-cover-image{
+    background: #ccc;
+    width: 100%; min-height: 100%
+}
+
+.channel-item .caption .text{
+    padding: 16px 0;
+    background: #ffffff;
+}
+
+.channel-item .caption .text h3{
+    font-family: "Gotham bold", sans-serif;
+    color: #000;
+    margin-bottom: 2px;
+    font-size: 1em;
+}
+
+#appBar{
+    padding-top: 10em;
+    margin-bottom: 3em;
+}
+
+#appBar h1{
+    font-family: "Gotham bold", sans-serif;
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+#appBar p{
+    color: #000;
+    font-size: 1.4em;
+    line-height: 1.5em;
+    font-family: "Gotham light", serif;
+    /*letter-spacing: 2px;*/
+    max-width: 35em;
+}
+
+
+#showItem{
+    position: relative;
+    min-height: 100vh;
+}
+
+#showItem .container{
+    max-width: 1200px;
+    margin: auto;
+}
+
+#showItem #title{
+    padding-top: 3.5em;
+    padding-bottom: 3.5em;
+}
+
+#showItem #videoContent{
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+    color: #000000;
+}
+
+#showItem #video{
+    overflow: hidden;
+    border-radius: 3px;
+    position: relative;
+    width: 100%;
+    height: 450px;
+    background-color: #000;
+    box-shadow: 0 0 32px rgba(120,0,0,0.1);
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+#showItem #videoTitle h1{
+    /*font-family: "Gotham medium", sans-serif !important;*/
+    /*font-family: Avenir, sans-serif;*/
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: bold;
+    font-size: 1.4em;
+    line-height: 1.3em;
+    margin-top: 35px;
+    margin-bottom: 8px;
+}
+
+#showItem #videoTitle p{
+    font-family: "Verdana", sans-serif;
+    font-size: 1em;
+    line-height: 1.3em;
+}
+
+@media all and (max-width: 768px){
+    body{
+        background: #fff;
+        padding-top: 0 !important;
+    }
+
+    #bannerTopBar{
+        background-color: transparent !important;
+    }
+
+    #media #title h1{
+        font-size: 3em;
+    }
+
+    #media #title p{
+        padding: 0 12px;
+        line-height: 1.3em;
+        font-size: 1.3em;
+        max-width: 800px;
+        color: #fefefe;
+        opacity: 0.9;
+    }
+
+    .channel{
+        width: 100%;
+        max-width: 100%;
+        padding: 12px 8px;
+        margin: auto;
+    }
+
+    .channel .title{
+        margin-right: 0;
+    }
+
+    #pageSpacer{
+        height: 10px !important;
+    }
+
+    #show #appBar{
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 2em;
+        margin-bottom: 0;
+        background: #f0f0f0 !important;
+    }
+
+    #show > div:first-child{
+        display: none;
+    }
+
+    #appBar h1{
+        font-size: 1.5em;
+    }
+
+    #appBar p{
+        font-size: 1.1em;
+        line-height: 1.2em;
+    }
+
+    #show .channel-items{
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-left: 0;
+        width: 100%;
+    }
+
+    #show .channel-items .channel-item{
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        margin-bottom: 20px;
+        height: auto;
+    }
+
+    .channel-item .channel-cover-image{
+        background-position: 0 0;
+        -webkit-background-size: cover;
+        background-size: cover;
+        background: #ccc;
+        width: 100%;
+        height: 320px;
+    }
+
+    .channel-item .caption .text{
+        padding: 16px;
+        background: #ffffff;
+    }
+
+    .channel-item .caption .text h3{
+        font-family: "Gotham medium", sans-serif;
+        color: #000;
+        margin-bottom: 2px;
+        font-size: 1.2em;
+        line-height:1.4em;
+    }
+
+    #showItem{
+        padding-top: 3em;
+    }
+
+    #showItem #pageWrapper{
+        flex-direction: column;
+    }
+
+    #showItem #video{
+        height: 250px;
+    }
+
+    #showItem #videoTitle h1{
+        margin-top: 5px;
+        margin-bottom: 30px;
+        padding: 12px;
+        padding-top: 12px;
+        font-size: 1.2em;
+        line-height: 1.4em;
+    }
+}

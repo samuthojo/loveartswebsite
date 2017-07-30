@@ -1,5 +1,9 @@
 @extends('layouts.app-inner')
 
+@section('styles')
+    <link rel="stylesheet" href="{{asset('css/media.css')}}">
+@endsection
+
 @section('content')
     <div ui-view style="min-height: calc(100vh - 120px)"></div>
 @endsection
