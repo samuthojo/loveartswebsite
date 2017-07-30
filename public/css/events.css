@@ -98,7 +98,7 @@ body{
 
 @media all and (max-width: 768px){
     body{
-        padding-top: 0;
+        padding-top: 0 !important;
     }
 
     #bannerTopBar{
@@ -106,9 +106,16 @@ body{
     }
 
     #events{
+        padding-top: 5em;
         padding-left: 12px;
         padding-right: 12px;
         padding-bottom: 1em;
+    }
+
+    #events > .fill-above{
+        top: 0;
+        background: #eee;
+        height: 22em;
     }
 
     .an-event{
