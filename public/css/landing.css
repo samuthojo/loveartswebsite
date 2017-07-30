@@ -140,7 +140,8 @@
 }
 
 #homePage #banner h2{
-    font-family: "Ultra", serif;
+    /*font-family: "Ultra", serif;*/
+    font-family: "Gotham Ultra", serif;
     font-size: 4em;
     letter-spacing: 17px;
     padding-top: 70px;
@@ -240,6 +241,7 @@
     display: block;
     box-sizing: border-box;
     font-size: 1em;
+    /*margin-top: 5px;*/
 }
 
 

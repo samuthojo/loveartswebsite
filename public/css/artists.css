@@ -56,10 +56,6 @@
     transition: all 0.35s;
 }
 
-.artist-text:hover{
-    background: rgba(0,0,0,0.8);
-}
-
 .artist-name{
     font-size: 2em;
     -webkit-transition: all 0.15s;
@@ -78,16 +74,12 @@
     background-repeat: no-repeat;
 }
 
-.artist:hover .artist-name{
-    opacity: 0;
+.artist-text:hover{
+    background: rgba(0,0,0,0.8);
 }
 
-.artist:hover .artist-names{
-    font-family: "Gotham ultra", sans-serif;
-    letter-spacing: 3px;
-    transform: scale(1.8);
-    padding: 0.5em 3em;
-    color: #555;
+.artist:hover .artist-name{
+    opacity: 0;
 }
 
 .artist:not(:hover) .artist-quote{
@@ -252,6 +244,20 @@
 
     .artist .artist-quote:not(:hover){
         display: block;
+    }
+
+    .artist-text:hover{
+        background: transparent;
+    }
+
+    .artist:hover .artist-name{
+        opacity: 1;
+    }
+
+    .artist:hover .artist-quote{
+        font-size: 1em;
+        position: relative;
+        padding: 0;
     }
 
     #artistFilters{
