@@ -1,0 +1,268 @@
+#menuToggler{
+    background: #d36776 !important;
+}
+#menuToggler svg{
+    /*fill: #fff !important;*/
+}
+#artists{
+    min-height: 100vh;
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    -ms-perspective: 1000px;
+    perspective: 1000px;
+    padding-top: 4em;
+}
+
+#artists .container{
+    max-width: 1200px;
+    margin: auto;
+}
+
+.page-title{
+    font-family: "Gotham ultra", sans-serif;
+    font-size: 3.5em;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.artist{
+    position: relative;
+    min-width: calc(33.33% - 4px);
+    max-width: calc(33.33% - 4px);
+    margin-bottom: 6px;
+    margin-right: 4px;
+    height: 300px;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.artist-text{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: rgba(0,0,0,0.4);
+    color: #fff;
+    font-family: "Gotham light", sans-serif;
+    padding: 0 1em;
+
+    -webkit-transition: all 0.35s;
+    -moz-transition: all 0.35s;
+    -ms-transition: all 0.35s;
+    -o-transition: all 0.35s;
+    transition: all 0.35s;
+}
+
+.artist-text:hover{
+    background: rgba(0,0,0,0.8);
+}
+
+.artist-name{
+    font-size: 2em;
+    -webkit-transition: all 0.15s;
+    -moz-transition: all 0.15s;
+    -ms-transition: all 0.15s;
+    -o-transition: all 0.15s;
+    transition: all 0.15s;
+}
+
+.artist .image{
+    width: 100%;
+    height: 100%;
+    background-color:#cccccc;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.artist:hover .artist-name{
+    opacity: 0;
+}
+
+.artist:hover .artist-names{
+    font-family: "Gotham ultra", sans-serif;
+    letter-spacing: 3px;
+    transform: scale(1.8);
+    padding: 0.5em 3em;
+    color: #555;
+}
+
+.artist:not(:hover) .artist-quote{
+    display: none;
+}
+
+.artist:hover .artist-quote{
+    font-size: 1.5em;
+    position: absolute;
+    padding: 0 20px;
+}
+
+#artistFilters{
+    padding: 20px;
+}
+
+#artistFilters .artist-filter{
+    position: relative;
+    color: #888;
+    padding: 15px 38px;
+    min-width: 100px;
+    text-align: center;
+    margin: 0 8px;
+    letter-spacing: 2px;
+    font-size: 16px;
+    white-space: normal;
+    text-transform: lowercase;
+}
+
+#artistFilters .artist-filter:first-letter{
+    text-transform: uppercase;
+}
+
+#artistFilters .artist-filter:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    transform: rotateX(18deg);
+    background: #f0f0f0;
+    z-index: -1;
+}
+
+#artistFilters .artist-filter:hover:before{
+    background: #f0f0f0;
+}
+
+#artistFilters .artist-filter.active{
+    color: #fff;
+    color: #000;
+    font-weight: bold;
+}
+
+#artistFilters .artist-filter.active:before{
+    background: var(--app-contrast-color);
+}
+
+#artists #noResults{
+    font-size: 1.2em;
+    color: #555;
+    font-family: Verdana;
+}
+
+#artists:not(.no-artists) #noResults{
+    display: none;
+}
+
+#artistFiltersMob {
+    position: relative;
+    display: none;
+    margin-top: 15px;
+    width: 190px;
+    padding: 5px;
+    font-size: 1.4em;
+    letter-spacing: 3px;
+    background-color: transparent;
+}
+
+#artistFiltersMob option{
+    text-transform: lowercase;
+}
+
+#artistFiltersMob option:first-letter{
+    text-transform: uppercase;
+}
+
+@media all and (max-width: 768px) {
+    body{
+        padding-top: 0 !important;
+    }
+    #bannerTopBar{
+        background-color: transparent !important;
+    }
+    #artists{
+        padding-top: 0 !important;
+    }
+    #pageHeader{
+        padding-top: 9em !important;
+        padding-bottom: 3em;
+        background: #f6f6f6;
+        margin-bottom: 20px !important;
+    }
+    
+    #artistList{
+        padding: 8px;
+        margin-bottom: 0 !important;
+    }
+
+    #artists #noResults{
+        padding: 20px;
+        font-size: 1.4em;
+    }
+
+    .artist{
+        min-width: calc(100% - 4px);
+        max-width: 100%;
+        width: 100%;
+        margin-bottom: 12px;
+        margin-right: 0;
+        height: auto;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .artist .image{
+        position: relative;
+        width: 120px;
+        min-width: 120px;
+        height: 120px;
+    }
+
+    .artist .artist-text{
+        padding: 0;
+        margin: 0 1em;
+        position: relative;
+        min-height: 100%;
+        align-items: flex-start;
+        justify-content: flex-start;
+        background: transparent;
+        color: #000;
+        margin-bottom: 8px;
+    }
+
+    .artist .artist-name{
+        font-family: "Gotham medium", sans-serif;
+        font-size: 1.3em;
+        text-align: left;
+        margin-bottom: 5px;
+    }
+
+    .artist .artist-quote{
+        color: #000;
+        font-family: "Lora Italic", serif;
+        position: relative;
+        opacity: 1;
+        text-align: left;
+        font-size: 1em;
+        line-height: 1.5em;
+    }
+
+    .artist .artist-quote:not(:hover){
+        display: block;
+    }
+
+    #artistFilters{
+        display: none;
+    }
+
+    #artistFiltersMob{
+        display: block;
+    }
+
+    #artistFiltersMobLabel{
+        display: inline-block;
+    }
+}
