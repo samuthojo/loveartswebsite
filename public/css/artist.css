@@ -40,6 +40,7 @@
 }
 
 #artistName h1{
+    font-family: "Gotham bold", sans-serif;
     font-size: 2em;
 }
 
@@ -127,7 +128,7 @@
 
 .about-me > h3 .hot-word{
     color: #000;
-    font-family: "Gotham bold", sans-serif;
+    font-family: "Gotham medium", sans-serif;
 }
 
 .about-me > p{
@@ -260,9 +261,20 @@
 
     #artist #artistBasics{
         background: #f8f8f8 !important;
-        padding: 2em;
+        padding: 0;
+        padding-bottom: 2em;
         padding-top: 8em;
         flex-direction: column;
+    }
+
+    #artist #artistBasics > div{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    #artist #artistBasics > div:first-child{
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
     }
 
     #artist #backBg{
@@ -273,7 +285,12 @@
         width: 77px;
         min-width: 77px;
         height: 77px;
-        margin-right: 20px;
+        margin-right: 16px;
+    }
+
+    #artistName h1{
+        font-size: 1em;
+        padding-right: 20px;
     }
 
     #artistName p{
