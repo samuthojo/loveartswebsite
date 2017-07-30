@@ -1,0 +1,233 @@
+body{
+    background: #f0f0f0;
+}
+
+#bannerTopBar{
+    position: absolute !important;
+    background-color: transparent;
+    /*background-color: rgba(0,0,0,1);*/
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#bannerTopBar a{
+    color: #000 !important;
+}
+
+#bannerTopBar a:hover{
+    background-color: rgba(255, 255, 255, 0.45) !important;
+}
+
+#bannerTopBar a.active{
+    background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+#authOptions a{
+    background-color: rgba(5, 5, 5, 0.05) !important;
+    color: #000 !important;
+}
+
+.container{
+    max-width: 1000px;
+    margin: auto;
+}
+
+#infos{
+    position: relative;
+    padding: 3em 0;
+    padding-bottom: 5em;
+    min-height: 100vh;
+}
+
+#infos #title{
+    padding: 3em 0;
+    padding-bottom: 5em;
+}
+
+#infos #title h1{
+    font-size: 3em;
+    font-family: "Gotham ultra", sans-serif;
+    /*letter-spacing: 3px;*/
+}
+
+#infos #title p{
+    margin-top: 10px;
+    font-size: 1.7em;
+    font-family: 'Gotham light', sans-serif;
+    line-height: 1.5em
+}
+
+#pointerDeco{
+    text-align: right; display: inline-block; position: absolute; right: 120px;
+}
+
+#pointerDeco hr{
+    height: 200px; width: 0; margin: auto; margin-bottom: 60px; margin-top: -30px;
+}
+
+#pointerDeco span{
+    font-size: 1.3em; font-family: 'Gotham light', sans-serif; line-height: 1.5em; display: inline-block; max-width: 300px;
+}
+
+#theInfos{
+    padding: 10em 0;
+}
+
+.info-image{
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 6em;
+}
+
+.info-image:nth-child(even){
+    transform: translateY(250px);
+}
+
+.info-image .image{
+    position: relative;
+    margin: auto;
+    width: 80%;
+    background-color: #fff;
+    /*height: 480px;*/
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0,0,0,0.2);
+    border-radius: 3px;
+    transition: 0.35s transform ease-out;
+}
+
+.info-image .image:hover{
+    transform: scale(1.2);
+}
+
+.info-image .image img:not(.gify){
+    min-width:200%;
+    min-height: 200%;
+    max-width:200%;
+    max-height: 200%;
+}
+
+.info-image .image:hover img{
+    transition: 0.25s transform ease-out;
+}
+
+.info-image .image:hover img:not(.gify){
+    transform: scale(0.5);
+}
+
+.info-image .title{
+    font-size: 1.2em;
+    margin-top: 30px;
+    text-align: center;
+    color: #000;
+}
+
+.info-image .image-subtitle{
+    display: block;
+    font-size: 0.8em;
+    margin-top: 5px;
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.info-image .title,
+.info-image .image-subtitle{
+    transition: 0.25s opacity ease-out;
+}
+
+.info-image .image:hover + .title,
+.info-image .image:hover ~ .image-subtitle{
+    opacity: 0;
+}
+
+.info-image .image .scrim{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%; width: 100%;
+}
+
+.info-image .image:not(:hover) .gify{
+    /*opacity: 0;*/
+}
+
+@media all and (max-width: 768px) {
+    body{
+        padding-top: 0 !important;
+        background: #f0f0f0;
+        background-color: transparent;
+    }
+
+    #infos, #infos > .container{
+        padding-top: 0 !important;
+    }
+
+    #infos #title{
+        padding-top: 8em !important;
+        padding-bottom: 8em;
+        margin-bottom: -5em;
+    }
+
+    #leftyImage{
+        display: none;
+    }
+
+    #title{
+        padding-top: 0 !important;
+    }
+
+    #infos #title h1{
+        font-size: 2.5em;
+        padding: 0 20px;
+    }
+
+    #infos #title p{
+        font-size: 1.2em;
+        line-height: 1.5em;
+        padding: 0 20px;
+    }
+
+    #pointerDeco{
+        display: none;
+    }
+
+    .info-image .image{
+        width: 80% !important;
+    }
+
+    .info-image .image:hover img:not(.gify){
+        height: 480px;
+    }
+
+    .info-image .image .gify{
+        height: 180px;
+    }
+
+    .info-image:nth-child(even){
+        transform: none;
+    }
+
+    .info-image .image:hover{
+        transform: none;
+    }
+
+    .info-image .image:hover img:not(.gify){
+        transform: none;
+    }
+
+    .info-image .image:hover + .title,
+    .info-image .image:hover ~ .image-subtitle{
+        opacity: 1;
+    }
+
+    #infos{
+        padding-bottom: 0;
+    }
+
+    #theInfos {
+        padding: 0;
+    }
+}
