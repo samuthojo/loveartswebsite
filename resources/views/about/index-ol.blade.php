@@ -72,21 +72,31 @@
             }
 
 
-
-
+            #values, #objectives{
+                width: 100%;
+            }
 
             #values h2, #objectives h2{
-                font-size: 5.5em;
+                font-size: 3.5em;
+                padding: 0;
                 font-family: "Gotham ultra", sans-serif;
-                position: absolute;
-                top: 0.7em;
-                opacity: 0.1;
+                position: relative;
+                top: 0;
+                opacity: 1;
+                color: #777;
+                text-align: center;
+            }
+
+            #values h2{
+                color: #aaa;
+                        /*#d9d9d9;*/
             }
 
             #values ul, #objectives ul{
                 font-size: 1.5em;
                 font-family: "Gotham light", sans-serif;
                 padding: 1em 2em;
+                margin: 0;
             }
 
             #values ul li, #objectives ul li{
@@ -99,15 +109,18 @@
 
 
             #ourFocus{
+                margin-top: 50px;
+                margin-bottom: 60px;
                 padding: 2em;
+                padding-bottom: 2.6em;
             }
 
             #ourFocus h3{
                 font-family: "Gotham light", sans-serif;
-                font-size: 2em;
+                font-size: 1.5em;
                 line-height: 1.5em;
                 text-align: center;
-                color: #777;
+                color: #aaa;
             }
         }
     </style>
@@ -158,7 +171,7 @@
             </div>
         </section>
 
-        <section id="valuesObjectives" class="layou">
+        <section id="valuesObjectives" class="layout wrap">
             <div id="values" style="background: #f2f2f2">
                 <h2>core values</h2>
                 <ul>

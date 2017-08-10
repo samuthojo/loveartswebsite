@@ -609,6 +609,9 @@
 
 
 /*FEATURED ARTIST QUESTIONS*/
+#featuredArtistQuestions:not(.view-all) .other-question{
+    display: none;
+}
 #featuredArtistQuestions .question{
     margin: 0.5em 0;
     position: relative;
@@ -617,7 +620,7 @@
 #featuredArtistQuestions .question .question-number{
     margin-right: -2em;
     top: 0;
-    height:100%;
+    align-self: flex-start;
 }
 
 #featuredArtistQuestions .question .question-number div{

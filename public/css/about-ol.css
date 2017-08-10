@@ -147,7 +147,7 @@ body{
     top: 0;
     width: 100%;
     padding: 0.5em 50px;
-    text-align: center;
+    /*text-align: center;*/
     opacity: 0.1;
 }
 
@@ -155,11 +155,12 @@ body{
     font-size: 1.5em;
     line-height: 1.3em;
     font-family: "Gotham light", sans-serif;
-    padding: 1.3em 2em;
+    padding: 2.3em 2em;
+    margin-left: 30px;
 }
 
 #values ul{
-    padding: 1em 2em;
+    /*padding: 1em 2em;*/
 }
 
 #values ul li, #objectives ul li{

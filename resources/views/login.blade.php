@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app-inner')
 
 @section('content')
     <style>
@@ -21,8 +21,9 @@
 
         #bg{
             position: absolute;
+            top: 0;
             width: 100%;
-            height: 200px;
+            height: 350px;
             background: #ff4d4d;
         }
 
@@ -32,7 +33,7 @@
             /*min-height: 400px;*/
             box-shadow: 0 0 22px rgba(0,0,0,0.1);
             position: relative;
-            top: 90px;
+            top: 30px;
             margin-bottom: 200px;
             background-color: #fff;
             overflow: hidden;
@@ -185,9 +186,15 @@
                 padding: 12px !important;
             }
 
+            #bg{
+                display: none;
+            }
+
             body{
+                padding-top: 0 !important;
                 background: #fff0f0;
             }
+
             #loginWrapper{
                 display: none;
             }
@@ -220,9 +227,8 @@
         </div>
     </div>
 
+    <div id="bg"></div>
     <div id="loginWrapper">
-        <div id="bg"></div>
-
         <div id="loginForm">
             <div id="theForm">
                 <h3>Choose a login option below</h3>

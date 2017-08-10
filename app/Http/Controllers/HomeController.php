@@ -30,7 +30,7 @@ class HomeController extends Controller
 
     public function about()
     {
-        return view('about.index');
+        return view('about.index-ol');
     }
 
     public function contact()

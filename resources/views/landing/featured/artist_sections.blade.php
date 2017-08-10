@@ -1,7 +1,7 @@
 <div id="artistSubcontent" class="view-about">
     <div id="artistLinks" class="layout">
         <span targ="#artistAbout" onclick="switchSection('about')">BIOGRAPHY</span>
-        <span targ="#artistQsns" onclick="switchSection('qsns')">20 QUESTIONS</span>
+        <span targ="#artistQsns" onclick="switchSection('qsns')">5 QUESTIONS</span>
         <span targ="#artistWorks" onclick="switchSection('works')">WORKS</span>
     </div>
 
@@ -36,7 +36,7 @@
             <div id="artistActions" class="layout" style="margin-top: 20px;">
                 <a href="https://soundcloud.com/user-526680082" title="Sound Cloud">
                     <i class="fa fa-soundcloud" style="color: #000;"></i>&nbsp;
-                    &nbsp;Leroy Sanyi&nbsp;
+                    &nbsp;Leroy Sanyi&nbsp;(SoundCloud)
                 </a>
                 {{--<a href="#" title="Youtube">--}}
                     {{--<i class="fa fa-youtube-play" style="color: #e6544e"></i>&nbsp;--}}
