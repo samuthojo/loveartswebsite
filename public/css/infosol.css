@@ -40,34 +40,29 @@ body{
 }
 
 #infos #title{
-    padding: 5em 0;
+    padding: 3em 0;
     padding-bottom: 5em;
-    padding-left: 4em;
-    text-align: center;
 }
 
 #infos #title h1{
-    font-size: 4em;
+    font-size: 3em;
     font-family: "Gotham ultra", sans-serif;
     /*letter-spacing: 3px;*/
 }
 
 #infos #title p{
+    margin-top: 10px;
     font-size: 1.7em;
     font-family: 'Gotham light', sans-serif;
-    line-height: 1.5em;
-    max-width: 540px;
-    margin-top: 20px;
-    margin: auto;
+    line-height: 1.5em
 }
 
 #pointerDeco{
-    text-align: right; display: inline-block; position: absolute; left: 130px;
-    display: none;
+    text-align: right; display: inline-block; position: absolute; right: 120px;
 }
 
 #pointerDeco hr{
-    height: 120px; width: 0; margin: auto; margin-bottom: 60px; margin-top: -30px;
+    height: 200px; width: 0; margin: auto; margin-bottom: 60px; margin-top: -30px;
 }
 
 #pointerDeco span{
@@ -75,7 +70,7 @@ body{
 }
 
 #theInfos{
-    /*padding: 10em 0;*/
+    padding: 10em 0;
 }
 
 .info-image{
@@ -84,9 +79,8 @@ body{
     margin-bottom: 6em;
 }
 
-#theInfos .layout:first-child .info-image:nth-child(1){
-    /*transform: translateY(250px);*/
-    margin-top: 40px;
+.info-image:nth-child(even){
+    transform: translateY(250px);
 }
 
 .info-image .image{

@@ -99,7 +99,7 @@
 #artistFilters .artist-filter{
     position: relative;
     color: #888;
-    padding: 15px 38px;
+    padding: 10px 38px;
     min-width: 100px;
     text-align: center;
     margin: 0 8px;
@@ -107,6 +107,7 @@
     font-size: 16px;
     white-space: normal;
     text-transform: lowercase;
+    margin-bottom: 16px;
 }
 
 #artistFilters .artist-filter:first-letter{
@@ -120,7 +121,7 @@
     top: 0;
     height: 100%;
     width: 100%;
-    transform: rotateX(18deg);
+    transform: skewX(8deg);
     background: #f0f0f0;
     z-index: -1;
 }

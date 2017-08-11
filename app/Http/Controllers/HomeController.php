@@ -35,7 +35,7 @@ class HomeController extends Controller
 
     public function contact()
     {
-//        return view('home');
+//    \    return view('home');
     }
 
     public function show($show)
