@@ -38,17 +38,12 @@ return [
     'google' => [
         'client_id' => '539967529242-qmic91qcdv2ou0iekn0ifibb65h79j5c.apps.googleusercontent.com',
         'client_secret' => 'k4_qc5ZtA7iW9ZrAckylv3cr',
-        // 'redirect' => 'http://localhost:8000/login/google/callback',
-        'redirect' => 'http://2017.loveartstanzania.com/login/google/callback',
-        // 'redirect' => 'http://loveartstanzania.com/login/google/callback',
-
+        'redirect' => env('LOGIN_GOOGLE_CALLBACK'),
     ],
 
     'facebook' => [
         'client_id' => '1602716249741191',
         'client_secret' => 'd787d8107bc3f6ca6221b3a8b38b21cb',
-        // 'redirect' => 'http://localhost:8000/login/facebook/callback',
-        'redirect' => 'http://2017.loveartstanzania.com/login/facebook/callback',
-        // 'redirect' => 'http://loveartstanzania.com/login/facebook/callback',
+        'redirect' => env('LOGIN_FACEBOOK_CALLBACK'),
     ],
 ];
