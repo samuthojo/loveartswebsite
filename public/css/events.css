@@ -48,6 +48,7 @@ body{
 }
 
 .an-event{
+    width: calc(33.333% - 10px);
     min-width: calc(33.333% - 10px);
     max-width: calc(33.333% - 10px);
     margin-bottom: 20px;
@@ -69,6 +70,7 @@ body{
     position: relative;
     z-index: 1;
     min-height: 100%;
+    min-width: 100%;
     background: rgba(0,0,0,0.8);
 }
 

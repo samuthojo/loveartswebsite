@@ -1,4 +1,4 @@
-<a href="{{$event->url}}" class="an-event layou vertical">
+<a href="{{$event->url}}" class="an-event layout">
     <div class="image layout center-center">
         <img src="{{asset('images/events/'.$event->poster)}}" alt="">
     </div>
