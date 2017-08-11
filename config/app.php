@@ -124,6 +124,8 @@ return [
 
     'log_level' => env('APP_LOG_LEVEL', 'debug'),
 
+    'datepicker_parse_format' => 'd/m/Y',
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
