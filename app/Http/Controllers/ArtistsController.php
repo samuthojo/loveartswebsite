@@ -97,9 +97,8 @@ class ArtistsController extends Controller
             $artist->name = !is_null($request->input('name')) ? $request->input('name') : null;
             $artist->email = !is_null($request->input('email')) ? $request->input('email') : null;
             $artist->gender = !is_null($request->input('gender')) ? $request->input('gender') : null;
-
-//            $dob = !is_null($request->input('dob')) ? Carbon::createFromFormat('Y-M-d', $request->input('dob')) : null;
-//            $artist->dob = $request->input('dob');
+            
+           $artist->dob = $request->input('dob');
 
 //            return $artist;
             if($artist->save()){
