@@ -292,4 +292,38 @@ class User extends Authenticatable
     public function type(){
         return $this->pillar()->first();
     }
+
+    public function setFacebookLinkAttribute($url)
+    {
+        $this->attributes['facebook_link'] = $this->validateUrlScheme($url);
+    }
+
+    public function setInstagramLinkAttribute($url)
+    {
+        $this->attributes['instagram_link'] = $this->validateUrlScheme($url);
+    }
+
+    public function setYouTubeLinkAttribute($url)
+    {
+        $this->attributes['youtube_link'] = $this->validateUrlScheme($url);
+    }
+
+    public function setTwitterLinkAttribute($url)
+    {
+        $this->attributes['twitter_link'] = $this->validateUrlScheme($url);
+    }
+
+    private function validateUrlScheme($url, $protocol = "https")
+    {
+        $delim = "://";
+        $arr = explode($delim, $url);
+
+        if (sizeof($arr) == 1) {
+
+            return $protocol . "://" . $url;
+
+        }
+
+        return $url;
+    }
 }
