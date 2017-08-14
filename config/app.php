@@ -124,7 +124,7 @@ return [
 
     'log_level' => env('APP_LOG_LEVEL', 'debug'),
 
-    'datepicker_parse_format' => 'd/m/Y',
+    'datepicker_parse_format' => 'Y-m-d',
 
     /*
     |--------------------------------------------------------------------------
