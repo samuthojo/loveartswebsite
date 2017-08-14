@@ -18,7 +18,9 @@ class ArtistsController extends Controller
 
     public function index()
     {
-        $artists = User::orderBy('created_at', 'desc')->where('role', '=', 0)->get(); //paginate(10);
+        $artists = User::orderBy('created_at', 'desc')
+          ->where('verified', true)
+          ->where('role', '=', 0)->get(); //paginate(10);
         $filters = Pillar::all();
         return view('artists.index', compact('artists'), compact('filters'));
     }
@@ -97,7 +99,7 @@ class ArtistsController extends Controller
             $artist->name = !is_null($request->input('name')) ? $request->input('name') : null;
             $artist->email = !is_null($request->input('email')) ? $request->input('email') : null;
             $artist->gender = !is_null($request->input('gender')) ? $request->input('gender') : null;
-            
+
            $artist->dob = $request->input('dob');
 
 //            return $artist;
