@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Pillar;
-use function foo\func;
 use Illuminate\Http\Request;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
 use App\User;
-use function PHPSTORM_META\map;
 use Auth;
 use Carbon\Carbon;
 use Image;
