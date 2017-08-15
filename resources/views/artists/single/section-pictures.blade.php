@@ -3,7 +3,7 @@
 
 <div class="shots-list">
     <div class="layout center-justified">
-        @foreach($artist->images()->where('verified', true)->get() as $image)
+        @foreach($images as $image)
             @if($loop->iteration <= 5)
                 <a href="#" class="insta-pic layout center-center">
                     <img src="{{asset('images/artists/profile'. '/' . $image->url)}}" alt="" style="height: 100%;">

@@ -26,7 +26,12 @@ class ArtistsController extends Controller
     public function single($artist)
     {
         $artist = User::with('images')->where('id', '=', $artist)->first();
-        return view('artists.single.index', compact('artist'));
+        $images = $artist->images()->where('verified', true)->get();
+        
+        return view('artists.single.index', [
+          'artist' => $artist,
+          'images' => $images,
+        ]);
     }
 
     public function setup_account()
