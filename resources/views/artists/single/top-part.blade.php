@@ -1,3 +1,4 @@
+@if(!is_null($artist))
 <div id="backBg"></div>
 <div class="container">
     <div id="artistBasics" class="layout">
@@ -35,3 +36,4 @@
         </div>
     </div>
 </div>
+@endif
