@@ -3,7 +3,7 @@
 
 <div class="shots-list">
     <div class="layout center-justified">
-        @foreach($artist->images as $image)
+        @foreach($artist->images()->where('verified', true)->get() as $image)
             @if($loop->iteration <= 5)
                 <a href="#" class="insta-pic layout center-center">
                     <img src="{{asset('images/artists/profile'. '/' . $image->url)}}" alt="" style="height: 100%;">
@@ -11,8 +11,8 @@
             @endif
         @endforeach
 
-        @if(count($artist->images) < 5)
-            @for($i = 0; $i < 5 - count($artist->images); $i++)
+        @if(count($artist->images()->where('verified', true)->get()) < 5)
+            @for($i = 0; $i < 5 - count($artist->images()->where('verified', true)->get()); $i++)
                 <div class="insta-pic empty layout center-center">
 
                 </div>
