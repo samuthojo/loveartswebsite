@@ -1,4 +1,3 @@
-@if(!is_null($artist))
 <h3 style="padding-bottom: 0;">PICTURES</h3>
 <div style="margin: auto; width: 180px; border-top: 1px solid #ccc; margin-top: 1.5em; margin-bottom: 3.2em"></div>
 
@@ -21,4 +20,3 @@
         @endif
     </div>
 </div>
-@endif

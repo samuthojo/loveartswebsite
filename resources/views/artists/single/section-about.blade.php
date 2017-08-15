@@ -1,4 +1,3 @@
-@if(!is_null($artist))
 <div class="layout" style="max-width: 1100px; margin: auto;">
     <div class="about-me flex">
         <h3>I'm a <span class="hot-word">{{$artist->simple_description}}</span></h3>
@@ -30,4 +29,3 @@
         {!! isset($viewMap[$artist->pillar_id]) ? $viewMap[$artist->pillar_id] : '' !!}
     </div>
 </div>
-@endif

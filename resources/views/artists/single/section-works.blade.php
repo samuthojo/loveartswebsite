@@ -1,4 +1,3 @@
-@if(!is_null($artist))
 <h3 style="padding-bottom: 0;">RECENT WORKS</h3>
 <div style="margin: auto; width: 180px; border-top: 1px solid #ccc; margin-top: 1.5em; margin-bottom: 3.2em"></div>
 
@@ -44,4 +43,3 @@
         {!! $landMap[get_view_group($artist->pillar_id)] !!}
     </div>
 </div>
-@endif
