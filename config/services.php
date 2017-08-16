@@ -37,7 +37,7 @@ return [
 
     'google' => [
         'client_id' => '539967529242-qmic91qcdv2ou0iekn0ifibb65h79j5c.apps.googleusercontent.com',
-        'client_secret' => 'k4_qc5ZtA7iW9ZrAckylv3cr',
+        'client_secret' => 'k4_qc5ZtA|\7iW9ZrAckylv3cr',
         'redirect' => env('LOGIN_GOOGLE_CALLBACK'),
     ],
 
