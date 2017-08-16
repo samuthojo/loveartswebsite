@@ -17,6 +17,7 @@ class CreateArtistImagesTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->string('url');
+            $table->boolean('verified')->default(false);
             $table->timestamps();
 
             $table->foreign('user_id')
