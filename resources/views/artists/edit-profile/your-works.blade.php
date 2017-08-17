@@ -11,7 +11,7 @@
         @if(strtolower($artist->type()->name) == "music")
             <label class="{{is_null($artist->portrait_url) ? 'required' : ''}}">
                 Sound Cloud url:
-                <input type="text" name="portrait_url" value="{{$artist->video_url}}" placeholder="Link to your souncloud account or song or playlist.">
+                <input type="text" name="portrait_url" value="{{$artist->portrait_url}}" placeholder="Link to your souncloud account or song or playlist.">
             </label>
         @else
             <label class="{{is_null($artist->portrait_url) ? 'required' : ''}}">

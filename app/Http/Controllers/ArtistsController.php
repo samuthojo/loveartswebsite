@@ -10,6 +10,7 @@ use App\User;
 use Auth;
 use Carbon\Carbon;
 use Image;
+use Illuminate\Support\Facades\Validator;
 
 class ArtistsController extends Controller
 {
@@ -149,10 +150,9 @@ class ArtistsController extends Controller
         $artist = Auth::user();
         $is_musician = strtolower($artist->type()-> name) == "music";
 
-//        CHECK FOR EMPTY FIELDS
         if(
             empty($request->video_url) ||
-            (is_null($artist->portrait_url) && ((!$is_musician && !$request->hasFile('work_picture')) ||
+            (is_null($request->portrait_url) && ((!$is_musician && !$request->hasFile('work_picture')) ||
                 ($is_musician && empty($request->portrait_url)))
             )
         )
@@ -161,20 +161,33 @@ class ArtistsController extends Controller
                 "msg" => "Some required fields are missing!"
             ]);
 
-//        TRY SAVING
+        $this->validate($request, [
+            'video_url' => [
+              'active_url',
+              'regex:/^https?\:\/\/(www\.){0,1}youtube\.com\/user\/(\S)+$/',
+            ],
+        ]);
+
         $artist->video_url = str_replace("watch?v=", "embed/", $request->input('video_url'));
 
-        if($is_musician)
-            $artist->portrait_url = $request->input('portrait_url');
-        else{
-            if($request->hasFile('work_picture')){
-                $work_picture = $request->file("work_picture");
-                $destinationPath = public_path('images/artists/works/');
-                $img = Image::make($work_picture->getRealPath());
-                $new_image_name = $artist->id.'-'.time().'.'.$work_picture->getClientOriginalExtension();
-                $img->save($destinationPath.$new_image_name,25);
+        if($is_musician) {
+          $this->validate($request, [
+            'portrait_url' => [
+              'active_url',
+              'regex:/^https?\:\/\/(soundcloud\.com|snd\.sc)\/(\S)+$/',
+            ],
+          ]);
 
-                $artist->portrait_url = $new_image_name;
+          $artist->portrait_url = $request->input('portrait_url');
+        } else {
+          if($request->hasFile('work_picture')){
+              $work_picture = $request->file("work_picture");
+              $destinationPath = public_path('images/artists/works/');
+              $img = Image::make($work_picture->getRealPath());
+              $new_image_name = $artist->id.'-'.time().'.'.$work_picture->getClientOriginalExtension();
+              $img->save($destinationPath.$new_image_name,25);
+
+              $artist->portrait_url = $new_image_name;
             }
         }
 
@@ -183,7 +196,7 @@ class ArtistsController extends Controller
                 "success" => true,
                 "msg" => "Your recent works have been saved!"
             ]);
-        }else{
+        } else {
             return response()->json([
                 "success" => false,
                 "msg" => "Couldn't save your recent works"
@@ -191,8 +204,7 @@ class ArtistsController extends Controller
         }
     }
 
-    public function save_social_media(Request $request)
-    {
+    public function save_social_media(Request $request) {
         $artist = Auth::user();
         $artist->facebook_link = isset($request->facebook_link) ? $request->facebook_link : null;
         $artist->instagram_link = isset($request->instagram_link) ? $request->instagram_link : null;
@@ -210,12 +222,48 @@ class ArtistsController extends Controller
             ]);
         }
 
+        if(!is_null($request->facebook_link)) {
+          $this->validate($request, [
+              'facebook_link' => [
+                'active_url',
+                'regex:/^https?\:\/\/(www\.){0,1}facebook\.com\/(\S)+$/',
+              ],
+          ]);
+        }
+
+        if(!is_null($request->instagram_link)) {
+          $this->validate($request, [
+            'instagram_link'=> [
+              'active_url',
+              'regex:/^https?\:\/\/(www\.){0,1}instagram\.com\/(\S)+$/',
+            ],
+          ]);
+        }
+
+        if(!is_null($request->youtube_link)) {
+          $this->validate($request, [
+            'youtube_link'=>  [
+              'active_url',
+              'regex:/^https?\:\/\/(www\.){0,1}youtube\.com\/user\/(\S)+$/',
+            ],
+          ]);
+        }
+
+        if(!is_null($request->twitter_link)) {
+          $this->validate($request, [
+            'twitter_link'=>  [
+              'active_url',
+              'regex:/^https?\:\/\/(www\.){0,1}twitter\.com\/(\S)+$/',
+            ],
+          ]);
+        }
+
         if($artist->save()){
             return response()->json([
                 "success" => true,
                 "msg" => "Social media links saved"
             ]);
-        }else{
+        } else {
             return response()->json([
                 "success" => false,
                 "msg" => "Couldn't save your social media links"
