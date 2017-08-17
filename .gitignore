@@ -1,7 +1,11 @@
 /node_modules
 /public/hot
 /public/storage
-/public/images/artists/works
+/public/css
+/public/fonts
+/public/images
+/public/js
+/public/music
 /storage/*.key
 /vendor
 /.idea
