@@ -11,10 +11,6 @@ Route::prefix('login')->group(function () {
     Route::get('/{driver}/callback', 'SocialLoginController@handleProviderCallback');
 });
 
-Route::get('/admin', function () {
-    return view('admin.index');
-});
-
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/about', 'HomeController@about')->name('about');
 Route::get('/contact', 'HomeController@contact')->name('contact');
@@ -40,4 +36,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/saveSocialMedia', 'ArtistsController@save_social_media')->name('saveSocialMedia');
     Route::post('/saveArtistPictures', 'ArtistsController@save_pictures')->name('saveArtistPictures');
     Route::get('/setupAccount', 'ArtistsController@setup_account')->name('setupAccount');
+});
+
+Route::namespace('Admin')->prefix('/admin')->group(function () {
+    Route::get('/', function() {
+        return view('admin.index');
+    });
 });
